@@ -6,7 +6,7 @@
 
    There are several reasons why we need an SDLC Mdoel: 1.Ensures quality 2.Promotes efficient use of         resources 3. Increases accountability 4.Facilitates communication 5.Supports project management 
 
-
+   
 
 2.Write 5 advantages of Agile methodology.
 ==================================================================================================
