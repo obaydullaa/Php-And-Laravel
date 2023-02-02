@@ -1,0 +1,37 @@
+1.What is the Feasibility Study of the SDLC model & why is this important?   
+===============================================================================================
+
+   Ans: SDLC model: The main aim of SDLC is to develop high-quality software at the lowest cost and in the shortest time in a systematic and professional way. SDLC is used in software engineering to structure the development process of a software product in a systematic and organized manner. 
+   analyze user neeas ana aeveiop me SORWare accoraing to me users requirements. 
+
+   There are several reasons why we need an SDLC Mdoel: 1.Ensures quality 2.Promotes efficient use of         resources 3. Increases accountability 4.Facilitates communication 5.Supports project management 
+
+   
+
+2.Write 5 advantages of Agile methodology.
+==================================================================================================
+
+  Ans: Agile methodology: An Agile methodology is project management practice that promotes a collaborative,   iterative and incremental approach to project management.
+  1.Fast feature development 2.Continuous customer involvement 3.Constant improvement 4.Flexibility 5. Customer satisfaction
+    
+
+3.Write short notes on SDLC model phase.
+===================================================================================================
+
+    Ans:The entire SDLC process divided into the following SDLC steps.
+    1.Requirement collection and analysis:- The requirement is the first stage in the SDLC process. It is conducted by the senior team members with inputs from all the stakeholders and domain experts in the industry.
+   
+    2.Feasibility study: Once the requirement analysis phase is completed the next sdlc step is to define and document software needs.
+
+    3.Design: In this third phase, the system and software design documents are prepared as per the requirement specification document. This helps define overall system architecture.
+
+    4.Coding: Once the system design phase is over, the next phase is coding. In this phase, developers start build the entire system by writing code using the chosen programming language.
+
+   5.Testing: Once the software is complete, and it is deployed in the testing environment. The testing team starts testing the functionality of the entire system.
+
+   6.Installation/Deployment: Once the software testing phase is over and no bugs or errors left in the system then the final deployment process starts. 
+
+   7.Maintenance: Once the system is deployed, and customers start using the developed system, following 3 activities occur
+    Bug fixing – bugs are reported because of some scenarios which are not tested at all
+    Upgrade – Upgrading the application to the newer versions of the Software
+    Enhancement – Adding some new features into the existing software
