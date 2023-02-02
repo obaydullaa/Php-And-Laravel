@@ -93,3 +93,20 @@ $number = 12;
 // $number = 13 % 6;
 
 // echo  $number;
+
+
+/**
+ * 7 More on addition subtraction
+ */
+
+//  $x = $y = 2;
+
+//  echo $x, "\n", $y;
+
+// $n = 7;
+
+// $m = $n++; // m = 8, n = 7
+
+// $m = ++$n; // m = , n = ,
+
+// echo $m, "\n", $n;
