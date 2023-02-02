@@ -49,23 +49,47 @@
 
 // printf("I'am %s", $fullName);
 
-$fname = 'Obaydul';
-$lname = 'islam';
+// $fname = 'Obaydul';
+// $lname = 'islam';
 
-printf("My %s is %s %s \n", 'name', $fname, $lname);
+// printf("My %s is %s %s \n", 'name', $fname, $lname);
 
-echo "
-  Hello,
-  My
-  nick name 
-  is {$fname},
-  & my full name is 
-  Obaydulla. \n
-";
+// echo "
+//   Hello,
+//   My
+//   nick name 
+//   is {$fname},
+//   & my full name is 
+//   Obaydulla. \n
+// ";
 
-echo "My Name First Name is ".$fname." And Last Name is ".$lname.".\n ";
-echo "My Name First Name is {$fname} And Last Name is {$lname}.\n ";
-printf("My Name First Name is %s And Last Name is %s", strtoupper($fname), strrev($lname) );
+// echo "My Name First Name is ".$fname." And Last Name is ".$lname.".\n ";
+// echo "My Name First Name is {$fname} And Last Name is {$lname}.\n ";
+// printf("My Name First Name is %s And Last Name is %s", strtoupper($fname), strrev($lname) );
 
 
 
+/**
+ * 4 Fixed CodeRunner in Visual Studio for Windows (PHP Not Found)
+ */
+
+ /**
+  * 5 Fixed CodeRunner in PHPStorm for Windows
+  */
+
+  /**
+   * 6 Addition Subtraction Multiplication Division in PHP
+   */
+
+$number = 12;
+// $number = $number + 13;
+// $number += 13;
+
+// $number = 12 * 2;
+// $number = (13-5) *6;
+
+// $number += 1;
+// $number = 13 / 6;
+// $number = 13 % 6;
+
+// echo  $number;
