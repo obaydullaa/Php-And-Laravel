@@ -110,3 +110,22 @@ $number = 12;
 // $m = ++$n; // m = , n = ,
 
 // echo $m, "\n", $n;
+
+/**
+ * 8 Discussion of different number systems
+ */
+$n = 12;
+$o = 012; // Octal Number.
+$h = 0x1B; // HexaDecimal.
+
+// printf("The Number is %d and %d and %d", $n, $o, $h);
+
+// printf("The binary equivalent of %d is %b",1212,1212);
+// printf("The hexadecimal equivalent of %d is %X",1212,1212);
+
+// printf("The Octal equivalent of %d is %o",27,27); 
+
+// printf("The Octal equivalent of %d is %o",65536,65536);
+
+printf(" Octal  %o = %d",0200000,0200000);
+
