@@ -146,8 +146,60 @@
 //  $n = 45.129;
 // printf("%.2f", $n); // Print After dosomic 2 digit.
 
- $m = 45.126; //0123
- $n = 27.155; // 0023
+//  $m = 45.126; //0123
+//  $n = 27.155; // 0023
 
- printf("%07.3f \n", $m);
- printf("%05.2f \n", $n);
+//  printf("%07.3f \n", $m);
+//  printf("%05.2f \n", $n);
+
+/**
+ * 10 A few words about sprintf
+ */
+   // $fname = "Obaydul";
+   // $lname = "Islam";
+
+   // echo "My name is {$fname} $lname";
+   // echo "\n";
+
+   // $output = sprintf("My   name is %s %s \n", $fname, $lname);
+
+   // echo strtoupper($output);
+
+
+   /**
+    * 11 Discussion of Condition (Logic) and Logical Operators in PHP.
+    */
+
+   //  $n = 11;
+
+   //  if($n == 0 ){
+   //    echo "$n is an even number";
+   //  } else {
+   //    echo "$n is a odd number";
+   //  }
+   //  echo "\n";
+
+   //  if($n > 10) {
+   //    echo "$n id greather than 10";
+   //  }
+
+   // $a =100;
+   // $b = 200;
+   // if($a == $b) {
+   //    echo "$a is equal $b";
+   // }elseif($a >= $b){
+   //    echo "$a is bigger $b";
+   // }
+   // else {
+   //    echo "$a is not bigger $b";
+   // }
+
+   // $food = 'applefff';
+
+   // if('tuna' == $food || 'salmon' == $food){
+   //    echo "{$food} has Vitamin D";
+   // }elseif("apple" == $food){
+   //    echo "{$food} does'n contain vitamin D";
+   // }else{
+   //    echo "We don't know if {$food} contains vitamin D";
+   // }
