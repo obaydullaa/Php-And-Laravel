@@ -203,3 +203,37 @@
    // }else{
    //    echo "We don't know if {$food} contains vitamin D";
    // }
+
+ 
+   /**
+    * 12 If Else, Leap Years and How to Shortcut Complex Conditions
+    */
+
+
+    // Leaf year rules
+    //=======================
+    // 1 - divisible by 4 ? 1700 / 2000
+    // 2 - divisible by 100 ?
+    // 3 - divisible by 400
+
+    $year = 2012;
+
+    if ($year % 4 == 0 && $year % 100 == 0 && $year % 400 ==0) {
+      echo "{$year} is a leap year";
+    }elseif($year % 4 == 0 && $year % 100 == 0) {
+      echo "{$year} is NOT a leap year";
+    }elseif($year % 4 == 0){
+      echo "{$year} is a leap year";
+    }else {
+      echo "{$year} is NOT a leap year";
+
+    }
+   echo "\n";
+
+   if($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)){
+      echo "{$year} is a leap year";
+   }else{
+      echo "{$year} is NOT a leap year";
+   }
+
+   echo "\n";
