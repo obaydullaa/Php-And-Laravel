@@ -275,27 +275,60 @@
  * 14 Working with Ternary Operators and Nested Ternary Operators
  */
 
-$n = 12;
-if(12== $n) {
-  echo "Twelve";
-}else if (10 == $n) {
-  echo "Ten";
-}else {
-  echo "A Number";
-}
-echo "\n";
+// $n = 12;
+// if(12== $n) {
+//   echo "Twelve";
+// }else if (10 == $n) {
+//   echo "Ten";
+// }else {
+//   echo "A Number";
+// }
+// echo "\n";
 
 // $numberInWord = (12 == $n) ? "Twelve" : "A Number";
-$numberInWord =(12 == $n) ? "Twelve" : ((10 == $n) ? "Ten" : "A Number") ;
-echo $numberInWord;
+// $numberInWord =(12 == $n) ? "Twelve" : ((10 == $n) ? "Ten" : "A Number") ;
+// echo $numberInWord;
 
-echo "\n";
+// echo "\n";
 
-if($n % 2 == 0) {
-  echo "Even Number";
-}else {
-  echo "Odd Number";
+// if($n % 2 == 0) {
+//   echo "Even Number";
+// }else {
+//   echo "Odd Number";
+// }
+// echo "\n";
+// $results = $n % 2 == 0 ? "{$n} is an Even Number": "{$n} Is an Odd Number";
+// echo $results;
+
+/**
+ * 15 Another way to check condition
+ */
+$n = 13;
+$r = $n % 2;
+
+switch ($r){
+  case 0:
+    echo "{$n} is Even Number \n";
+  break;
+  default: 
+    echo "{$n} Is an odd number";
 }
 echo "\n";
-$results = $n % 2 == 0 ? "{$n} is an Even Number": "{$n} Is an Odd Number";
-echo $results;
+
+$color = "black";
+
+switch ($color){
+ 
+  case "red":
+    /*echo "red Is our favorite color";
+    break;
+    case "green": 
+      echo " green Is our favorite color";
+      break;*/
+      case "red":
+        case "green":
+          echo " {$color} Is our favorite color";
+          break;
+      default: 
+      echo "This color is okay";
+}
