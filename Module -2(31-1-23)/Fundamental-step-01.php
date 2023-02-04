@@ -240,32 +240,62 @@
 /**
  * 13 Nested If Else and Readability of Code
 */
-$condition1 = true;
-$condition2 = true;
-$condition3 = false;
+// $condition1 = true;
+// $condition2 = true;
+// $condition3 = false;
 
-if($condition1){
-  if($condition2){
-    if($condition3) {
-      echo "Hello";
-    }else{
-      echo "No 1";
-    }
-  }else{
-      echo "No 2";
-    }
-}else{
-  echo "No 3";
+// if($condition1){
+//   if($condition2){
+//     if($condition3) {
+//       echo "Hello";
+//     }else{
+//       echo "No 1";
+//     }
+//   }else{
+//       echo "No 2";
+//     }
+// }else{
+//   echo "No 3";
+// }
+
+// echo "\n";
+
+// if($condition1 && $condition2 && $condition3) {
+//   echo "Hello";
+// } elseif($condition1 && $condition2) {
+//   echo "No 1";
+// }elseif($condition1) {
+//   echo "No 2";
+// }else {
+//   echo "No 3";
+// }
+
+
+/**
+ * 14 Working with Ternary Operators and Nested Ternary Operators
+ */
+
+$n = 12;
+if(12== $n) {
+  echo "Twelve";
+}else if (10 == $n) {
+  echo "Ten";
+}else {
+  echo "A Number";
 }
+echo "\n";
+
+// $numberInWord = (12 == $n) ? "Twelve" : "A Number";
+$numberInWord =(12 == $n) ? "Twelve" : ((10 == $n) ? "Ten" : "A Number") ;
+echo $numberInWord;
 
 echo "\n";
 
-if($condition1 && $condition2 && $condition3) {
-  echo "Hello";
-} elseif($condition1 && $condition2) {
-  echo "No 1";
-}elseif($condition1) {
-  echo "No 2";
+if($n % 2 == 0) {
+  echo "Even Number";
 }else {
-  echo "No 3";
+  echo "Odd Number";
 }
+echo "\n";
+$results = $n % 2 == 0 ? "{$n} is an Even Number": "{$n} Is an Odd Number";
+echo $results;
