@@ -216,24 +216,56 @@
     // 2 - divisible by 100 ?
     // 3 - divisible by 400
 
-    $year = 2012;
+  //   $year = 2012;
 
-    if ($year % 4 == 0 && $year % 100 == 0 && $year % 400 ==0) {
-      echo "{$year} is a leap year";
-    }elseif($year % 4 == 0 && $year % 100 == 0) {
-      echo "{$year} is NOT a leap year";
-    }elseif($year % 4 == 0){
-      echo "{$year} is a leap year";
-    }else {
-      echo "{$year} is NOT a leap year";
+  //   if ($year % 4 == 0 && $year % 100 == 0 && $year % 400 ==0) {
+  //     echo "{$year} is a leap year";
+  //   }elseif($year % 4 == 0 && $year % 100 == 0) {
+  //     echo "{$year} is NOT a leap year";
+  //   }elseif($year % 4 == 0){
+  //     echo "{$year} is a leap year";
+  //   }else {
+  //     echo "{$year} is NOT a leap year";
 
+  //   }
+  //  echo "\n";
+
+  //  if($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)){
+  //     echo "{$year} is a leap year";
+  //  }else{
+  //     echo "{$year} is NOT a leap year";
+  //  }
+
+
+/**
+ * 13 Nested If Else and Readability of Code
+*/
+$condition1 = true;
+$condition2 = true;
+$condition3 = false;
+
+if($condition1){
+  if($condition2){
+    if($condition3) {
+      echo "Hello";
+    }else{
+      echo "No 1";
     }
-   echo "\n";
+  }else{
+      echo "No 2";
+    }
+}else{
+  echo "No 3";
+}
 
-   if($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)){
-      echo "{$year} is a leap year";
-   }else{
-      echo "{$year} is NOT a leap year";
-   }
+echo "\n";
 
-   echo "\n";
+if($condition1 && $condition2 && $condition3) {
+  echo "Hello";
+} elseif($condition1 && $condition2) {
+  echo "No 1";
+}elseif($condition1) {
+  echo "No 2";
+}else {
+  echo "No 3";
+}
