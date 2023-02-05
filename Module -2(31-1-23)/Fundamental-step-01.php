@@ -418,46 +418,55 @@
  * 19 Alternative Syntax of Control Structures
  * =========================================================================
  */
-$n = 12;
-if ($n % 2 == 0) {
-   echo "Even Number";
-}else {
-  echo "Odd Number";
+// $n = 12;
+// if ($n % 2 == 0) {
+//    echo "Even Number";
+// }else {
+//   echo "Odd Number";
 
-}
-echo PHP_EOL;
+// }
+// echo PHP_EOL;
 
-if ($n%2== 0) :
-  echo "Event Number";
-  echo PHP_EOL;
-  echo "Some Text";
-else:
-  echo "Odd Number";
-  echo PHP_EOL;
-  echo "Some Text";
-endif;
+// if ($n%2== 0) :
+//   echo "Event Number";
+//   echo PHP_EOL;
+//   echo "Some Text";
+// else:
+//   echo "Odd Number";
+//   echo PHP_EOL;
+//   echo "Some Text";
+// endif;
 
-echo PHP_EOL;
+// echo PHP_EOL;
 
-switch($n%2):
-  case 0:
-    echo "Even Number";
-    break;
-    default:
-    echo "Odd Number";
-  endswitch;
+// switch($n%2):
+//   case 0:
+//     echo "Even Number";
+//     break;
+//     default:
+//     echo "Odd Number";
+//   endswitch;
 
-  //Alter native another
+//   //Alter native another
 
-  if (true):
-    ?>
-    even number.
+//   if (true):
+//     ?>
+//     even number.
 
-    <?php
-    else:
-      ?>
-      
-      odd number.
-      <?php
+//     <?php
+//     else:
+//       ?>
 
-    endif;
+//       odd number.
+//       <?php
+
+//     endif;
+
+/**
+ * 20 Clearing things up with ternary operators
+ */
+
+ $n = 10;
+ $results = ($n % & 2 == 0) ? "A" :( ($n == 11) ? "B" : "C");
+ 
+ echo $results;
