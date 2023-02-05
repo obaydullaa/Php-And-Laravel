@@ -449,24 +449,13 @@
 
 //   //Alter native another
 
-//   if (true):
-//     ?>
-//     even number.
-
-//     <?php
-//     else:
-//       ?>
-
-//       odd number.
-//       <?php
-
-//     endif;
 
 /**
  * 20 Clearing things up with ternary operators
  */
 
  $n = 10;
- $results = ($n % & 2 == 0) ? "A" :( ($n == 11) ? "B" : "C");
+ $results = ($n % 2 == 0) ? "A" :(($n == 11) ? "B" : "C");
  
  echo $results;
+
