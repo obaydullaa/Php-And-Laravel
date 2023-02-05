@@ -412,3 +412,52 @@
 // $e = true and false;
 
 // var_dump($f, $e);
+
+
+/**
+ * 19 Alternative Syntax of Control Structures
+ * =========================================================================
+ */
+$n = 12;
+if ($n % 2 == 0) {
+   echo "Even Number";
+}else {
+  echo "Odd Number";
+
+}
+echo PHP_EOL;
+
+if ($n%2== 0) :
+  echo "Event Number";
+  echo PHP_EOL;
+  echo "Some Text";
+else:
+  echo "Odd Number";
+  echo PHP_EOL;
+  echo "Some Text";
+endif;
+
+echo PHP_EOL;
+
+switch($n%2):
+  case 0:
+    echo "Even Number";
+    break;
+    default:
+    echo "Odd Number";
+  endswitch;
+
+  //Alter native another
+
+  if (true):
+    ?>
+    even number.
+
+    <?php
+    else:
+      ?>
+      
+      odd number.
+      <?php
+
+    endif;
