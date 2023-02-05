@@ -303,32 +303,79 @@
 /**
  * 15 Another way to check condition
  */
-$n = 13;
-$r = $n % 2;
+// $n = 13;
+// $r = $n % 2;
 
-switch ($r){
-  case 0:
-    echo "{$n} is Even Number \n";
-  break;
-  default: 
-    echo "{$n} Is an odd number";
-}
-echo "\n";
+// switch ($r){
+//   case 0:
+//     echo "{$n} is Even Number \n";
+//   break;
+//   default: 
+//     echo "{$n} Is an odd number";
+// }
+// echo "\n";
 
-$color = "black";
+// $color = "green";
 
-switch ($color){
+// switch ($color){
  
-  case "red":
+//   case "red":
     /*echo "red Is our favorite color";
     break;
     case "green": 
       echo " green Is our favorite color";
       break;*/
-      case "red":
-        case "green":
-          echo " {$color} Is our favorite color";
-          break;
-      default: 
-      echo "This color is okay";
+//       case "red":
+//         case "green":
+//            echo " green Is our favorite color";
+
+//       default: 
+//       echo "This color is okay";
+// }
+
+/**
+ * 16 More on switch case
+ */
+
+$n = 13;
+$r = $n % 2;
+
+switch ($r){
+  case 0;
+  switch ($n) {
+    case $n>0:
+      echo "$n is a positive even Number";
+      break;
+      case $n<0:
+        echo "$n is a negative even Number";
+        break;
+  }
+  break;
+  default:
+  switch ($n) {
+    case $n>0:
+      echo "$n is a positive Odd Number";
+      break;
+      case $n<0:
+        echo "$n is a negative Odd Number";
+        break;
+  }
+
 }
+
+echo "\n";
+
+switch (true) {
+  case (0 == $r && $n >0):
+  echo "$n is a positive even number";
+    break;
+  case (1 == $r && $n>0):
+    echo "$n is a positive Odd number";
+    break;
+    case (0 == $r && $n<0):
+      echo "$n is a Negative even number";
+      break;
+    case (-1 ==$r && $n<0):
+       echo "$n is a negative Odd Number";
+       break;
+  }
