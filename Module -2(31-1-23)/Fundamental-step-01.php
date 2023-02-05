@@ -1,6 +1,7 @@
 <?php
 /**
  * 2. Intro to Variable;
+*======================================================
  */
 //  $name = 'Obaydulla';
 // $age = 10;
@@ -34,6 +35,7 @@
  * 
  * Print.
  *  var_dump();
+ *======================================================
  */
 
 // $name =  'Obaydul';
@@ -79,6 +81,7 @@
 
   /**
    * 6 Addition Subtraction Multiplication Division in PHP
+ *======================================================
    */
 
 // $number = 12;
@@ -97,6 +100,7 @@
 
 /**
  * 7 More on addition subtraction
+ *======================================================
  */
 
 //  $x = $y = 2;
@@ -113,6 +117,7 @@
 
 /**
  * 8 Discussion of different number systems
+ *======================================================
  */
 // $n = 12;
 // $o = 012; // Octal Number.
@@ -131,6 +136,7 @@
 
 /**
  * 9 The magic of the printf function
+ *======================================================
  */
 
 //  $fname = "Obaydul";
@@ -152,8 +158,10 @@
 //  printf("%07.3f \n", $m);
 //  printf("%05.2f \n", $n);
 
+
 /**
  * 10 A few words about sprintf
+ *======================================================
  */
    // $fname = "Obaydul";
    // $lname = "Islam";
@@ -207,6 +215,7 @@
  
    /**
     * 12 If Else, Leap Years and How to Shortcut Complex Conditions
+    *======================================================
     */
 
 
@@ -239,6 +248,7 @@
 
 /**
  * 13 Nested If Else and Readability of Code
+ *======================================================
 */
 // $condition1 = true;
 // $condition2 = true;
@@ -273,6 +283,7 @@
 
 /**
  * 14 Working with Ternary Operators and Nested Ternary Operators
+ *======================================================
  */
 
 // $n = 12;
@@ -302,6 +313,7 @@
 
 /**
  * 15 Another way to check condition
+ *======================================================
  */
 // $n = 13;
 // $r = $n % 2;
@@ -335,6 +347,7 @@
 
 /**
  * 16 More on switch case
+ *======================================================
  */
 
 // $n = 13;
@@ -383,6 +396,7 @@
 
 /**
  * 17 Interesting issue with switch case
+ *======================================================
  */
 
 //  $string = "8balls";
@@ -403,6 +417,7 @@
 /**
  * 18 Operator Precedence in PHP
  * More Details: https://www.php.net/manual/en/language.operators.precedence.php
+ *======================================================
  */
 
 // $f = false || true; // Precedence Heigh
@@ -454,8 +469,32 @@
  * 20 Clearing things up with ternary operators
  */
 
- $n = 10;
- $results = ($n % 2 == 0) ? "A" :(($n == 11) ? "B" : "C");
+//  $n = 10;
+//  $results = ($n % 2 == 0) ? "A" :(($n == 11) ? "B" : "C");
  
- echo $results;
+//  echo $results;
+
+
+/**
+ * Question
+ * Conditions:
+ * 
+ * If marks are 60% or more, the grade will be First Division.
+ * If marks are between 45% to 59%, the grade will be Second Division.
+ * If marks are between 33% to 44%, the grade will be Third Division.
+ * If marks are less than 33%, the student will  Fail.
+ * 
+ */ 
+    
+// $marks = 33;
+
+// if (60 > $marks){
+//  echo "The grade will be First Division.";
+// }elseif(45 > $marks && 59 < $marks){
+//   echo "The grade will be Second Division.";
+// }elseif(33 > $marks && 59 < $marks) {
+//  echo "The grade will be Third Division.";
+// } elseif (33 < $marks ){
+//  echo "the student will  Fail";
+// }
 
