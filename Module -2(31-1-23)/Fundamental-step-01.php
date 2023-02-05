@@ -337,45 +337,63 @@
  * 16 More on switch case
  */
 
-$n = 13;
-$r = $n % 2;
+// $n = 13;
+// $r = $n % 2;
 
-switch ($r){
-  case 0;
-  switch ($n) {
-    case $n>0:
-      echo "$n is a positive even Number";
-      break;
-      case $n<0:
-        echo "$n is a negative even Number";
-        break;
-  }
-  break;
-  default:
-  switch ($n) {
-    case $n>0:
-      echo "$n is a positive Odd Number";
-      break;
-      case $n<0:
-        echo "$n is a negative Odd Number";
-        break;
-  }
+// switch ($r){
+//   case 0;
+//   switch ($n) {
+//     case $n>0:
+//       echo "$n is a positive even Number";
+//       break;
+//       case $n<0:
+//         echo "$n is a negative even Number";
+//         break;
+//   }
+//   break;
+//   default:
+//   switch ($n) {
+//     case $n>0:
+//       echo "$n is a positive Odd Number";
+//       break;
+//       case $n<0:
+//         echo "$n is a negative Odd Number";
+//         break;
+//   }
 
-}
+// }
 
-echo "\n";
+// echo "\n";
 
-switch (true) {
-  case (0 == $r && $n >0):
-  echo "$n is a positive even number";
+// switch (true) {
+//   case (0 == $r && $n >0):
+//   echo "$n is a positive even number";
+//     break;
+//   case (1 == $r && $n>0):
+//     echo "$n is a positive Odd number";
+//     break;
+//     case (0 == $r && $n<0):
+//       echo "$n is a Negative even number";
+//       break;
+//     case (-1 ==$r && $n<0):
+//        echo "$n is a negative Odd Number";
+//        break;
+//   }
+
+/**
+ * 17 Interesting issue with switch case
+ */
+
+ $string = "8balls";
+
+ switch ($string) {
+  case (string)"9balls": 
+    echo "Nine Ball";
     break;
-  case (1 == $r && $n>0):
-    echo "$n is a positive Odd number";
+  case  (string) 8:
+    echo "8";
     break;
-    case (0 == $r && $n<0):
-      echo "$n is a Negative even number";
-      break;
-    case (-1 ==$r && $n<0):
-       echo "$n is a negative Odd Number";
-       break;
-  }
+  case (string)"8balls":
+    echo "Eight Balls";
+    break;
+ }
