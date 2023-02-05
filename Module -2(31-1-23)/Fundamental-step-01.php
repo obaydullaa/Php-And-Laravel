@@ -380,20 +380,35 @@
 //        break;
 //   }
 
+
 /**
  * 17 Interesting issue with switch case
  */
 
- $string = "8balls";
+//  $string = "8balls";
 
- switch ($string) {
-  case (string)"9balls": 
-    echo "Nine Ball";
-    break;
-  case  (string) 8:
-    echo "8";
-    break;
-  case (string)"8balls":
-    echo "Eight Balls";
-    break;
- }
+//  switch ($string) {
+//   case (string)"9balls": 
+//     echo "Nine Ball";
+//     break;
+//   case  (string) 8:
+//     echo "8";
+//     break;
+//   case (string)"8balls":
+//     echo "Eight Balls";
+//     break;
+//  }
+
+
+/**
+ * 18 Operator Precedence in PHP
+ * More Details: https://www.php.net/manual/en/language.operators.precedence.php
+ */
+
+// $f = false || true; // Precedence Heigh
+// $e = false or true;
+
+// $f = true && false; // Precedence Heigh
+// $e = true and false;
+
+// var_dump($f, $e);
