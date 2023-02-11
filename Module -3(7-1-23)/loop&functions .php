@@ -137,16 +137,16 @@
 
  // 0 1 2 3 5 8 13 21 34 55 89 
 
-  $veryold = 0;
-  $old = 1;
-  $new = 1;
+//   $veryold = 0;
+//   $old = 1;
+//   $new = 1;
 
-  for($i=0; $i<10; $i++){
-    echo $veryold." ";
-    $old = $new;
-    $new = $old + $veryold;
-    $veryold = $old;
- }
+//   for($i=0; $i<10; $i++){
+//     echo $veryold." ";
+//     $old = $new;
+//     $new = $old + $veryold;
+//     $veryold = $old;
+//  }
 
  /**
   * Details fibonacci Series
@@ -185,6 +185,30 @@
   o = 8 
   n = 13 
 
-
+  *7th Loop
+  v = 13
+  o = 13
+  n = 21 
 
   */
+
+
+
+/**
+ * 7. What are functions and how to write them
+ */
+// encapsulation
+
+// function isEven($n){ // parameter
+//   if($n % 2 == 0) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// $x = 11;
+// if(isEven($x)) { // argument
+//   echo "{$x} is an event number";
+// }else {
+//   echo "{$x} is an odd number";
+// }
