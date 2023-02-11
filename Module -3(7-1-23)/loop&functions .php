@@ -102,3 +102,35 @@
 //  $x = $y++;
 //  $x = $y;
 //  $y = $y +1;
+
+
+/**
+ * 5. Continue and break between loops
+ */
+
+ for($i = 17; $i<20; $i++) {
+  // echo $i;
+  // echo PHP_EOL;
+
+    // if($i == 6) {
+    //   echo $i++;
+    //     echo PHP_EOL;
+    //   break;
+    // }
+
+    // if($i % 6 == 0) {
+    //   echo $i;
+    //   break; 
+    // }
+
+    if($i<17) {
+      continue;
+    }
+    
+    echo $i;
+    echo PHP_EOL;
+
+   
+
+
+ }
