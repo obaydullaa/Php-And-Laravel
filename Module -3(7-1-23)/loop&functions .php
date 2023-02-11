@@ -108,7 +108,7 @@
  * 5. Continue and break between loops
  */
 
- for($i = 17; $i<20; $i++) {
+//  for($i = 17; $i<20; $i++) {
   // echo $i;
   // echo PHP_EOL;
 
@@ -123,14 +123,68 @@
     //   break; 
     // }
 
-    if($i<17) {
-      continue;
-    }
+    // if($i<17) {
+    //   continue;
+    // }
     
-    echo $i;
-    echo PHP_EOL;
+    // echo $i;
+    // echo PHP_EOL;
+//  }
 
-   
+/**
+ * 6. Printing the Fibonacci Series with Loops
+ */
 
+ // 0 1 2 3 5 8 13 21 34 55 89 
 
+  $veryold = 0;
+  $old = 1;
+  $new = 1;
+
+  for($i=0; $i<10; $i++){
+    echo $veryold." ";
+    $old = $new;
+    $new = $old + $veryold;
+    $veryold = $old;
  }
+
+ /**
+  * Details fibonacci Series
+  *initial
+  v = 0
+  o = 1 
+  n = 1 
+
+  *1st Loop
+  v = 1
+  o = 1 
+  n = 1 
+
+  *2nd Loop
+  v = 1
+  o = 1 
+  n = 2 
+
+  *3rd Loop
+  v = 2
+  o = 2 
+  n = 3 
+
+  *4th Loop
+  v = 3
+  o = 3 
+  n = 5 
+
+  *5th Loop
+  v = 3
+  o = 5 
+  n = 8 
+
+  *6th Loop
+  v = 8
+  o = 8 
+  n = 13 
+
+
+
+  */
