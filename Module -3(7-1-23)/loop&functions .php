@@ -192,11 +192,10 @@
 
   */
 
-
-
 /**
  * 7. What are functions and how to write them
  */
+
 // encapsulation
 
 // function isEven($n){ // parameter
@@ -212,3 +211,36 @@
 // }else {
 //   echo "{$x} is an odd number";
 // }
+
+/**
+ * 8. Type hinting or type checking of function parameters
+ */
+
+ // It work PHP 7
+// function factorial( int $n) {
+//   $result = 1;
+//   for($i = $n; $i > 1; $i--) {
+//     $result *= $i;
+//   }
+//   return $result;
+// }
+
+// $x = 'abcd';
+
+// echo "Factorial of {$x} is ".factorial($x);
+
+ // It work under PHP 7
+function factorial( $n) {
+  if(gettype($n) !="integer") {
+    return "invalid";
+  }
+  $result = 1;
+  for($i = $n; $i > 1; $i--) {
+    $result *= $i;
+  }
+  return $result;
+}
+
+$x = 2;
+
+echo "Factorial of {$x} is ".factorial($x);
