@@ -230,17 +230,32 @@
 // echo "Factorial of {$x} is ".factorial($x);
 
  // It work under PHP 7
-function factorial( $n) {
-  if(gettype($n) !="integer") {
-    return "invalid";
-  }
-  $result = 1;
-  for($i = $n; $i > 1; $i--) {
-    $result *= $i;
-  }
-  return $result;
-}
+// function factorial( $n) {
+//   if(gettype($n) !="integer") {
+//     return "invalid";
+//   }
+//   $result = 1;
+//   for($i = $n; $i > 1; $i--) {
+//     $result *= $i;
+//   }
+//   return $result;
+// }
 
-$x = 2;
+// $x = 2;
 
-echo "Factorial of {$x} is ".factorial($x);
+// echo "Factorial of {$x} is ".factorial($x);
+
+/**
+ * 9. Default value of function parameter or optional parameter
+ */
+
+//  function serve($foodType='Coffee', $numberOfItems='1 cup') {
+//   echo "{$numberOfItems} of {$foodType} has been served.";
+//  }
+//  $ft = "Tree";
+//  $n =  "2 cups";
+//  serve($ft);
+
+//  serve('Salad', '5 Plates');
+
+//  serve('apple', '2 pices');
