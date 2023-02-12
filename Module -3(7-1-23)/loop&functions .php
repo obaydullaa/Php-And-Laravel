@@ -259,3 +259,14 @@
 //  serve('Salad', '5 Plates');
 
 //  serve('apple', '2 pices');
+
+/**
+ * 10. Fixing function return type
+ */
+
+ function sum(int $x, int $y, int $z):int {
+  return $x + $y + $z;
+ }
+
+
+ echo sum("5",5,5);
