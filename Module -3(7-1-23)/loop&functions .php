@@ -264,9 +264,15 @@
  * 10. Fixing function return type
  */
 
- function sum(int $x, int $y, int $z):int {
-  return $x + $y + $z;
- }
+//  function sum(int $x, int $y, int $z):int {
+//   return $x + $y + $z;
+//  }
 
 
- echo sum("5",5,5);
+//  echo sum("5",5,5);
+// what is the output ?
+// 
+
+
+
+
