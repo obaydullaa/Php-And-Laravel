@@ -350,21 +350,58 @@
 /**
  * 14. Printing Fibonacci Series Using Recursive Functions
  */
-function fibonacci($old, $new, $end) {
-    static $start;
-    $start = $start ?? 1;
+// function fibonacci($old, $new, $end) {
+//     static $start;
+//     $start = $start ?? 1;
 
-  if($start > $end) {
-    return;
-  }
-  $start ++;
-  echo $old. " ";
-  $_temp = $old + $new;
-  $old = $new;
-  $new = $_temp;
+//   if($start > $end) {
+//     return;
+//   }
+//   $start ++;
+//   echo $old. " ";
+//   $_temp = $old + $new;
+//   $old = $new;
+//   $new = $_temp;
 
-  fibonacci($old, $new, $end);
+//   fibonacci($old, $new, $end);
 
-}
+// }
 
- fibonacci(0,1,10);
+//  fibonacci(0,1,10);
+
+/**
+ * 15. Variable Scope in PHP Function
+ * PHP Variable Scope 3
+ *  1. Local scope.
+ * 2. Global Scope.
+ * 3. Static Scope.
+ */
+
+// $name = "Earth"; // global scope
+// function dosomething() {
+//   // global $name; // wya one
+//   // echo  $GLOBALS['name']; // waye two
+// }
+// dosomething();
+
+
+
+// function dosomething() {
+//   global $name;
+//   $name = "Earth"; // local scope;
+// }
+
+// dosomething();
+
+// echo $name;
+
+// function dosomething() {
+//   static $i;   // static scope
+//   $i = $i ?? 0;
+//   $i++;
+//   echo $i;
+//   echo "\n";
+// }
+// dosomething();
+// dosomething();
+// dosomething();
