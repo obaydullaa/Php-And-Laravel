@@ -292,29 +292,57 @@
  * 12. Dividing a large function into smaller functions
  */
 
- function doTaskA(){
-  echo "Step A Done \n";
- }
- function doTaskB(){
-  echo "Step B Done \n";
- }
+//  function doTaskA(){
+//   echo "Step A Done \n";
+//  }
+//  function doTaskB(){
+//   echo "Step B Done \n";
+//  }
 
- function doTaskC(){
-  echo "Step C Done \n";
- }
- function doTaskD(){
-  echo "Step D Done \n";
- }
- function doTaskE(){
-  echo "Step E Done \n";
- }
+//  function doTaskC(){
+//   echo "Step C Done \n";
+//  }
+//  function doTaskD(){
+//   echo "Step D Done \n";
+//  }
+//  function doTaskE(){
+//   echo "Step E Done \n";
+//  }
 
- function doTheLargerTask(){
-   doTaskA();
-   doTaskB();
-   doTaskC();
-   doTaskD();
-   doTaskE();
- }
+//  function doTheLargerTask(){
+//    doTaskA();
+//    doTaskB();
+//    doTaskC();
+//    doTaskD();
+//    doTaskE();
+//  }
 
- doTheLargerTask();
+//  doTheLargerTask();
+
+/**
+ * 13. Recursion and Recursive Functions
+ */
+
+//  function printN($i){
+//   if($i>=10){
+//     return;
+//   }
+//   echo $i. "\n";
+//   $i++;
+//   printN($i);
+//  }
+//  echo printN(0);
+
+// function printNumber($counter, $end, $stepping='1'){
+//   if($counter > $end){
+//     return;
+//   }
+//   echo $counter. "\n";
+//   $counter += $stepping;
+
+
+//   printNumber($counter, $end, $stepping);
+
+// }
+
+// printNumber(10, 20, 5);
