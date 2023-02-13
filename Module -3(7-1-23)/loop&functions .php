@@ -273,6 +273,17 @@
 // what is the output ?
 // 
 
+/**
+ * 11. Accepting Unlimited Arguments in Functions
+ */
 
 
+function sum(int ...$n):int {
+$result = 0;
+  for($i =0; $i<count($n); $i++) {
+    $result += $n[$i];
+  }
+  return $result;
 
+}
+echo sum(1,2,3,4,5);
