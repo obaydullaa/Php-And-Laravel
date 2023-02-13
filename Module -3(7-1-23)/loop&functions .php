@@ -278,12 +278,43 @@
  */
 
 
-function sum(int ...$n):int {
-$result = 0;
-  for($i =0; $i<count($n); $i++) {
-    $result += $n[$i];
-  }
-  return $result;
+// function sum(int ...$n):int {
+// $result = 0;
+//   for($i =0; $i<count($n); $i++) {
+//     $result += $n[$i];
+//   }
+//   return $result;
 
-}
-echo sum(1,2,3,4,5);
+// }
+// echo sum(1,2,3,4,5);
+
+/**
+ * 12. Dividing a large function into smaller functions
+ */
+
+ function doTaskA(){
+  echo "Step A Done \n";
+ }
+ function doTaskB(){
+  echo "Step B Done \n";
+ }
+
+ function doTaskC(){
+  echo "Step C Done \n";
+ }
+ function doTaskD(){
+  echo "Step D Done \n";
+ }
+ function doTaskE(){
+  echo "Step E Done \n";
+ }
+
+ function doTheLargerTask(){
+   doTaskA();
+   doTaskB();
+   doTaskC();
+   doTaskD();
+   doTaskE();
+ }
+
+ doTheLargerTask();
