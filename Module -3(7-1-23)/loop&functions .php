@@ -405,3 +405,23 @@
 // dosomething();
 // dosomething();
 // dosomething();
+
+/**1
+ * 3-02-2023
+ * Live class Hasin Hyder vai..
+ */
+
+
+// foreach($products as $product){
+//   echo "{$product['name']} - {$product['price']}"; // Interpolation
+//   echo "\n";
+// }
+
+// echo "Hello";
+
+function student($name, $title='Md') {
+    echo "My Name is {$title} {$name}";
+}
+
+// student('Obaydul', 'Md');
+// student(name:"Obaydul", title:"Md"); // Name Argument
