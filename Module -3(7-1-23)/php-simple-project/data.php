@@ -6,9 +6,9 @@ $products = [
         "price"=>"48",
     ],
     [
-        "name"=> "Nomad Tumbler",
+        "name"=> "My changes file",
         "image"=>"https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-        "price"=>"35",
+        "price"=>"7777777777",
     ],
     [
         "name"=> "Focus Paper Refill",
