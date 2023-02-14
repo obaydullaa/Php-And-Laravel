@@ -41,5 +41,21 @@
   /**
  * 1. 2. Array Manipulation
  * ============================================================================
+ * array is mutable = array is  modified.
+ * Immutable na mane modified kora jai.
  */
   
+   $students = [
+    "ramhim",
+    "karim",
+    123,
+    "monir",
+
+  ];
+
+  $students[2] = 'Rohim';
+  
+  $n = count($students);
+  for($i = 0; $i < $n; $i++) {
+    echo $students[$i]."\n";
+  }
