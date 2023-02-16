@@ -93,11 +93,11 @@
 
   // echo $students[12];
 
-  $foods = [
-    'vegetables' => 'brinjal, brocoli, carrot, capsicum ',
-    'fruits' => ' orange, banana, apple',
-    'drinks' => ' water, milk',
-  ];
+  // $foods = [
+  //   'vegetables' => 'brinjal, brocoli, carrot, capsicum ',
+  //   'fruits' => ' orange, banana, apple',
+  //   'drinks' => ' water, milk',
+  // ];
 
   // Add array value
 
@@ -134,3 +134,22 @@
 //     $value = $values[$i];
 //     echo $value."\n";
 //   }
+
+/**
+ * 4. String to Array and Array to String, Multiple Delimiters
+ * ===========================================================================================
+ * 
+ *  delimeter = ', '
+ * explode('key',$var-string') // string to array convert.
+ * join('key', $var)
+ */
+
+
+  $vegetables = 'brinjal, brocoli, carrot, capsicum ';
+
+  $vegetable = explode(', ', $vegetables);
+  // var_dump($vegetable);
+  
+  $vegetableString = join(', ',  $vegetable);
+
+  echo ($vegetableString);
