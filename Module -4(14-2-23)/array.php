@@ -141,15 +141,19 @@
  * 
  *  delimeter = ', '
  * explode('key',$var-string') // string to array convert.
- * join('key', $var)
+ * join('key', $var)           // array tp string
+ * preg_split('/(, |,)/', 'brinjal, brocoli, carrot) //  its better explode functions
  */
 
 
-  $vegetables = 'brinjal, brocoli, carrot, capsicum ';
-
-  $vegetable = explode(', ', $vegetables);
+  $vegetables = preg_split('/(, |,)/', 'brinjal, brocoli, carrot, capsicum,potato, shweet-potato ');
+  var_dump($vegetables);
   // var_dump($vegetable);
-  
-  $vegetableString = join(', ',  $vegetable);
 
-  echo ($vegetableString);
+  // $vegetable_explode = explode(', ', $vegetables);
+  
+  $vegetableString = join(', ',  $vegetables);
+
+  // echo ($vegetableString);
+
+  echo count($vegetables);
