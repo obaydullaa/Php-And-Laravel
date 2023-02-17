@@ -146,14 +146,60 @@
  */
 
 
-  $vegetables = preg_split('/(, |,)/', 'brinjal, brocoli, carrot, capsicum,potato, shweet-potato ');
-  var_dump($vegetables);
-  // var_dump($vegetable);
+  // $vegetables = preg_split('/(, |,)/', 'brinjal, brocoli, carrot, capsicum,potato, shweet-potato ');
+  // var_dump($vegetables);
+  // // var_dump($vegetable);
 
-  // $vegetable_explode = explode(', ', $vegetables);
+  // // $vegetable_explode = explode(', ', $vegetables);
   
-  $vegetableString = join(', ',  $vegetables);
+  // $vegetableString = join(', ',  $vegetables);
 
-  // echo ($vegetableString);
+  // // echo ($vegetableString);
 
-  echo count($vegetables);
+  // echo count($vegetables);
+
+
+  /**
+   * Multidimensional or nested arrays
+   * ======================================================================
+   */
+
+   $foods = [
+    'vegetables'=> explode(', ', 'brinjal, brocoli, carrot, capsicum'),
+    'fruits'    => explode(', ', 'orange, banana, apple'),
+    'drinks'    => explode(', ', 'water, milks'),
+   ];
+
+  //  print_r($foods);
+
+   array_push($foods['drinks'],'orange juice');
+
+  //  print_r($foods);
+
+  // echo $foods['vegetables'][3];
+
+
+  $sample = [
+    'test' => [
+      	'test-again' => [
+				'a',
+				'b',
+				'c',
+				'd'
+			]
+		]
+    ];
+
+//   echo $sample['test']['test-again'][3];
+
+$sample2 =[
+	[1,2,3,4],
+	[11,22,33,44],
+	[111,222,333,444],
+	[111,222,333,[5,6,7]],
+];
+
+
+ echo $sample2[3][3][1];
+    
+
