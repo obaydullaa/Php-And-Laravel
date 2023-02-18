@@ -246,3 +246,37 @@
 // echo PHP_EOL;
 // $student2 = json_decode($jsonData, true);
 // print_r($student2) ;
+
+
+/**
+ * 7. Copy by Value and Copy by Reference
+ * ===============================================================
+ * 
+ * 
+ */
+
+ $person = [
+  'fname' => 'Hello',
+ 'lname' => 'world',
+];
+
+$newPerson = $person;
+
+$newPerson['lname']='Pluto';
+
+print_r($person);
+print_r($newPerson);
+// copy by value.
+// Deep copy.
+
+// Copy by reference
+//shallow copy
+
+function printData(&$person) {
+	$person['fname'] .= " changed";
+	print_r($person);
+}
+
+ printData($person);
+
+ print_r($person); 
