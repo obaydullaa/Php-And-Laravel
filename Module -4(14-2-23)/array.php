@@ -160,46 +160,89 @@
 
 
   /**
-   * Multidimensional or nested arrays
+   * 5. Multidimensional or nested arrays
    * ======================================================================
    */
 
-   $foods = [
-    'vegetables'=> explode(', ', 'brinjal, brocoli, carrot, capsicum'),
-    'fruits'    => explode(', ', 'orange, banana, apple'),
-    'drinks'    => explode(', ', 'water, milks'),
-   ];
+//    $foods = [
+//     'vegetables'=> explode(', ', 'brinjal, brocoli, carrot, capsicum'),
+//     'fruits'    => explode(', ', 'orange, banana, apple'),
+//     'drinks'    => explode(', ', 'water, milks'),
+//    ];
 
   //  print_r($foods);
 
-   array_push($foods['drinks'],'orange juice');
+//    array_push($foods['drinks'],'orange juice');
 
   //  print_r($foods);
 
   // echo $foods['vegetables'][3];
 
 
-  $sample = [
-    'test' => [
-      	'test-again' => [
-				'a',
-				'b',
-				'c',
-				'd'
-			]
-		]
-    ];
+	// $sample = [
+    // 'test' => [
+    //   	'test-again' => [
+	// 			'a',
+	// 			'b',
+	// 			'c',
+	// 			'd'
+	// 		]
+	// 	]
+    // ];
 
 //   echo $sample['test']['test-again'][3];
 
-$sample2 =[
-	[1,2,3,4],
-	[11,22,33,44],
-	[111,222,333,444],
-	[111,222,333,[5,6,7]],
-];
+// $sample2 =[
+// 	[1,2,3,4],
+// 	[11,22,33,44],
+// 	[111,222,333,444],
+// 	[111,222,333,[5,6,7]],
+// ];
 
 
- echo $sample2[3][3][1];
+//  echo $sample2[3][3][1];
     
 
+/**
+ * 6. Associative Array to String Conversion - Serialize, json
+ * ====================================================================================
+ * 
+ * serialize($student); // a:5:{s:5:"fname";s:5:"Jamal";s:5:"lname";
+ * unserialize($serialize); // normal array
+ * json_encode($student); // {"fname":"Jamal","lname":"Ahmed" }
+ * json_decode($jsonData); //  stdClass Object([fname] => Jamal [lname] => Ahmed
+ * json_decode($jsonData, true); // for get array
+ * 
+ */
+
+//  $student = [
+// 	'fname' => 'Jamal',
+// 	'lname' => 'Ahmed',
+// 	'age' => '15',
+// 	'class' => 8,
+// 	'section' => '8',
+//  ];
+
+//  print_r($student);
+
+//  echo $student['fname']. " ". $student['lname'];
+
+// printf(" %s, %s \n",$student['fname'],$student['lname']);
+
+// echo join(", ", $student);
+// echo PHP_EOL;
+
+// $serialize = serialize($student);
+
+// $newStudent = unserialize($serialize);
+
+// print_r($serialize);
+// print_r($newStudent);
+
+// echo "\n";
+
+// $jsonData = json_encode($student);
+// echo $jsonData;
+// echo PHP_EOL;
+// $student2 = json_decode($jsonData, true);
+// print_r($student2) ;
