@@ -255,28 +255,55 @@
  * 
  */
 
- $person = [
-  'fname' => 'Hello',
- 'lname' => 'world',
-];
+//  $person = [
+//   'fname' => 'Hello',
+//  'lname' => 'world',
+// ];
 
-$newPerson = $person;
+// $newPerson = $person;
 
-$newPerson['lname']='Pluto';
+// $newPerson['lname']='Pluto';
 
-print_r($person);
-print_r($newPerson);
-// copy by value.
-// Deep copy.
+// print_r($person);
+// print_r($newPerson);
+// // copy by value.
+// // Deep copy.
 
-// Copy by reference
-//shallow copy
+// // Copy by reference
+// //shallow copy
 
-function printData(&$person) {
-	$person['fname'] .= " changed";
-	print_r($person);
+// function printData(&$person) {
+// 	$person['fname'] .= " changed";
+// 	print_r($person);
+// }
+
+//  printData($person);
+
+//  print_r($person); 
+/**
+ * Write a PHP function to find the longest word in a string?
+// Hints :
+// // Example usage
+// $str = "The quick brown fox jumped over the lazy dog";
+// echo longestWord($str);
+// Output: jumped
+
+ */
+
+$str = "The quick brown fox jumped over the lazy dog";
+
+
+function longestWord($str) {
+  $words = explode(" ", $str); 
+  
+  $longestWord = "";
+  
+  for ($i = 0; $i < count($words); $i++) {
+    if (strlen($words[$i]) > strlen($longestWord)) {
+      $longestWord = $words[$i];
+    }
+  }
+  
+  return $longestWord;
 }
-
- printData($person);
-
- print_r($person); 
+echo longestWord($str); // Output: jumped
