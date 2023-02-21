@@ -280,6 +280,8 @@
 //  printData($person);
 
 //  print_r($person); 
+
+
 /**
  * Write a PHP function to find the longest word in a string?
 // Hints :
@@ -290,20 +292,33 @@
 
  */
 
-$str = "The quick brown fox jumped over the lazy dog";
+// $str = "The quick brown fox jumped over the lazy dog";
 
 
-function longestWord($str) {
-  $words = explode(" ", $str); 
+// function longestWord($str) {
+//   $words = explode(" ", $str); 
   
-  $longestWord = "";
+//   $longestWord = "";
   
-  for ($i = 0; $i < count($words); $i++) {
-    if (strlen($words[$i]) > strlen($longestWord)) {
-      $longestWord = $words[$i];
-    }
-  }
+//   for ($i = 0; $i < count($words); $i++) {
+//     if (strlen($words[$i]) > strlen($longestWord)) {
+//       $longestWord = $words[$i];
+//     }
+//   }
   
-  return $longestWord;
-}
-echo longestWord($str); // Output: jumped
+//   return $longestWord;
+// }
+// echo longestWord($str); // Output: jumped
+
+/**
+ * 8. Removing data from associative arrays
+ * ===============================================================
+ * unset($person) // Remove associative  array elements remove
+ */
+
+// $person = ['fname' => 'obaydul', 'lname' => 'Islam'];
+
+// print_r($person);
+// unset($person['lname']);
+
+// print_r($person);
