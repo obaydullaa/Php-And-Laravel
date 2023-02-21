@@ -350,3 +350,20 @@
 //  } else {
 //   echo 'Name is either not set or it\'s empty';
 //  }
+
+/**
+ * 10. Extracting some data from an array while keeping the original array intact
+ * ====================================================================================
+ */
+
+$fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
+$random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
+
+// $someFruits = array_slice($fruits, 2);
+// $someFruits = array_slice($fruits, 2, 2);
+// $someFruits = array_slice($fruits, -5, -2);
+// $someFruits = array_slice($fruits, 2, 2, true); // main index
+// $randomData = array_slice($random, 3, null, true); 
+$randomData = array_slice($random, -6, -4,); 
+
+print_r($randomData);
