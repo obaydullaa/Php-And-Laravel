@@ -354,16 +354,32 @@
 /**
  * 10. Extracting some data from an array while keeping the original array intact
  * ====================================================================================
+ * array_slice()  // Don' modify original array.
+ */
+
+// $fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
+// $random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
+
+// // $someFruits = array_slice($fruits, 2);
+// // $someFruits = array_slice($fruits, 2, 2);
+// // $someFruits = array_slice($fruits, -5, -2);
+// // $someFruits = array_slice($fruits, 2, 2, true); // main index
+// // $randomData = array_slice($random, 3, null, true); 
+// $randomData = array_slice($random, -6, -4,); 
+
+// print_r($randomData);
+
+/**
+ * 11. Decluttering an array
+ * =========================================================================
+ * array_splice() // Modify original array and add element
  */
 
 $fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
 $random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
 
-// $someFruits = array_slice($fruits, 2);
-// $someFruits = array_slice($fruits, 2, 2);
-// $someFruits = array_slice($fruits, -5, -2);
-// $someFruits = array_slice($fruits, 2, 2, true); // main index
-// $randomData = array_slice($random, 3, null, true); 
-$randomData = array_slice($random, -6, -4,); 
+$newFruits = ['Jackfruit', 'tamarind'];
+$someFruits = array_splice($fruits,-5,2, $newFruits);
 
-print_r($randomData);
+print_r($someFruits);
+print_r($fruits);
