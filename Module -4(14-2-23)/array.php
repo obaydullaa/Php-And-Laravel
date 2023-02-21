@@ -372,14 +372,48 @@
 /**
  * 11. Decluttering an array
  * =========================================================================
- * array_splice() // Modify original array and add element
+ * array_splice() // Modify original array and add extra array 
  */
 
-$fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
-$random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
+// $fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
+// $random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
 
-$newFruits = ['Jackfruit', 'tamarind'];
-$someFruits = array_splice($fruits,-5,2, $newFruits);
+// $newFruits = ['Jackfruit', 'tamarind'];
+// $someFruits = array_splice($fruits,-5,2, $newFruits);
 
-print_r($someFruits);
-print_r($fruits);
+// print_r($someFruits);
+// print_r($fruits);
+
+
+/**
+ * 12. Concatenating several arrays (very important)
+ * =========================================================================================
+ */
+
+// $fruits = array("apple", "banana", "orange", "plum", "dates", "mango");
+// $random = ["a" => 12, "b" =>45, "c" => 34, "d" => 22, "e" => 77, "f" => 31, 12=>78, "g" => 55 ];
+
+// $newFruits1 = array_slice($fruits, 0, 3);
+// $newFruits2 = array_slice($fruits, 3);
+
+// $newFruits = array_merge($newFruits1, $newFruits2);
+
+// print_r($newFruits1);
+// print_r($newFruits2);
+// print_r($newFruits);
+
+// $newFruitsPlus = $newFruits1 + $newFruits2;
+
+// print_r($newFruitsPlus);
+
+
+// $r1 = array_slice($random,0,2,true);
+// $r2 = array_slice($random ,4,null,true);
+// $r3 = ["j"=>45, "k"=>12];
+
+// $randomData = array_splice($random, 2,2, ["j"=>45, "k"=>12]);
+
+// $randomDataCorrectWay = $r1 + $r3 + $r2;
+
+// print_r($random);
+// print_r($randomDataCorrectWay);
