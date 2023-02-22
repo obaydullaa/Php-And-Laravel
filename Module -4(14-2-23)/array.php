@@ -399,7 +399,7 @@
 // $newFruits = array_merge($newFruits1, $newFruits2);
 
 // print_r($newFruits1);
-// print_r($newFruits2);
+// print_r($newFruits2); 
 // print_r($newFruits);
 
 // $newFruitsPlus = $newFruits1 + $newFruits2;
@@ -417,3 +417,46 @@
 
 // print_r($random);
 // print_r($randomDataCorrectWay);
+
+
+/**
+ * 13. Sorting Indexed and Associated Arrays
+ * =====================================================================
+ * sort() // associative array create and sort  a b c akare...
+ * asort() // associative array create and asort  a b c akare ONLY VALUE SORT HOISE DON"T KEY..
+ * arsort() // associative array create and reverse  c b a akare...
+ *  ksort($fruits); // key sorting
+ *  krsort($fruits); // key sorting reverse
+ *  sort($numbers, SORT_STRING); // key and value ar sate ja golo mase kortbe je golo age asbe -> [0]=>1,[1]=>2,[2]=>22
+ *  sort($random); // Case sensitive seat =>a,A,B,b P //skey code jar man besi sei first thake
+ *  sort($random, SORT_STRING | SORT_FLAG_CASE); => // Case insensitive sort
+ * 
+ * 
+ * 
+ * 
+ */
+
+ $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
+ $numbers = [1,2,56,3,4,22,77,5];
+
+ krsort($fruits);
+ sort($numbers, SORT_STRING);
+
+//  print_r($fruits);
+//  print_r($numbers);
+
+ $random = ["apple","Apple","banana","Banana","Pineapple"];
+ sort($random, SORT_STRING | SORT_FLAG_CASE);
+ print_r($random);
+
+//  for ($i =0; $i<count($numbers); $i++) {
+//   echo $numbers[$i]."\n";
+//  }
+
+// foreach($numbers as $number) {
+//   echo $number."\n";
+// }
+
+// foreach($fruits as $fruit) {
+//   echo $fruit."\n";
+// }
