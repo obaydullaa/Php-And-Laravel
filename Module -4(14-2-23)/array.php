@@ -465,17 +465,25 @@
 /**
  * 14. Searching in Indexed and Associated Arrays
  * ================================================================================================================================
- * 
+ * in_array(56, $numbers, true)  // array te ase kina.. jodi type check kore thole true/false dite hobe..
+ * array_search(56, $numbers); // array r modde position ber korar jonnu use hoi...
+ * key_exists('B', $fruits) // array te ley ase kina seta chek kora jonno use hoi.
  * 
  */
 
  
   $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
 
-  $numbers = [1,2,56,3,4,22,77,5];
+  $numbers = [1,2,'56',3,4,22,77,5];
  
  if(in_array(56, $numbers)) {
-    echo '56 is found';
+    echo '56 is found'."\n";
  }
+ 
+ $offset = array_search(56, $numbers);
+ echo $offset;
+echo PHP_EOL;
 
- echo "hello"; 
+if(key_exists('B', $fruits)) {
+  echo 'key B Exists';
+}
