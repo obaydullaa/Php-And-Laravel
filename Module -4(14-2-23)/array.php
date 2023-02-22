@@ -470,20 +470,49 @@
  * key_exists('B', $fruits) // array te ley ase kina seta chek kora jonno use hoi.
  * 
  */
-
  
-  $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
+//   $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
 
-  $numbers = [1,2,'56',3,4,22,77,5];
+//   $numbers = [1,2,'56',3,4,22,77,5];
  
- if(in_array(56, $numbers)) {
-    echo '56 is found'."\n";
- }
+//  if(in_array(56, $numbers)) {
+//     echo '56 is found'."\n";
+//  }
  
- $offset = array_search(56, $numbers);
- echo $offset;
-echo PHP_EOL;
+//  $offset = array_search(56, $numbers);
+//  echo $offset;
+// echo PHP_EOL;
 
-if(key_exists('B', $fruits)) {
-  echo 'key B Exists';
-}
+// if(key_exists('B', $fruits)) {
+//   echo 'key B Exists';
+// }
+
+/**
+ * 15. Difference and intersection of two indexed and associated arrays
+ * ==================================================================================
+ * array_intersect($numbers1, $numbers2); // search common element 2 array...check only value.
+ * array_intersect_assoc($fruits2, $fruits1); // search key and value.
+ * 
+ *  array_diff($numbers2, $numbers1); // jagolo mil nai sei golo dekhabe.. check only value
+ * array_diff_assoc($fruits2, $fruits1); // check value and key
+ */
+
+//  $numbers1 = [1,4,3,66,54,7,23,1,2];
+//  $numbers2 = [88,3,21,44,3,28,1,2,7];
+
+//  $fruits1 = array("a"=> "malta", "b"=>"grapes", "c"=>"lemon");
+//  $fruits2 = array("d"=> "pineapple", "b"=>"malta", "a"=>"grapes", "c"=>"lemon");
+
+//  $common = array_intersect($numbers1, $numbers2);
+// //  $commonf = array_intersect($fruits2, $fruits1);
+//  $commonf = array_intersect_assoc($fruits2, $fruits1);
+
+//  print_r($common);
+//  print_r($commonf);
+
+// //  $diff = array_diff($numbers1, $numbers2);
+//  $diff = array_diff($numbers2, $numbers1);
+//  $difff = array_diff_assoc($fruits2, $fruits1);
+
+//  print_r($diff);
+//  print_r($difff);
