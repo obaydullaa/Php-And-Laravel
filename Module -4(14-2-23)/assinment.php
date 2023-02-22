@@ -81,3 +81,5 @@ $my_array = array(12, 5, 23, 14, 25, 38);
 
 $second_largest = find_second_largest($my_array);
 echo "The second largest number is: " . $second_largest;
+
+

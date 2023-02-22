@@ -436,18 +436,18 @@
  * 
  */
 
- $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
- $numbers = [1,2,56,3,4,22,77,5];
+//  $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
+//  $numbers = [1,2,56,3,4,22,77,5];
 
- krsort($fruits);
- sort($numbers, SORT_STRING);
+//  krsort($fruits);
+//  sort($numbers, SORT_STRING);
 
-//  print_r($fruits);
-//  print_r($numbers);
+// //  print_r($fruits);
+// //  print_r($numbers);
 
- $random = ["apple","Apple","banana","Banana","Pineapple"];
- sort($random, SORT_STRING | SORT_FLAG_CASE);
- print_r($random);
+//  $random = ["apple","Apple","banana","Banana","Pineapple"];
+//  sort($random, SORT_STRING | SORT_FLAG_CASE);
+//  print_r($random);
 
 //  for ($i =0; $i<count($numbers); $i++) {
 //   echo $numbers[$i]."\n";
@@ -459,4 +459,23 @@
 
 // foreach($fruits as $fruit) {
 //   echo $fruit."\n";
-// }
+// }]
+
+
+/**
+ * 14. Searching in Indexed and Associated Arrays
+ * ================================================================================================================================
+ * 
+ * 
+ */
+
+ 
+  $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
+
+  $numbers = [1,2,56,3,4,22,77,5];
+ 
+ if(in_array(56, $numbers)) {
+    echo '56 is found';
+ }
+
+ echo "hello"; 
