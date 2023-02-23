@@ -678,3 +678,24 @@
 // echo $fruits[$key];
 
 // print_r($_fruits);
+
+/**
+ * 22 How to Write Strings Differently in PHP
+ * ===========================================================
+ *  <<<EOD ....... EOD; // HereDoc
+ * <<<'EOD' ....... EOD; // NowDoc
+ */
+
+ $name = "Rakib";
+
+ $string01 = 'My name is $name';
+ echo $string01;
+
+ $heredoc = <<<EOD
+
+  Data One
+  My name jis $name \n
+  Data Twoooooooooooo
+  EOD;
+
+ echo $heredoc;
