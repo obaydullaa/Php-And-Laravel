@@ -708,8 +708,29 @@
  * chr(99); // Generate a single-byte string from a number
  */
 
- echo ord('A');
- echo PHP_EOL;
- echo ord('a');
- echo PHP_EOL;
- echo chr(99);
+//  echo ord('A');
+//  echo PHP_EOL;
+//  echo ord('a');
+//  echo PHP_EOL;
+//  echo chr(99);
+
+
+/**
+ * 24 Accessing characters within a string
+ * =============================================================
+ * substr($string,1,4)
+ * substr($string, -3)
+ */
+
+//  $string = 'Hellow World';
+
+// //  echo $string[-5];
+// //  echo $string[5];
+
+// $length = strlen($string);
+// // echo substr($string,1,4);
+// echo substr($string,$length-3);
+
+// echo PHP_EOL;
+
+// echo substr($string, -10, -8);
