@@ -571,16 +571,32 @@
  * 
  */
 
- $numbers = [1,2,3,4];
+//  $numbers = [1,2,3,4];
 
- function sum($oldValue, $newValue) {
+//  function sum($oldValue, $newValue) {
 
-	if($newValue % 2==0) {
-		return $oldValue + $newValue;
-	}
-  	return $oldValue;
- }
+// 	if($newValue % 2==0) {
+// 		return $oldValue + $newValue;
+// 	}
+//   	return $oldValue;
+//  }
 
- $sum =array_reduce($numbers, 'sum');
+//  $sum =array_reduce($numbers, 'sum');
 
- echo $sum;
+//  echo $sum;
+
+/**
+ * 18. Using the list function to get data from an array into a variable
+ * $color = [122,233,65];
+ * list($red, $green, $blue) = $color;  // long data store in small data
+ * 
+ */
+// $color = [122,233,65];
+// $red = $color[0];
+// $green = $color[1];
+// $blue = $color[2];
+
+// list($red, $green, $blue) = $color;
+
+// echo $blue;
+
