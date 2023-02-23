@@ -686,16 +686,30 @@
  * <<<'EOD' ....... EOD; // NowDoc
  */
 
- $name = "Rakib";
+//  $name = "Rakib";
 
- $string01 = 'My name is $name';
- echo $string01;
+//  $string01 = 'My name is $name';
+//  echo $string01;
 
- $heredoc = <<<EOD
+//  $heredoc = <<<EOD
 
-  Data One
-  My name jis $name \n
-  Data Twoooooooooooo
-  EOD;
+//   Data One
+//   My name jis $name \n
+//   Data Twoooooooooooo
+//   EOD;
 
- echo $heredoc;
+//  echo $heredoc;
+
+/**
+ * 23 Introduction to ASCII Code
+ * ==============================================================
+ * American Standard Code for Information Interchange,
+ *  ord('A'); // Convert the first byte of a string to a value between 0 and 255
+ * chr(99); // Generate a single-byte string from a number
+ */
+
+ echo ord('A');
+ echo PHP_EOL;
+ echo ord('a');
+ echo PHP_EOL;
+ echo chr(99);
