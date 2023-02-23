@@ -637,19 +637,44 @@
  * 
  */
 
- $numbers = range(40, 50);
+//  $numbers = range(40, 50);
 
- $random = mt_rand(0, 32);
+//  $random = mt_rand(0, 32);
 
-$luck = $numbers[$random];
-if($luck % 2 == 0) {
-  echo "Head";
-}else {
-  echo "Tail";
-}
+// $luck = $numbers[$random];
+// if($luck % 2 == 0) {
+//   echo "Head";
+// }else {
+//   echo "Tail";
+// }
 
-shuffle($numbers);
-print_r($numbers);
-$randomNumber = $numbers[3];
-echo PHP_EOL;
-echo $randomNumber;
+// shuffle($numbers);
+// print_r($numbers);
+// $randomNumber = $numbers[3];
+// echo PHP_EOL;
+// echo $randomNumber;
+
+
+/**
+ * 21. Associative array shuffling problems and solutions
+ * ==========================================================================
+ * array_rand($fruits); // Pick one or more random keys out of an array
+ * 
+ */
+
+//  $fruits = array("A"=> "apple", "B"=>"banana", "OR"=>"orange", "D"=>"plum", "E"=>"dates", "F"=>"mango");
+
+// //  shuffle($fruits);
+// //  print_r($fruits);
+
+// $_fruits = $fruits;
+
+// shuffle($_fruits);
+
+// $key = array_rand($fruits);
+
+// // echo $key;
+
+// echo $fruits[$key];
+
+// print_r($_fruits);
