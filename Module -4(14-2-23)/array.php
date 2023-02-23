@@ -587,6 +587,7 @@
 
 /**
  * 18. Using the list function to get data from an array into a variable
+ * ============================================================================================
  * $color = [122,233,65];
  * list($red, $green, $blue) = $color;  // long data store in small data
  * 
@@ -600,3 +601,31 @@
 
 // echo $blue;
 
+
+/**
+ * 19. Using Range Functions and Stepping - Very interesting
+ * =========================================================================================
+ * range() // i'ts make array one particular number to another particular number.
+ * 
+ * 
+ */
+
+//  $numbers = [12,13,14, 15,16,17,18, 19,20];
+
+// $numbers = [];
+// for($i = 12; $i<21; $i++) {
+// 	array_push($numbers, $i);
+// }
+
+// print_r($numbers);
+
+// $numbers = range(12, 20 ,2);
+
+// print_r($numbers);
+
+// foreach(range(0, 50, 7) as $number) {
+
+// 	if($number > 0) {
+// 		echo $number. "\n";
+// 	}
+// }
