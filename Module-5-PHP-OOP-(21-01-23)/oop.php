@@ -128,3 +128,40 @@
 // $ourFund->addFund(10);
 // // $ourFund->deductFund(7);
 // $ourFund->getTotal();
+
+/**
+ * 5 Writing a Real Life Useful Class
+ * ===============================================================
+ *  #ff0000 // 155, 0,0
+ */
+
+ class RGB {
+    private $color; //#ff0000
+    private $red; 
+    private $green;
+    private $blue; 
+
+    private function __construct($colorCode = '') {
+        $this->color = ltrim($colorCode,"#");
+        $this->parseColor();
+    }
+
+    private function getColor() {
+        return $this->color;
+    }
+
+    private function setColor($colorCode) {
+        $this->color = ltrim($colorCode,"#");
+        $this->parseColor();
+    }
+
+    private function parseColor() {
+       if($this->color) {
+            $colors  = sscanf($this->color, '%02x%02x%02x');
+            print_r($colors);
+       }
+    }
+ }
+
+$myColor = new RGB("#ffef27");
+
