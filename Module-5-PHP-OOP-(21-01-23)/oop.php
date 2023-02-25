@@ -62,34 +62,69 @@
  * 
  */
 
- class Human {
-    public $name;
-    public $age;
-    function __construct($personName,$personAge=0) {
-        // echo "New Human Object is Created. \n";
-        $this->name = $personName;
-        $this->age = $personAge;
+//  class Human {
+//     public $name;
+//     public $age;
+//     function __construct($personName,$personAge=0) {
+//         // echo "New Human Object is Created. \n";
+//         $this->name = $personName;
+//         $this->age = $personAge;
 
-    }
+//     }
 
-    function sayHi(){
-        echo "Salam\n";
-        $this->sayName();
-    }
+//     function sayHi(){
+//         echo "Salam\n";
+//         $this->sayName();
+//     }
 
-    function sayName(){
-        if($this->age){
-            echo "My Name is {$this->name}, I am {$this->age} year old\n";
-        }else {
-            echo "My Name is {$this->name}, I don't know how old i am. \n";
-        }
-    }
-}
+//     function sayName(){
+//         if($this->age){
+//             echo "My Name is {$this->name}, I am {$this->age} year old\n";
+//         }else {
+//             echo "My Name is {$this->name}, I don't know how old i am. \n";
+//         }
+//     }
+// }
 
-$h1 = new Human("Obaydul",22);
-$h2 = new Human("Rifat",13);
-$h3 = new Human("Noor");
-// $h1->name = "Obaydul";
-$h1->sayHi();
-$h2->sayHi();
-$h3->sayHi();
+// $h1 = new Human("Obaydul",22);
+// $h2 = new Human("Rifat",13);
+// $h3 = new Human("Noor");
+// // $h1->name = "Obaydul";
+// $h1->sayHi();
+// $h2->sayHi();
+// $h3->sayHi();
+
+/**
+ * 4 Public and Private Methods and Properties of Classes
+ * ==================================================================================
+ * 
+ */
+// class Fund {
+//     private $fund;
+
+//     function __construct($initialFund = 0){
+//         $this->fund = $initialFund;
+//     }
+
+//     public function addFund($money) {
+//         $this->fund += $money;
+//         $this->deductFund(0);
+        
+//     }
+
+//     private function deductFund($money) {
+//         $this->fund -= $money;
+//     }
+
+//     public function getTotal() {
+//         echo "Total fund is {$this->fund}\n";
+//     }
+// }
+
+// $ourFund = new Fund(100);
+// // $ourFund->fund = 75;
+
+// $ourFund->getTotal();
+// $ourFund->addFund(10);
+// // $ourFund->deductFund(7);
+// $ourFund->getTotal();
