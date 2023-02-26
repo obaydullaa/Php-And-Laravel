@@ -135,33 +135,53 @@
  *  #ff0000 // 155, 0,0
  */
 
- class RGB {
-    private $color; //#ff0000
-    private $red; 
-    private $green;
-    private $blue; 
+//  class RGB {
+//     private $color; //#ff0000
+//     private $red; 
+//     private $green;
+//     private $blue; 
 
-    private function __construct($colorCode = '') {
-        $this->color = ltrim($colorCode,"#");
-        $this->parseColor();
-    }
+//     public function __construct($colorCode = '') {
+//         $this->color = ltrim($colorCode,"#");
+//         $this->parseColor();
+//     }
 
-    private function getColor() {
-        return $this->color;
-    }
+//     public function getColor() {
+//         return $this->color;
+//     }
 
-    private function setColor($colorCode) {
-        $this->color = ltrim($colorCode,"#");
-        $this->parseColor();
-    }
+//     public function getRGBColor() {
+//         return array($this->red, $this->green, $this->blue);
+//     }
 
-    private function parseColor() {
-       if($this->color) {
-            $colors  = sscanf($this->color, '%02x%02x%02x');
-            print_r($colors);
-       }
-    }
- }
+//     public function readRGBColor() {
+//         echo "Red = {$this->red}\nGreen = {$this->green}\nBlue = {$this->blue}";
+//     }
 
-$myColor = new RGB("#ffef27");
+//     public function setColor($colorCode) {
+//         $this->color = ltrim($colorCode,"#");
+//         $this->parseColor();
+//     }
 
+//     private function parseColor() {
+//        if($this->color) {
+//             list($this->red, $this->green, $this->blue)  = sscanf($this->color, '%02x%02x%02x');
+//        }else {
+//         list($this->red, $this->green, $this->blue)  = array(0, 0, 0);
+//        }
+//     }
+
+//     public function getRed() {
+//         return $this->red;
+//     }
+//     public function getGreen() {
+//         return $this->green;
+//     }
+//     public function getBlue() {
+//         return $this->blue;
+//     }
+//  }
+
+// $myColor = new RGB("ff0000");
+
+// $myColor->readRGBColor();
