@@ -271,52 +271,104 @@
  * =======================================================================
  */
 
- abstract class Shape {
-    abstract function getArea();
-    abstract function getPerimeter();
- }
+//  abstract class Shape {
+//     abstract function getArea();
+//     abstract function getPerimeter();
+//  }
 
- class Rectangle extends Shape {
+//  class Rectangle extends Shape {
 
-    private $base, $height;
+//     private $base, $height;
 
-    function __construct($base, $height) {
-        $this->base = $base;
-        $this->height = $height;
+//     function __construct($base, $height) {
+//         $this->base = $base;
+//         $this->height = $height;
 
-    }
+//     }
 
-    public function setBase($base) {
-        $this->base = $base;
-    }
+//     public function setBase($base) {
+//         $this->base = $base;
+//     }
 
-    public function setHeight($height) {
-        $this->height = $height;
+//     public function setHeight($height) {
+//         $this->height = $height;
 
-    }
+//     }
 
-    public function getArea() {
-        return $this->base*$this->height;
+//     public function getArea() {
+//         return $this->base*$this->height;
 
-    }
+//     }
 
-    function getPerimeter() {
+//     function getPerimeter() {
 
-    }
+//     }
 
- }
+//  }
 
- class Triangle extends Shape {
-    function getArea() {
-        return $this->base*$this->height;
+//  class Triangle extends Shape {
+//     function getArea() {
+//         return $this->base*$this->height;
 
-    }
-    function getPerimeter() {
+//     }
+//     function getPerimeter() {
 
-    }
- }
+//     }
+//  }
 
- $triangle = new Triangle(10,10);
+//  $triangle = new Triangle(10,10);
 
- echo $triangle->getArea();
- $shape = new Shape();
+//  echo $triangle->getArea();
+//  $shape = new Shape();
+
+
+class Car {
+  private $make;
+  private $model;
+  private $year;
+
+  public function __construct($make, $model, $year) {
+    $this->make = $make;
+    $this->model = $model;
+    $this->year = $year;
+  }
+
+  public function get_make() {
+    return $this->make;
+  }
+
+  public function get_model() {
+    return $this->model;
+  }
+
+  public function get_year() {
+    return $this->year;
+  }
+
+  public function set_make($make) {
+    $this->make = $make;
+  }
+
+  public function set_model($model) {
+    $this->model = $model;
+  }
+
+  public function set_year($year) {
+    $this->year = $year;
+  }
+
+  public function display_info() {
+    echo "Car make: " . $this->make . "\n";
+    echo "Car model: " . $this->model . "\n";
+    echo "Car year: " . $this->year . "\n";
+  }
+}
+
+
+$myCarObj = new Car("Toyota", "Corolla", 2015);
+
+
+$myCarObj->display_info();
+$myCarObj->set_make("Honda");
+$myCarObj->set_model("Civic");
+$myCarObj->display_info();
