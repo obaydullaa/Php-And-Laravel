@@ -94,6 +94,20 @@ if(is_readable($fileName)) {
  * ===================================================
  * // reset data when new open file
  * // use on time write use 'W'
- * $fp = fopen($fileName, "w"); 
+ *1.  $fp = fopen($fileName, "w"); 
+ * 
+ * Jodi ager Data mone rakte hoi tahole 
+ * 2. $existingData = file_get_contents($fileName);
+ * 
+ * etato previews data mone rakhe and new data likhe
+ * 3.$fp = fopen($fileName, "a");
  * 
  */
+
+ 
+// $fileName = "C:/xampp/htdocs/Php-And-Laravel/Module-6-(9-3-23)/php01/file/data/f2.txt";
+
+// $fp = fopen($fileName, "w");
+// fwrite($fp,"Obaydul\n");
+// fwrite($fp,"Rifat\n");
+// fclose($fp);
