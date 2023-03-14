@@ -111,3 +111,23 @@ if(is_readable($fileName)) {
 // fwrite($fp,"Obaydul\n");
 // fwrite($fp,"Rifat\n");
 // fclose($fp);
+
+
+/**
+ * 3 (File) Tips for Windows and the use of the is writable function
+ * =================================================================================
+ */
+// if don't work file file path
+//  $fileName = "C:\\xampp/htdocs\\Php-And-Laravel\\Module-6-(9-3-23)\\php01\\file\\data\\f2.txt";
+
+//  $fileName = "C:/xampp/htdocs/Php-And-Laravel/Module-6-(9-3-23)/php01/file/data/f2.txt";
+
+ // we use save waye..
+//  if (is_writable($fileName)) {
+    // $fileName = "C:/xampp/htdocs/Php-And-Laravel/Module-6-(9-3-23)/php01/file/data/f2.txt";
+
+    // $fp = fopen($fileName, "w");
+    // fwrite($fp,"Obaydul\n");
+    // fwrite($fp,"Rifat\n");
+    // fclose($fp);
+//  }
