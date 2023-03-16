@@ -10,10 +10,11 @@
 
 // echo $date2-$date1;
 
-$date1 = new DateTime('1st january 2021');
-$date2= new DateTime('28th march 2023');
+$date1 = new DateTime('1AM 1st january 2021');
+$date2= new DateTime('3AM 28th march 2023');
 
-$diff = $date1->diff($date2);
+// $diff = $date1->diff($date2);
+$diff = date_diff($date1, $date2);
 
 // echo $diff->d;
 
@@ -22,8 +23,10 @@ $diff = $date1->diff($date2);
 // echo $diff->d>0?$diff->m." Day": '';
 
 echo formatNumber($diff->y,'year').
-formatNumber($diff->m,'month') .
-formatNumber($diff->m,'day') 
+    formatNumber($diff->m,'month') .
+    formatNumber($diff->m,'day') .
+    formatNumber($diff->m,'hour') .
+    formatNumber($diff->m,'minute') 
 ;
 
 function formatNumber ($number, $type) {
