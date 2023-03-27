@@ -111,6 +111,7 @@
             </div>
             
             <input class="btn" type="submit" name="submit" value="Register">
+            OR
             <a href="login.php" class="btn" > Login Now </a>
         </form>
     </div>
