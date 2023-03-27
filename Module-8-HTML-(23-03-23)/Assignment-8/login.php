@@ -1,11 +1,18 @@
+
+<?php 
+  // require_once("index.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h2>Login Form</h2>
+  <div class="box-wrapper">
+  <h2>Login Form</h2>
 	<?php
+ 
 		// check if form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// validate email
@@ -51,20 +58,30 @@
 	?>
 	
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		<label>Email:</label>
-		<input type="text" name="email">
-		<span><?php echo $email_err;?></span><br><br>
-		
+  <div class="sing-input">
+      <label>Email:</label>
+      <input type="text" name="email">
+      <span>
+        <?php  if(isset($email_err) ){ echo $email_err;} ?>
+      </span>
+  </div>
+  <div class="sing-input">
 		<label>Password:</label>
 		<input type="password" name="password">
-		<span><?php echo $password_err;?></span><br><br>
+		<span>
+      <?php  if(isset($password_err) ){ echo $email_err;} ?>
+    </span>
+  </div>
 		
-		<input type="submit" name="submit" value="Login">
+		
+		<input class="btn" type="submit" name="submit" value="Login">
 	</form>
 	<?php
 		if (!empty($login_err)) {
-			echo "<p>$login_err</p>";
+			echo "<p style='color: red;'>$login_err</p>";
 		}
 	?>
+  </div>
+
 </body>
 </html>

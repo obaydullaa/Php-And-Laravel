@@ -5,8 +5,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h2>Registration Form</h2>
-	<?php
+    <div class="box-wrapper">
+
+    <?php
 		// define variables and set to empty values
 		$first_name = $last_name = $email = $password = $confirm_password = "";
 		$first_name_err = $last_name_err = $email_err = $password_err = $confirm_password_err = "";
@@ -62,7 +63,8 @@
 				fputcsv($file, $data);
 				fclose($file);
 				// display confirmation message
-				echo "<p>Thank you for registering, $first_name!</p>";
+				echo "<p>Thank you for registering, $first_name! </p>";
+                echo "<a class='btn' href='login.php'> Login </a>";
 				exit();
 			}
 		}
@@ -75,29 +77,43 @@
 			return $data;
 		}
 	?>
-	
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		<label>First Name:</label>
-		<input type="text" name="first_name" value="<?php echo $first_name;?>">
-		<span><?php echo $first_name_err;?></span><br><br>
-		
-		<label>Last Name:</label>
-		<input type="text" name="last_name" value="<?php echo $last_name;?>">
-		<span><?php echo $last_name_err;?></span><br><br>
-		
-		<label>Email:</label>
-    <input type="text" name="email" value="<?php echo $email;?>">
-		<span><?php echo $email_err;?></span><br><br>
-    <label>Password:</label>
-	<input type="password" name="password" value="<?php echo $password;?>">
-	<span><?php echo $password_err;?></span><br><br>
-	
-	<label>Confirm Password:</label>
-	<input type="password" name="confirm_password" value="<?php echo $confirm_password;?>">
-	<span><?php echo $confirm_password_err;?></span><br><br>
-	
-	<input type="submit" name="submit" value="Register">
-</form>
+        
+	    <h2 class="heading-title">Registration Form</h2>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <div class="sing-input">
+                <label>First Name:</label>
+                <input type="text" name="first_name" value="<?php echo $first_name;?>">
+                <span><?php echo $first_name_err;?></span>
+            </div>
+            
+            <div class="sing-input">
+                <label>Last Name:</label>
+                <input type="text" name="last_name" value="<?php echo $last_name;?>">
+                <span><?php echo $last_name_err;?></span>
+            </div>
+            
+            <div class="sing-input">
+                <label>Email:</label>
+                <input type="text" name="email" value="<?php echo $email;?>">
+                <span><?php echo $email_err;?></span>
+            </div>
+            
+            <div class="sing-input">
+                <label>Password:</label>
+                <input type="password" name="password" value="<?php echo $password;?>">
+                <span><?php echo $password_err;?></span>
+            </div>
+            
+            <div class="sing-input">
+                <label>Confirm Password:</label>
+                <input type="password" name="confirm_password" value="<?php echo $confirm_password;?>">
+                <span><?php echo $confirm_password_err;?></span>
+            </div>
+            
+            <input class="btn" type="submit" name="submit" value="Register">
+            <a href="login.php" class="btn" > Login Now </a>
+        </form>
+    </div>
 
 </body>
 </html>
