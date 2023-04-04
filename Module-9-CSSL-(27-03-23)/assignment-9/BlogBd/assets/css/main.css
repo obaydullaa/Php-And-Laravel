@@ -5399,12 +5399,13 @@ ul.footer-menu-wrap li a:hover {
     min-width: 780px;
     height: 500px;
 }
-
-.blog-details .category-item__thumb img {
-    min-width: 780px;
-    height: 500px;
+.blog-details .category-item__thumb a {
+	display: block;
 }
-
+.blog-details .category-item__thumb img {
+	min-width: 830px;
+	height: 500px;
+}
 .blog-details__thumb {
     height: 450px;
     max-height: 100%;
