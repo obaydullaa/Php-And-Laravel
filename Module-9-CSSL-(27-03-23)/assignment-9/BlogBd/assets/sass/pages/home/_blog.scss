@@ -1,0 +1,70 @@
+
+/*====================== Blog Style ====================*/
+.blog-item {
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    &:hover {
+        .blog-item {
+            &__thumb {
+                img {
+                    transform: scale(1.3) rotate(15deg);
+                }
+            }
+            &__title {
+                &-link {
+                    color: hsl(var(--base));
+                }
+            }
+        }
+    }
+    &__thumb {
+        overflow: hidden;
+        border-radius: 8px;
+        max-height: 300px;
+        &-link {
+            width: 100%;
+            height: 100%;
+            img {
+                @include fit_image; 
+                transition: .3s linear;
+            }
+        }
+    }
+    &__content {
+        background-color: hsl(var(--white)/.07); 
+        padding: 35px 25px;
+        height: 100%;
+        @include sm-screen {
+            padding: 30px 20px;
+        }
+        @include xsm-screen {
+            padding: 25px 15px;
+        }
+    }
+    &__title {
+        margin-top: 20px;
+        @include msm-screen {
+            margin-top: 15px;
+        }
+        &-link {
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+    &__desc {
+        margin-bottom: 25px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        @include sm-screen {
+            margin-bottom: 15px;
+        }
+    }
+}

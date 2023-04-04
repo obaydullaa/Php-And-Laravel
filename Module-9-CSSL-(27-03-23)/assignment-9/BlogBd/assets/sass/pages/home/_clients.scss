@@ -1,0 +1,32 @@
+  /*=================== Client area =========*/
+.client-logos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    img {
+      width: 160px !important;
+    }
+    .slick-slide {
+      margin: 0 10px;
+    }
+  }
+
+  /*=================== Client Page Logo =========*/
+  .client-logo {
+    background-color: hsl(var(--white));
+    padding: 40px 20px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid hsl(var(--black) / .08);
+    transition: .3s linear;
+    &:hover {
+      background-color: hsl(var(--base-two));
+    }
+  }

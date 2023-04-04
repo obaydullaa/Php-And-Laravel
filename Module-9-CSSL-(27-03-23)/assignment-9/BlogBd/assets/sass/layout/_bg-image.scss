@@ -1,0 +1,38 @@
+.bg-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+.bg-overlay{
+    position: relative;
+    isolation: isolate;
+    &::before{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background-color: hsl(var(--base-two)); 
+        opacity: .8;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+.bg-overlay-two{
+    position: relative;
+    isolation: isolate;
+    &::before{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background-color: hsl(var(--base)); 
+        opacity: .8;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+

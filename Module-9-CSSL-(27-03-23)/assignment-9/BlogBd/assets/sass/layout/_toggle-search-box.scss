@@ -1,0 +1,76 @@
+/*=================== Overlay Search Box Start =======================*/
+.overlay-search-box {
+    .modal-header {
+        border-bottom: 0;
+        padding: 0;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        pointer-events: auto;
+        background-color: hsl(var(--dark));
+        background-clip: padding-box;
+        border-radius: .3rem;
+        outline: 0;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }    
+}
+.search-box {
+    width: 80%;
+    margin: 0 auto;
+    @include sm-screen {
+        width: 100%;
+    }
+}
+.search-btn {
+    background-color: transparent;
+    color: hsl(var(--white));
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 20px; 
+    transition: .2s linear;
+    transform: translateY(-50%) rotate(-90deg);
+    &:hover {
+        color: hsl(var(--base));
+    }
+}
+.toggle-search-box {
+    margin-left: 15px;
+    order: 1;
+    @include md-screen {
+        order: -1;
+        margin-left: auto;
+        margin-right: 16px;
+    }
+    button {
+        background-color: transparent;
+        color: hsl(var(--white));
+        transform: scaleX(-1);
+    }
+}
+.search-overlay-close {
+    background-color: transparent;
+    border: 1px solid hsl(var(--base));
+    color: hsl(var(--base));
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    transition: .2s linear;
+    &:hover {
+        background-color: hsl(var(--base));
+        color: hsl(var(--white));
+    }
+}
+// =================== Overlay Search Box End =====================================

@@ -1,0 +1,251 @@
+
+/*==============** Dashboard Profile **==============*/
+.my-posts-wrap {
+    padding: 25px;
+    border-radius: 16px;
+}
+.dashboard_profile {
+    padding: 20px;
+    border-right: 1px solid hsl(var(--base)/0.1);
+    @include md-screen {
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+}
+.dashboard_profile_wrap {
+    position: relative;
+    h3 {
+        font-size: 18px;
+    }
+    .photo_upload {
+        display: inline-block;
+        padding: 0px 0px 0px;    
+        position: absolute;
+        top: 5px;
+        left: 75px;
+        color: hsl(var(--base));
+         i{
+            cursor: pointer;
+         }
+        .upload_file {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+            visibility: hidden;
+            display: none;
+        }
+    }
+    .profile_photo {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+    }
+    h3 {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 3px;
+        letter-spacing: 1px;
+        margin-top: 10px;
+    }
+    p {
+    margin-bottom: 10px;
+    }
+}
+.dashboard_profile{
+    &__details {
+        ul {
+            li {
+                a {
+                    border-bottom: 1px solid hsl(var(--base)/0.1);
+                    padding: 12px 20px 12px 0px;
+                    display: block;
+                    font-size: 17px;
+                    transition: all .3s ease-in-out;
+                    i {
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        color: hsl(var(--base));
+                    }
+                    &.active {
+                    color: hsl(var(--base));
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.dashboard-body {
+    position: relative;
+    &__bar {
+        &-icon {
+            color: hsl(var(--white));
+            font-size: 25px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            width: 50px;
+            height: 40px;
+            line-height: 40px;
+            background-color: hsl(var(--base));
+            text-align: center;
+            border-radius: 5px;
+        }
+    }
+}
+
+/*============= Dashboard Card ===========*/
+.dashboard-card {
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include sm-screen {
+        padding: 20px 15px;
+    } 
+    &__icon {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        color: hsl(var(--white));
+        background-color: hsl(var(--base));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__content {
+        text-align: left;
+        width: calc(100% - 60px);
+        padding-left: 10px;
+    }   
+    &__amount {
+        margin-bottom: 5px;
+        margin-bottom: 0;
+    }
+}
+
+.card-primary {
+    background-color: hsl(var(--primary)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--primary));
+    }
+}
+.card-violet {
+    background-color: hsl(var(--violet)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--violet));
+    }
+}
+.card-success {
+    background-color: hsl(var(--success)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--success));
+    }
+}
+.card-danger {
+    background-color: hsl(var(--danger)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--danger));
+    }
+}
+.card-warning {
+    background-color: hsl(var(--warning)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--warning));
+    }
+}
+.card-info {
+    background-color: hsl(var(--info)/.6);
+    .dashboard-card__icon {
+        background-color: hsl(var(--info));
+    }
+}
+
+
+/*======= Dashboard My Posts =======*/
+.my-posts {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid hsl(var(--base)/0.1);
+    @include xxsm-screen {
+        padding-left: 0;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+    &__thumb {
+        width: 100px;
+        height: 70px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        @include xsm-screen {
+            padding-left: 0;
+            width: 70%;
+            height: 100px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        width: calc(100% - 100px);
+        padding-left: 20px;
+        margin-top: 0px;
+        @include xsm-screen {
+            padding-left: 0;
+            width: 100%;
+        }
+        .meta-wrap {
+            justify-content: inherit;
+        }
+        .author-wrap {
+            display: flex;
+            justify-content: inherit;
+            margin-right: 10px;
+            position: relative;
+            padding-right: 10px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4px;
+                right: 0;
+                width: 1px;
+                height: 57%;
+                background: hsl(var(--base));
+            }
+        }
+        h4 {
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: 400;
+            @include msm-screen {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            a {
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

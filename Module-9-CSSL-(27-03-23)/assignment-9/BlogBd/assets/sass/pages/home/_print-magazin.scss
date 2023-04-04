@@ -1,0 +1,63 @@
+/*============= Print Magazin =============*/
+
+.print-magazin-content {
+    h2 {
+        font-size: 45px;
+        text-transform: capitalize;
+        @include md-screen {
+            font-size: 40px;
+        }
+        @include sm-screen {
+            font-size: 35px;
+        }
+        @include msm-screen {
+            font-size: 30px;
+        }
+    }
+    span {
+        color: hsl(var(--base));
+        font-weight: 500;
+    }
+    p {
+        margin-bottom: 30px;
+    }
+}
+
+.print-magazin-right{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    @include md-screen {
+        justify-content: start;
+    }
+    &__thumb {
+        position: relative;
+        z-index: 3;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 500px;
+        width: 460px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: hsl(var(--dark));
+            opacity: 0.4;
+            border-radius: 16px;
+            z-index: 1;
+        }
+    }
+}
+
+.subscribe-wrap {
+    padding: 50px;
+    border: 1px solid hsl(var(--base)/.2);
+}

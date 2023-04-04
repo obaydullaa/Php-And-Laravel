@@ -1,0 +1,85 @@
+/*====================== About Section====================*/
+.about-section {
+    overflow: hidden;
+}
+.about-thumb {
+    padding-left: 30px;
+    padding-right: 30px;
+    img {
+        max-height: 350px;
+    }
+    &__inner {
+        display: inline-block;
+        position: relative;
+    }
+    &__line {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid hsl(var(--white) / .3);
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            background-color: hsl(var(--base));
+        }
+        &::before {
+            width: 12px;
+            height: 12px;
+        }
+        &::after {
+            width: 20px;
+            height: 20px;
+        }
+        &-one {
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            top: -15px;
+            left: -15px;
+            animation: spin 12s infinite linear;
+            &::before {
+                top: -6px;
+                left: 50%;
+                margin-left: -6px;
+            }
+            &::after {
+                top: 50%;
+                left: -10px;
+                margin-top: -10px;
+            }
+        }
+        &-two {
+            width: calc(100% + 60px);
+            height: calc(100% + 60px);
+            top: -30px;
+            left: -30px;
+            animation: spin2 15s infinite linear;
+            &::before {
+                bottom: -6px;
+                left: 50%;
+                margin-left: -6px;
+            }
+            &::after {
+                right: -10px;
+                top: 50%;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+        100% {
+            transform: rotate(360deg);
+    }
+}
+@keyframes spin2 {
+    0% {
+        transform: rotate(0deg);
+    }
+        100% {
+            transform: rotate(-360deg);
+    }
+}

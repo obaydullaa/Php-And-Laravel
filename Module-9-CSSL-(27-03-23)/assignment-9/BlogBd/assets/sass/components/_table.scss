@@ -1,0 +1,242 @@
+/*====================== Table Style ====================*/
+.table {
+	margin: 0;
+	font-size: 15px;
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	thead {
+		tr {
+			th {
+				background-color: hsl(var(--base)); 
+				text-align: center;
+				font-size: 15px;
+				padding: 15px 20px;
+				color: hsl(var(--white)); 
+				font-family: var(--heading-font);
+				font-weight: 500;
+                border-bottom: 0;
+				max-width: 170px;
+				&:first-child {
+					text-align: left;
+					border-radius: 5px 0 0 0;
+				}
+				&:last-child {
+					border-radius: 0 5px 0 0;
+					text-align: right;
+				}
+			}
+		}
+	}
+	tbody {
+		border: 0 !important;
+        background-color: hsl(var(--black)); 
+		tr {
+			&:nth-child(even) {
+				background-color: hsl(var(--white)/ 0.1 );
+                border-bottom: 1px solid  hsl(var(--white) / .06);
+			}
+			&:last-child {
+				td {
+					&:first-child {
+						border-radius: 0 0 0px 5px;
+					}
+					&:last-child {
+						border-radius: 0 0 5px 0;
+					}
+				}
+			}
+			td {
+				text-align: center;
+				vertical-align: middle;
+				padding: 20px 15px;
+				border-width: 1px;
+                border: 0;
+				font-family: var(--heading-font);
+                color: hsl(var(--white)); 
+				max-width: 170px;
+				&::before {
+					content: attr(data-label);
+					font-family: var(--heading-font);
+					font-size: 15px;
+					color: hsl(var(--white)); 
+					font-weight: 500;
+					display: none;
+                    width: 50% !important;
+                    text-align: left;
+				}
+				&:first-child {
+					text-align: left;
+				}
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+.table--responsive--md {
+    @include sm-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+	@include sm-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}
+.table--responsive--lg {
+    @include md-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+					    display: block;
+					}
+				}
+			}
+		}
+    }
+    @include md-screen {
+        tbody {
+			tr {
+				td {
+					border: none;
+				}
+			}
+		}
+    }
+}
+.table--responsive--xl {
+    @include lg-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+    
+    @include lg-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}
+.table--responsive--xl {
+    @include xl-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+    
+    @include xl-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}

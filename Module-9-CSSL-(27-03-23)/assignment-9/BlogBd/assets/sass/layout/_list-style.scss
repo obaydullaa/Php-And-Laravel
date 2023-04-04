@@ -1,0 +1,23 @@
+/*====================== List Style ====================*/
+.text-list {
+    margin: -8px 0px;
+    &.inline {
+        display: flex;
+        align-items: center;
+        margin: 0px -8px;
+        .text-list {
+            &__item  {
+                padding: 0px 8px;
+            }
+        }
+    }
+    &__item  {
+        padding: 8px 0px;
+        color: hsl(var(--body-color));
+        &-icon{
+            color: hsl(var(--base));
+            font-size: 12px;
+            margin-right: 5px;
+        }
+    }
+}

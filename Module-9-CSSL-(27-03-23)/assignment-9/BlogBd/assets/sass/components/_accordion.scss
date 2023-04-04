@@ -1,0 +1,79 @@
+/*=========================== Accodion style start =============================*/
+.custom--accordion {
+    .accordion-item {
+        border: 1px solid hsl(var(--dark) / .09);
+        background-color: transparent !important;
+        border-radius: 5px;
+        overflow: hidden;
+        &:not(:last-child) {
+            margin-bottom:20px;
+        }
+    }
+    .accordion-body {
+        padding: 20px;
+        background-color: hsl(var(--section-bg));
+        .text {
+            max-width: 60%;
+            @include msm-screen {
+                max-width: 100%;
+            }
+        }
+    }
+    &:first-of-type .accordion-button.collapsed {
+        border-radius: 5px;  
+    }
+    &:last-of-type .accordion-button.collapsed {
+        border-radius: 5px;  
+    }
+    .accordion-button{
+        background-color: hsl(var(--section-bg));
+        color: var(--heading-color);
+        font-size: 18px;
+        padding: 15px ;
+        @include msm-screen {
+            font-size: 18px;
+            padding: 13px;
+            padding-right: 30px;
+        }
+        &::after {
+            background-image: none;
+        }
+        &:focus {
+            box-shadow: none;
+        }
+        &:not(.collapsed) {
+            color: hsl(var(--white)); 
+            background-color: hsl(var(--dark)) !important;
+            box-shadow: none;
+            &::after {
+                transform: rotate(0deg);
+                background-image: none;
+                color: hsl(var(--base)); ; 
+            }
+        }
+        &[aria-expanded="true"], &[aria-expanded="false"] {
+            &::after {
+                font-family: "Line Awesome Free";
+                font-weight: 600;
+                content: "\f068";
+                display: inline-block;
+                position: relative;
+                margin-left: auto;
+                width: 0 !important;
+                right: 15px;
+                color: hsl(var(--white));
+                @include msm-screen {
+                    right: -13px;
+                    font-size: 14px;
+                }
+            }
+        }
+        &[aria-expanded="false"] {
+            &::after {
+                content: "\f067";
+                color: hsl(var(--body-color));
+            }
+        }
+    }
+    
+}

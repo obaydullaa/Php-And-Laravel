@@ -1,0 +1,47 @@
+
+/*==================== Scroll to Top Start ======================*/
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    color: hsl(var(--white));
+    background-color: hsl(var(--base));
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 16px;
+    z-index: 5;
+    transition: .5s;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    bottom: -50px;
+    animation: scroll_top 5s linear infinite;
+    @include sm-screen {
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+    &:hover {
+        color: hsl(var(--white));
+        background-color: hsl(var(--base-two-d-100));
+    }
+    &.show{
+        visibility: visible;
+        opacity: 1;
+        bottom: 30px;
+    }
+}
+@keyframes scroll_top {
+    0%, to{
+        transform: translateY(0px); 
+    }
+    50%{
+        transform: translateY(20px); 
+    }
+}
+// ===================== Scroll to Top End =================================

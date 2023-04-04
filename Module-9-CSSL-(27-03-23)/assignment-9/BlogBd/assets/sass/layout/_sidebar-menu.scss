@@ -1,0 +1,166 @@
+/*======== Sidebar Menu Start =======*/
+.sidebar-menu {
+  padding-bottom: 10px;
+  height: 100vh;
+  min-height: 100%;
+  background-color: hsl(var(--white));
+  overflow-y: auto;
+  z-index: 999; 
+  border-radius: 5px;
+  padding-top: 30px;
+  transition: .2s linear;
+/*============== Sidebar Show hide Css Start ===========*/
+  &.show-sidebar {
+      transform: translateX(0);
+  }
+  @include md-screen {
+      position: fixed;
+      left: 0;
+      top: 0;
+      min-width: 320px;
+      padding-top: 60px;
+      transform: translateX(-100%);
+      z-index: 9992;
+      border-radius: 0;
+  }
+  &__close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      color: hsl(var(--base));
+      border: 1px solid hsl(var(--base));
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      border-radius: 3px;
+      font-size: 18px;
+      transition: .2s linear;
+      cursor: pointer;
+      z-index: 9;
+      &:hover, &:focus {
+          background-color: hsl(var(--base));
+          border-color: hsl(var(--base));
+          color: hsl(var(--white));
+      }
+  }
+
+/*============== Sidebar Show hide Css end ===========*/
+  &-list {
+      &__item {
+        &.has-dropdown {
+          &.active {
+              >a {
+                background-color: hsl(var(--base)/0.1);
+                color: hsl(var(--base));
+                  &:after {
+                      transform: rotate(90deg);
+                      right: 17px;
+                      color: hsl(var(--base));
+                  }
+              }
+          }
+          > a {
+              &:after {
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  content: "\f105";
+                  font-style: normal;
+                  display: inline-block;
+                  font-style: normal;
+                  font-variant: normal;
+                  text-rendering: auto;
+                  text-align: center;
+                  background: 0 0;
+                  position: absolute;
+                  right: 15px;
+                  top: 14px;
+                  transition: .1s linear;
+              }
+          }
+        }
+      }
+      &__link {
+          display: inline-block;
+          text-decoration: none;
+          position: relative;
+          padding: 8px 20px 8px 20px;
+          width: 100%;
+          color: hsl(var(--black));  
+          .icon{
+              margin-right: 5px;
+              font-size: 15px;
+              line-height: 30px;
+              text-align: center;
+              border-radius: 4px;
+              animation: swing ease-in-out 0.5s 1 alternate;
+          }
+      }
+  }
+}
+
+/*=============== Sidebar Submenu Start ===============*/
+.sidebar-submenu {
+  display: none;
+  &.open-submenu {
+    display: block;
+  }
+  &-list {
+      padding: 5px 0;
+      &__item {
+        &.active {
+          > a {
+            background-color: hsl(var(--base)/0.08);
+            color: hsl(var(--base));
+          }
+        }
+      }
+      &__link {
+          padding: 8px 20px 8px 50px;
+          display: block;
+          color: hsl(var(--black));
+          &:before {
+              content: "\f111";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 400;
+              font-style: normal;
+              display: inline-block;
+              text-align: center;
+              text-decoration: none;
+              margin-right: 10px;
+              font-size: 8px;
+          }
+      }
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+

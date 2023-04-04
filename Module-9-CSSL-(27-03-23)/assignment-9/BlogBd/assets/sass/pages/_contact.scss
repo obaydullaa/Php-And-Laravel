@@ -1,0 +1,73 @@
+
+/*=================== Contact top Start =========*/
+
+.contact-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hsl(var(--white));
+    border: 1px solid hsl(var(--base)/0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    &__icon {
+        width: 80px;
+        display: flex;
+        background-color: hsl(var(--base));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: hsl(var(--white));
+        font-size: 25px;
+        @include sm-screen {
+            width: 70px;
+            font-size: 18px;
+        }
+    }   
+    &__content {
+        width: calc(100% - 80px);
+        padding: 15px 20px;
+        @include sm-screen {
+            width: calc(100% - 70px);
+            padding: 15px;
+        }
+    }
+    &__title {
+        margin-bottom: 7px;
+        color: hsl(var(--black));
+    }
+    &__desc {
+        color: hsl(var(--black)/.6);
+    }
+}
+// Contact top End
+
+
+// Contact Bottom Start
+.contact-map {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    iframe {
+        width: 100%;
+        height: 100%;
+
+    }
+}
+
+.contactus-form {
+    border: 1px solid hsl(var(--base)/0.1);
+    background-color: hsl(var(--white)/.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    @include sm-screen {
+        padding: 30px 20px;
+    }
+    @include msm-screen {
+        padding: 20px 15px;
+    }
+}
+// Contact Bottom End
+
+.contact-thumb img {
+    border-radius: 15px;
+}

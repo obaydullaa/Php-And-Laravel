@@ -1,0 +1,88 @@
+  /*=================== Testimonials =========*/
+.testimonials {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonails-card {
+    padding: 0 10px;
+    height: 100%; 
+}
+
+.testimonial-item {
+    background-color: hsl(var(--white));
+    border: 1px solid hsl(var(--black) / .08);
+    padding: 30px 20px;
+    border-radius: 5px;
+    position: relative;
+    height: 100%; 
+    @include xsm-screen {
+        padding: 25px 15px;
+    }
+    &__quate {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 80px;
+        opacity: 0.08;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &__thumb {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        @include xsm-screen {
+            width: 45px;
+            height: 45px;
+        }
+        img {
+            @include fit_image; 
+        }
+    }
+    &__details {
+        width: calc(100% - 60px);
+        padding-left: 20px;
+        @include xsm-screen {
+            width: calc(100% - 45px);
+            padding-left: 10px;
+        }
+    }
+    &__name {
+        margin-bottom: 0;
+        color: hsl(var(--black) );
+    }
+    &__designation {
+        color: hsl(var(--black) / .8);
+    }
+    &__desc {
+        margin-top: 20px;
+        padding-top: 20px;
+        color: hsl(var(--black) / .5);
+        border-top: 1px solid hsl(var(--black) / .08);
+        @include xsm-screen {
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+    }
+}
+
+.rating-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &__item {
+        padding: 0 1px;
+        color: hsl(var(--base));
+    }
+}

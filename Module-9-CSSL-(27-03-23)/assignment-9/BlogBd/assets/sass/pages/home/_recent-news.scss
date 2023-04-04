@@ -1,0 +1,46 @@
+/*============= Recent News =============*/
+.recent-wrap {
+    padding: 30px;
+    border: 1px solid hsl(var(--base)/0.1);
+    border-radius: 17px;
+}
+.recent-item {
+    position: relative;
+    border-bottom: 1px solid hsl(var(--base)/0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    &:hover {
+        .recent-item__thumb img {
+            transform: scale(1.2);
+        }
+    }
+    &__thumb {    
+        overflow: hidden;
+        border-radius: 17px;
+        img {
+            transform: scale(1);
+            transition: all .5s linear;
+            min-width: 400px;
+            min-height: 300px;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        padding-top: 25px;
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: hsl(var(--dark)) !important;
+            a {
+                line-height: 1.5;
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+        p {
+            margin-bottom: 25px;
+        }
+    }
+}

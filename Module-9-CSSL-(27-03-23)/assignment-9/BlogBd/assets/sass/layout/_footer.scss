@@ -1,0 +1,26 @@
+
+/*============= Footer Start Here =======================*/
+.footer-area {
+    background-color: hsl(var(--dark));
+    margin-top: auto;
+    &.bg-img {
+        background-size: contain;
+        background-position: top center;
+    }
+}
+
+ul.footer-menu-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+
+ul.footer-menu-wrap li a {
+    padding: 0 15px;
+    color: #fff;
+    &:hover {
+        color: hsl(var(--base));
+    }
+}
+// =============Bottom Footer End Here =======================
+

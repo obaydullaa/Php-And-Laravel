@@ -1,0 +1,146 @@
+
+/*================ Top Header Start Here ================*/
+.header-top{
+    background-color:hsl(var(--dark)); 
+    border-bottom: 1px solid hsl(var(--base) / .08);
+    padding:4px 0px;
+    position: relative;
+    .social-list.style-two .social-list__link {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+.top-header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include md-screen {
+        justify-content: center;
+    }
+}
+.latest-top.latest-slider {
+    @include md-screen {
+        text-align: center;
+    }
+    p {
+        color: hsl(var(--white));
+        line-height: 1.4;
+    }
+}
+.contact-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    @include md-screen {
+        justify-content: center;
+    }
+    &__item {
+        padding: 2px 20px 0px;
+        position: relative;
+        color: hsl(var(--white));
+        &:last-child::before {
+            display: none;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 15px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: hsl(var(--white) /.4);
+        }
+        &-icon {
+            font-size: 16px;
+            text-align: center;
+            color: hsl(var(--white));
+            display: inline-block;
+        }
+    }
+    &__link {
+        color: hsl(var(--white));
+        font-weight: 400;
+        font-family: var(--body-font);
+        &:hover &-icon {
+            color: hsl(var(--white));
+        }
+    }
+}
+// Login Registration
+.login-registration-list {
+    margin: 0 -10px;
+    padding-right: 20px;
+    @include md-screen {
+        padding-right: 0;
+    }
+    &__item {
+        color: hsl(var(--white));
+        padding: 0 10px;
+        position: relative;
+        &:last-child::before {
+            display: none;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 12px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: hsl(var(--white)/.5);
+        }
+    }
+    &__icon {
+        color: hsl(var(--base));
+        margin-right: 10px;
+        font-size: 16px;
+        i {
+            color: hsl(var(--white));
+        }
+    }
+   &__link {
+        color: hsl(var(--white));
+        font-weight: 400;
+        font-family: var(--body-font);
+        @include msm-screen {
+            font-size: 15px;
+        }
+        &:hover {
+            color: hsl(var(--base));
+            .login-registration-list__icon {
+                color: hsl(var(--white));
+            }
+            @include md-screen {
+               color: hsl(var(--base));
+            }
+        }
+    }
+}
+
+// Language Box
+.language-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    .select {
+        color: hsl(var(--white));
+        background-color: transparent;
+        border: 1px solid hsl(var(--white)/0.4);
+        padding: 3px 8px;
+        font-size: 15px;
+        font-weight: 400;
+        border-radius: 5px;
+        option {
+            background-color: hsl(var(--dark));
+        }
+    }
+}
+
+// ================ Top Header End Here ================
