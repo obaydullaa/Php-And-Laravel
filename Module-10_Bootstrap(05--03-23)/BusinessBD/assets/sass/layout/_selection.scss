@@ -1,0 +1,30 @@
+/*====================== Selection Style ====================*/
+::selection {
+    color: hsl(var(--white));
+    background: hsl(var(--base-d-100));
+  }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--base-d-100));
+    border: 0px solid transparent;
+    border-radius: 2px;
+    // &:hover {
+    //     background-color: #08f55b;
+    // }
+    // &:active {
+    //     background-color: #08f55b;
+    // }
+}
+::-webkit-scrollbar-track {
+    // background-color: hsl(var(--base-two));
+    // &:active {
+    //     background-color: #1673dd;
+    // }
+}

@@ -1,0 +1,32 @@
+/*====================== Bg Variable ====================*/
+.bg--white {
+    background-color: hsl(var(--white)) !important;
+}
+.bg--base {
+    background-color: hsl(var(--base)) !important;
+}
+.bg--primary {
+    background-color: hsl(var(--primary)) !important;
+}
+.bg--secondary {
+    background-color: hsl(var(--secondary)) !important;
+}
+.bg--success {
+    background-color: hsl(var(--success)) !important;
+}
+.bg--danger {
+    background-color: hsl(var(--danger)) !important;
+}
+.bg--warning {
+    background-color: hsl(var(--warning)) !important;
+}
+.bg--info {
+    background-color: hsl(var(--info)) !important;
+}
+.bg--violet {
+    background-color: hsl(var(--violet)) !important;
+}
+
+.section-bg {
+    background-color: hsl(var(--base) / 0.05);
+}

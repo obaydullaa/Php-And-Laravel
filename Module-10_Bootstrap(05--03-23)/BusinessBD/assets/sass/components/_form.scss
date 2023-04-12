@@ -1,0 +1,328 @@
+/*====================== Form Style ====================*/
+.search-box {
+    .input--group {
+        .form--control {
+            color: hsl(var(--white)); 
+            padding-right: 30px;
+        }
+    }
+}
+.search-box {
+    .form--control {
+        color: hsl(var(--dark)); 
+        padding-right: 40px;
+        &::placeholder {
+            color: hsl(var(--dark));;
+        }
+
+    }
+}
+
+.form--label {
+    margin-bottom: 6px;
+    font-size: 17px;
+    color: hsl(var(--dark) / .9);
+    font-weight: 400;
+}
+
+.form--control {
+    font-weight: 400;
+    outline: none;
+    width: 100%;
+    padding: 14px 15px;
+    background-color: hsl(var(--base)/.05); 
+    border: 1px solid hsl(var(--white) / .1);
+    color: hsl(var(--dark)); 
+    line-height: 1;
+    border-radius: 10px;
+    &::placeholder {
+        color: hsl(var(--dark) / .6);
+        font-size: 16px;
+    }
+    &:focus {
+        color: hsl(var(--dark)); 
+        box-shadow: none;
+        border-color: hsl(var(--base)); 
+        background-color: hsl(var(--base)/.05);  
+    }
+    &:disabled, &[readonly] {
+        background-color: hsl(var(--base)/2); 
+        opacity: 1;
+        border: 0;
+    }
+    &[type="password"] {
+        color: hsl(var(--dark)/.5);
+        &:focus {
+            color: hsl(var(--dark)); 
+        }
+    }
+    &[type="file"] {
+        line-height: 60px;
+        padding: 0;
+        position: relative;
+        &::file-selector-button {
+            border: 1px solid hsl(var(--black) / .08);
+            padding: 4px 6px;
+            border-radius: .2em;
+            background-color: hsl(var(--base) / .9);
+            transition: .2s linear;
+            line-height: 25px;
+            position: relative;
+            margin-left: 15px;
+            color: hsl(var(--body-color));
+            &:hover {
+                background-color: hsl(var(--base));
+                border: 1px solid hsl(var(--base));
+                color: hsl(var(--white));
+            }
+        }
+    }
+}
+textarea.form--control {
+    height: 150px;
+    padding: 15px;
+}
+// Autofill Css
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: hsl(var(--dark)) !important;
+}
+
+// input gruop
+.input--group {
+    position: relative;
+}
+.input--icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(var(--base));
+}
+// Show Hide Password
+.password-show-hide {
+    position: absolute;
+    right: 20px;
+    z-index: 3;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(var(--dark)/.5);
+}
+// --------------- Number Arrow None ---------------------
+#send-amount input[type='file'] {
+    color: hsl(var(--base)); 
+    cursor: pointer;
+}
+input #send-amount::file-selector-button { 
+    display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+.contact__title {
+    font-size: 40px;
+    font-weight: 700;
+}
+/*====== Country code ======*/
+.input-group.country-code {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    .input-group-text {
+        background-color: hsl(var(--base)/0.5);
+        border: 1px solid hsl(var(--white)/0.7);
+        border-radius: 10px 0 0 10px;
+    }
+}
+
+// ============== Select here ==================
+
+// Form Select  
+.select {
+    color: hsl(var(--dark) / .6);
+    &:focus {
+        border-color: hsl(var(--base));
+    }
+    option {
+        background-color: hsl(var(--dark));
+        color: hsl(var(--white));
+    }
+}
+
+/*=========== Custom Checkbox Design ===========*/
+.form--check {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        display: inline;
+    }
+    .form-check-input {
+        box-shadow: none;
+        background-color: transparent;
+        box-shadow: none !important;
+        border: 0;
+        position: relative;
+        border-radius: 2px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid hsl(var(--base));
+        &:checked {
+            background-color: hsl(var(--base)) !important;
+            border-color: hsl(var(--base)) !important;
+            box-shadow: none;
+            &[type=checkbox] {
+                background-image:none ;
+                }
+            &::before {
+                position: absolute;
+                content: "\f00c";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: hsl(var(--white)); 
+                font-size: 13px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .form-check-label {
+        width: calc(100% - 16px);
+        padding-left: 8px;
+    }
+    label {
+        @include xsm-screen {
+            font-size: 16px;
+        }
+    }
+    a {
+        @include xsm-screen {
+            font-size: 16px;
+        }
+    }
+}
+/*==========  Custom Radion Design ============*/
+.form--radio {
+    .form-check-input {
+        box-shadow: none;
+        border: 2px solid hsl(var(--base));
+        position: relative;
+        margin-right: 10px;
+        &:active {
+            filter: brightness(100%);
+        }
+        &:checked {
+            background-color: transparent;
+            border-color: hsl(var(--base));
+            &[type=radio] {
+                background-image:none ;
+                }
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                width: 7px;
+                height: 7px;
+                background-color: hsl(var(--base));
+                border-radius: 50%;
+                z-index: 999;
+            }
+        } 
+    }
+}
+/*  Custom Switch Design */
+.form--switch {
+	.form-check-input {
+		width: unset;
+		border-radius: 3px;
+		background-image: none;
+		position: relative;
+		box-shadow: none;
+		border: 0;
+		background-color: hsl(var(--base-two) / .5) !important;
+		padding: 12px 30px !important;
+		margin-left: 0;
+		margin-bottom: 5px;
+		&:focus {
+			width: unset;
+			border-radius: 3px;
+			background-image: none;
+			position: relative;
+			box-shadow: none;
+			border: 0;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 15px;
+			background-color: hsl(var(--base-two));
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: 2px;
+			left: 5px;
+			transition: .2s linear;
+		}
+		&:checked {
+			background-color: hsl(var(--base)); 
+			&::before {
+				left: calc(100% - 25px);
+			}
+		}
+	}
+}
+// Form Checkbox
+.form-check.form--switch {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 10px;
+	.form-check-label {
+		margin-right: 10px;
+		color: hsl(var(--white));
+		font-weight: 500;
+		margin-bottom: 0;
+		line-height: 2;
+	}
+}
+.choose-domain {
+    .input-group {
+        &.country-code  {
+            @include xsm-screen {
+                flex-direction: column;
+                .form--control {
+                    margin: 5px;
+                    border-radius: 10px !important;
+                }
+                .input-group-text {
+                    width: 70px;
+                    border-radius: 10px !important;
+                }
+            }
+            select.select.form--control {
+                width: 120px;
+                color: hsl(var(--dark));
+            }
+    }
+    }
+}
+
+/*  Custom Switch End Design */
+// ----------------------------- Calander Icon --------------
+::-webkit-calendar-picker-indicator {
+    filter: invert(.5);
+  }
+  ::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+  }

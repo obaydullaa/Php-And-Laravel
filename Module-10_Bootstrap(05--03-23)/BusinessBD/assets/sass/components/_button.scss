@@ -1,0 +1,274 @@
+/*====================== Button Style ====================*/
+button {
+    border: none;
+    transition: .2s linear;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+// Custom Button
+.btn {
+    &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      color: hsl(var(--white));
+      font-weight: 400;
+      padding: 12px 22px;
+      border-radius: 6px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      border: 1px solid transparent;   
+      text-transform: capitalize;
+      font-weight: 700;
+      transition: 0.5s;
+      font-family: var(--heading-font);
+      letter-spacing: 1px;
+      font-size: 18px;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 0px;
+            // background-color: hsl(var(--white));
+            top: 0;
+            right: 0;
+            z-index: -1;
+            border-radius: 6px;
+            transition: .5s;
+        }
+      @include sm-screen {
+          padding: 11px 25px;
+      }
+      @include msm-screen {
+          padding: 11px 20px;
+      }
+      &:hover, &:focus {
+          color: hsl(var(--white));
+          border-color: transparent;
+          border-radius: 6px;
+      }
+      &--lg {
+        padding: 15px 35px;
+        @include sm-screen {
+            padding: 13px 30px;
+        }
+        @include msm-screen {
+            padding: 11px 25px;
+        }
+      }
+      &--sm {
+        padding: 6px 15px;
+        background-color: hsl(var(--base));
+        color: hsl(var(--white));
+        &:hover, &:focus {
+            background-color: hsl(var(--white));
+            border: 1px solid hsl(var(--base));
+            color: hsl(var(--base));
+            border-radius: 15px 0px 15px;
+        }
+        @include sm-screen {
+            padding: 5px 8px;
+        }
+      }
+      &--ssm {
+        padding: 3px 7px;
+        background-color: hsl(var(--base));
+        color: hsl(var(--white));
+        font-size: 14px;
+        &:hover, &:focus {
+            background-color: hsl(var(--white));
+            border: 1px solid hsl(var(--base));
+            color: hsl(var(--base));
+        }
+        @include sm-screen {
+            padding: 3px 8px;
+        }
+      }
+      &--icon {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 15px;
+        padding: 0;
+    }
+    // ============= Different Color Button Start ==================
+    &--base {
+        background: hsl(var(--base));
+        color: hsl(var(--white));
+        &.style-1{
+            background-color: hsl(var(--white));
+            color: hsl(var(--base));
+            &::before {
+                background-color: hsl(var(--base));
+            }
+            &:hover {
+                color: hsl(var(--white));
+
+            }
+        }
+        &:hover::before {
+            height: 100%;
+            width: 100%;
+            background-color: hsl(var(--white));
+        }
+        &:hover, &:focus {
+            background-color: hsl(var(--white));
+            border: 1px solid hsl(var(--base));
+            color: hsl(var(--base));
+            border-radius: 6px;
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            background-color: transparent;
+            border: 1px solid hsl(var(--base));
+            color: hsl(var(--white));
+            &.hover-white-c {
+                &:hover, &:focus{
+                    color: hsl(var(--black));;
+                }
+            }
+            &:hover, &:focus{
+                background-color: hsl(var(--base));
+                color: hsl(var(--base));;
+            }
+        }
+    }
+    &--simple {
+        &__icon {
+            font-size: 13px;
+            margin-left: 5px;
+        }
+    }
+    &--primary {
+        background-color: hsl(var(--primary));
+        &:hover, &:focus {
+            background-color: hsl(var(--primary-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--primary));
+            background-color: transparent;
+            color: hsl(var(--primary));
+            &:hover, &:focus {
+                background-color: hsl(var(--primary));
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--secondary {
+        background-color: hsl(var(--secondary));
+        &:hover, &:focus {
+            background-color: hsl(var(--secondary-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--secondary));;
+            background-color: transparent;
+            color: hsl(var(--secondary));
+            &:hover, &:focus {
+                background-color: hsl(var(--secondary));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--success {
+        background-color: hsl(var(--success));
+        &:hover, &:focus {
+            background-color: hsl(var(--success-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--success));;
+            background-color: transparent;
+            color: hsl(var(--success));
+            &:hover, &:focus {
+                background-color: hsl(var(--success));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--danger {
+        background-color: hsl(var(--danger));
+        &:hover, &:focus {
+            background-color: hsl(var(--danger-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--danger));;
+            background-color: transparent;
+            color: hsl(var(--danger));
+            &:hover, &:focus {
+                background-color: hsl(var(--danger));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--warning {
+        background-color: hsl(var(--warning));
+        &:hover, &:focus {
+            background-color: hsl(var(--warning-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--warning));;
+            background-color: transparent;
+            color: hsl(var(--warning));
+            &:hover, &:focus {
+                background-color: hsl(var(--warning));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--info {
+        background-color: hsl(var(--info));
+        &:hover, &:focus {
+            background-color: hsl(var(--info-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--info));;
+            background-color: transparent;
+            color: hsl(var(--info));
+            &:hover, &:focus {
+                background-color: hsl(var(--info));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+    &--violet {
+        background-color: hsl(var(--violet));
+        &:hover, &:focus {
+            background-color: hsl(var(--violet-d-100)); 
+        }
+        &.pill {
+            border-radius: 35px;
+        }
+        &.outline {
+            border: 1px solid hsl(var(--violet));;
+            background-color: transparent;
+            color: hsl(var(--violet));
+            &:hover, &:focus {
+                background-color: hsl(var(--violet));;
+                color: hsl(var(--white));
+            }
+        }
+    }
+}
+// ============= Different Color Button End ==================

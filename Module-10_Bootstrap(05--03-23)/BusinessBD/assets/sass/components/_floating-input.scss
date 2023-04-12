@@ -1,0 +1,95 @@
+
+/* ================= Floting Input Start ================= */
+
+.input--floating {
+	position: relative;
+	a {
+		font-size: 15px;
+		font-weight: 500;
+		&:hover {
+			color: hsl(var(--base));
+		}
+	}
+
+	.form--control {
+		height: 40px;
+		background-color: transparent;
+		border: 1px solid hsl(var(--base));
+		color: hsl(var(--base-two));
+		font-size: 14px;
+		padding-left: 15px;
+		width: 100%;
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			background-color: transparent;
+			border: 1px solid hsl(var(--base));
+			outline: none;
+			border: 1px solid hsl(var(--base));
+			~ {
+				.form--label {
+					top: 0;
+					left: 15px;
+					z-index: 5;
+					font-size: 12px;
+					font-weight: 500;
+					color: hsl(var(--base-two));
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+		&::placeholder {
+			opacity: 0;
+			visibility: hidden;
+			color: transparent;
+			opacity: 0;
+			visibility: hidden;
+			color: transparent;
+			font-size: 13px;
+		}
+		&:not(:placeholder-shown).form--control {
+			&:not(:focus) {
+				~ {
+					.form--label {
+						top: 0;
+						left: 15px;
+						z-index: 9;
+						transition: all 0.2s ease-in-out;
+					}
+				}
+			}
+		}
+	}
+	.form--label {
+		position: absolute;
+		top: 20px;
+		left: 15px;
+		cursor: text;
+		transform: translateY(-50%);
+		color: hsl(var(--base-two));
+		padding: 4px 4px;
+		font-size: 12px;
+		border-radius: 5px;
+		transition: 0.2s ease;
+		line-height: 0.8;
+		pointer-events: none;
+		z-index: 1;
+		background-color: transparent;
+		&::before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 2px;
+			left: 0;
+			top: 53%;
+			background-color: hsl(var(--base-two));
+			transform: translateY(-50%);
+			z-index: -1;
+		}
+	}
+}
+
+select.form-control.form--control:has(option) ~ .form--label {
+    top: 0% !important;
+}
+/* ================= Floting Input End ================= */
