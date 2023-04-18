@@ -6,3 +6,18 @@
 // Inside the loop, multiply the current iteration number by the input "num" to generate the product.
 // Log the product to the console in the format "num x iteration = product".
 // Test the function with different input numbers to generate multiplication tables.~
+
+function multiplicationTable(num) {
+    let result = "";
+
+    for (let i = 1; i <= 10; i++) {
+        const product = num * i;
+        result += `${num} x ${i} = ${product}\n`;
+    }
+
+    return result;
+}
+const table = multiplicationTable(5);
+console.log(table);
+
+  
