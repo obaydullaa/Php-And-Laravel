@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="container mx-auto p-10">
+    <div class="space-y-5 ">
+      <button onclick="simpleGet()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Simple GET (Fetch)
+      </button>
+      <br/>
+      <button onclick="getJSON()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        GET JSON (Fetch)
+      </button>
+      <br/>
+      <button onclick="errorCheck()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Status Check (Fetch)
+      </button>
+      <br/>
+      <button onclick="sendHeader()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Send Header (Fetch)
+      </button>
+      <br/>
+      <button onclick="postRequest()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Post (Fetch)
+      </button>
+      <br/>
+      <button onclick="putRequest()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Put (Fetch)
+      </button>
+
+      <br/>
+      <button onclick="patchRequest()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Patch (Fetch)
+      </button>
+      <br/>
+      <button onclick="deleteRequest()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Delete (Fetch)
+      </button>
+      <hr>
+      <br/>
+      <button onclick="simpleGetAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Simple GET (Axios)
+      </button>
+      <br/>
+      <button onclick="getJSONAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        GET JSON (Axios)
+      </button>
+      <br/>
+      <button onclick="errorCheckAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Status Check (Axios)
+      </button>
+      <br/>
+      <button onclick="sendHeaderAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Send Header (Axios)
+      </button>
+      <br/>
+      <button onclick="postRequestAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Post (Axios)
+      </button>
+      <br/>
+      <button onclick="putRequestAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Put (Axios)
+      </button>
+      <br/>
+      <button onclick="patchRequestAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Patch (Axios)
+      </button>
+      <br/>
+      <button onclick="deleteRequestAxios()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Delete (Axios)
+      </button>
+      <hr>
+      <form action="#" id="form" method="POST">
+        <label for="name">Name:
+          <input type="text" name="name" id="name" >
+        </label>
+        <br/>
+        <label for="email">Email:
+          <input type="text" name="email" id="email" >
+        </label>
+      </form>
+      <button id="submit-button" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Submit</button>
+    </div>
+  </div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="ajax.js"></script>
+</html>
