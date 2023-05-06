@@ -4,6 +4,8 @@ Http request response overview, Postman, grocery shop ecommerce api integration
 
 //=========================================================================================
 
+https://github.com/vdespa/Postman-Complete-Guide-API-Testing/blob/main/simple-grocery-store-api.md
+
 instal Postman software...
 and basic use intervace.....
 
