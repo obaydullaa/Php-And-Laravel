@@ -1,2 +1,9 @@
+
+Conceptual class: Request Response Life Cycle Part-1
+Http request response overview, Postman, grocery shop ecommerce api integration
+
+//=========================================================================================
+
 instal Postman software...
 and basic use intervace.....
+
