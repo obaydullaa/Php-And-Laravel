@@ -5,14 +5,26 @@
     <title>BMI Calculator</title>
   </head>
   <body>
-    <form>
-      <label for="weightInput">Weight (kg):</label>
-      <input type="number" id="weightInput" name="weight"><br><br>
-      <label for="heightInput">Height (cm):</label>
-      <input type="number" id="heightInput" name="height"><br><br>
-      <button type="button" id="calculateBtn" onclick="calculateBMI()">Calculate</button>
-    </form>
-    <p id="result"></p>
+    <section class="bmi-area" style="background-image: url(background.png);">
+        <div class="bmi-section-wrap">
+            <h2 class="title">BMI Calculator using JavaScript </h2>
+
+            <h3 class="results" id="result"></h3>
+
+            <form>
+                <div class="single-input">
+                    <label for="weightInput">Weight (kg):</label>
+                    <input type="number" id="weightInput" name="weight">
+                </div>
+                <div class="single-input">
+                    <label for="heightInput">Height (cm):</label>
+                    <input type="number" id="heightInput" name="height">
+                </div>
+                <button type="button" id="calculateBtn" onclick="calculateBMI()">Calculate</button>
+              </form>
+             
+        </div>
+    </section>
     <script>
       function calculateBMI() {
         let weight = document.getElementById("weightInput").value;

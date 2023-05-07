@@ -1,22 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 9;
+}
 body {
-    background-image: url("background.jpg");
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 16px;
   }
-  
-  form {
+
+.bmi-area {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bmi-area:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(123,63,255) 0%,rgba(198,79,255,0.76) 100%);
+    top: 0;
+    opacity: .80;
+    left: 0;
+    opacity: 0.5;
+}
+
+.bmi-section-wrap {
+    width: 400px;
+    margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    margin: 0 auto;
-  }
+}
   
   label {
     display: block;
     font-weight: bold;
   }
+  h2.title {
+    font-size: 22px;
+}
+.results {
+    margin-bottom: 17px;
+    text-align: center;
+    background: linear-gradient(to right, rgb(123,63,255) 0%,rgba(198,79,255,0.76) 100%);
+    border-radius: 5px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+}
+.single-input {
+    margin-bottom: 10px;
+}
+
+.single-input label {
+    margin-bottom: 15px;
+}
   
   input[type="number"] {
     padding: 10px;
@@ -28,17 +76,18 @@ body {
   }
   
   button {
-    background-color: #4CAF50;
+    background: linear-gradient(to right, rgb(123,63,255) 0%,rgba(198,79,255,0.76) 100%);
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-  }
+    font-size: 20px;
+}
   
   button:hover {
-    background-color: #3e8e41;
+    background: linear-gradient(to right, rgba(198,79,255,0.76) 0%, rgb(123,63,255) 100%);
   }
   
   #result {
