@@ -1,0 +1,20 @@
+Build a BMI Calculator using JavaScript and deploy it to Netlify
+
+Part 1: Building the BMI Calculator
+Create an HTML file with a form containing two input fields with IDs of "weightInput" and "heightInput", and a button with an ID of "calculateBtn".
+Using JavaScript, write a function that calculates the Body Mass Index (BMI) of a person when the "calculateBtn" is clicked.
+The BMI formula is: BMI = weight (kg) / (height (m) * height (m)).
+Display the BMI result on the web page.
+
+Part 2: Styling the BMI Calculator 
+Use CSS to style the form and the result.
+Add a background image to the form.
+Add custom fonts using Google Fonts.
+
+Part 3: Deploying to Netlify
+Deploy your site to Netlify.
+
+What You should submit :
+1.  You should submit github repository link
+2. You should add a text file named note.txt in your repository
+3. In the note.txt file, please add your deployed link of your website
