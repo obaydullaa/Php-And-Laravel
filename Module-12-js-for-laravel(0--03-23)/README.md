@@ -1,3 +1,3 @@
-# Project Live Link.
+# BMI Calculator Live Link.
 
 https://businessbd.netlify.app/
