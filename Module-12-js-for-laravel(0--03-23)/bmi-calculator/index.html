@@ -26,12 +26,22 @@
         </div>
     </section>
     <script>
-      function calculateBMI() {
+    function calculateBMI() {
         let weight = document.getElementById("weightInput").value;
         let height = document.getElementById("heightInput").value / 100; // convert cm to m
+
+        // Check if the input fields are empty
+        if (weight === '' || height === '') {
+            document.getElementById("result").innerHTML = "Input Field Is Empty...";
+            return false; // prevent the form from being submitted and the page from being refreshed
+        }
+
         let bmi = weight / (height * height);
         document.getElementById("result").innerHTML = "Your BMI is " + bmi.toFixed(2);
-      }
+
+        return false; // prevent the form from being submitted and the page from being refreshed
+    }
+
     </script>
   </body>
 </html>
