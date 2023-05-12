@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add List Item</title>
+</head>
+<body>
+
+  <style> 
+    .input-wrapper {
+      width: 500px;
+      margin: 50px auto;
+    }
+      </style>
+  
+  <div class="input-wrapper">
+    <input type="text" id="newItemText" placeholder="Enter a new item">
+    <button type="button" id="add-button">Add Item</button>
+    
+    <ul id="myList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  
+  <script>
+//Write a JavaScript function that selects an element with an id of "myList" and adds a new list item with the text "Apples" to the end of the list
+    const buttonElm = document.getElementById("add-button")
+    buttonElm.addEventListener('click', addListItem)
+
+    function addListItem() {
+      const newItemText = document.getElementById("newItemText").value;
+      const myList = document.getElementById("myList");
+      const newItem = document.createElement("li");
+      const text = document.createTextNode(newItemText);
+  
+      newItem.appendChild(text);
+      myList.appendChild(newItem);
+      
+      document.getElementById("newItemText").value = "";
+    }
+  </script>
+</body>
+</html>
