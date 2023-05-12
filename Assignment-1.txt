@@ -34,4 +34,4 @@
    7.Maintenance: Once the system is deployed, and customers start using the developed system, following 3 activities occur
     Bug fixing – bugs are reported because of some scenarios which are not tested at all
     Upgrade – Upgrading the application to the newer versions of the Software
-    Enhancement – Adding some new features into the existing software
+    Enhancement – Adding some new features into the existing software   
