@@ -6,26 +6,30 @@ Screenshot of the running server.
 # Part 2: Laravel Folder Structure
 Describe the purpose of each of the following folders in a Laravel project:
 
+**app:** It is the application folder and includes the entire source code of the project. It contains events, exceptions and middleware declaration. 
 
-@ app
+**config:** The config folder includes various configurations and associated parameters required for the smooth functioning of a Laravel application.
 
-bootstrap
+**database** As the name suggests, this directory includes various parameters for database functionalities. It includes three sub-directories as given below −
 
-config
+    * **Seeds** − This contains the classes used for unit testing database.
 
-database
+    * **Migrations** − This folder helps in queries for migrating the database used in the web application.
 
-public
+    * **Factories** − This folder is used to generate large number of data records.
 
-resources
 
-routes
+**public**
 
-storage
+**resources**
 
-tests
+**routes**
 
-Vendor
+**storage**
+
+**tests**
+
+**Vendor**
 
 
 
