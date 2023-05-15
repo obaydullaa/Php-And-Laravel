@@ -7,9 +7,28 @@ Screenshot of the running server.
 Describe the purpose of each of the following folders in a Laravel project:
 
 
+@ app
+
+bootstrap
+
+config
+
+database
+
+public
+
+resources
+
+routes
+
+storage
+
+tests
+
+Vendor
 
 
 
+# Screenshot of the running route.
 
-
-
+![Screenshot of the running route](https://github.com/obaydullaa/Php-And-Laravel/assets/41355030/8bf4f851-8e84-47e2-a373-41686853b882)
