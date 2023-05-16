@@ -50,4 +50,9 @@ class BookController extends Controller
         $book = $this->books[$bookId];
         return $book[$field];
     }
+    public function createBook()
+    {
+        
+        return "New post Request.";
+    }
 }
