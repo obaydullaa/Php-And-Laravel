@@ -85,7 +85,6 @@ class BookController extends Controller
     }
     public function createBook()
     {
-        
         return "New post Request.";
     }
 }
