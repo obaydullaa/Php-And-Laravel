@@ -62,8 +62,15 @@ class BookController extends Controller
         ],
     ];
 
-    public function books()
+    public function books(Request $request)
     {
+        $limit = $request->query('limit');
+        if($limit == 0){
+            return $this->books;
+        }else {
+            return array_splice($this->books, 0, $limit);
+        }
+        return $limit;
         return $this->books;
     }
 
@@ -83,8 +90,37 @@ class BookController extends Controller
         $book = $this->books[$bookId];
         return $book[$field];
     }
-    public function createBook()
+    public function createBook(Request $request)
     {
-        return "New post Request.";
+        // $author = request()->get('author');
+        // $title = request()->get('title');
+
+        $author = $request->get('author');
+        $title = $request->get('title');
+
+        return "Title = {$title} and Author = {$author}"; 
     }
+
+    public function getHeader(Request $request)
+    {
+
+        $author = $request->get('author');
+        $title = $request->get('title');
+
+        return "Title = {$title} and Author = {$author}"; 
+    }
+}
+
+// VerifyCsrfToken
+//=======================================
+class VerifyCsrfToken extends Middleware
+{
+    /**
+     * The URIs that should be excluded from CSRF verification.
+     *
+     * @var array<int, string>
+     */
+    protected $except = [
+        'books','header'
+    ];
 }
