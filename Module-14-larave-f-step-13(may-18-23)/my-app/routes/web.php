@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'DemoAction']);
