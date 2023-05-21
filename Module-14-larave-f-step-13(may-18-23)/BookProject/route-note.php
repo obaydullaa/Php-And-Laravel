@@ -244,3 +244,11 @@ class demoController extends Controller
     }
 }
 Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+
+/**
+* Module-14-Pre recode Video
+ * 6 [Request] Working With Form Data
+ * ===========================================================================
+ * 
+ */
