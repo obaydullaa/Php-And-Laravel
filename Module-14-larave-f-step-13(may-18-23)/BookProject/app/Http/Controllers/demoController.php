@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    public function DemoAction(Request $request):array{
+    public function DemoAction(Request $request):string{
+        $name = $request->header(key: 'name');
+        $age = $request->header(key: 'age');
     
-        return $request->input();
+        return "My name is ${name} and i am ${age} year old. ";
     }
 }
-Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);

@@ -146,7 +146,7 @@ class demoController extends Controller
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
 /**
-* Request body with out specipic paramiter send by postman
+* Request body with out specific paramiter send by postman
 *
 */
 
@@ -181,3 +181,26 @@ class demoController extends Controller
         "location": "Dhaka"
     }
 }
+
+
+/**
+* Module-14-Pre recode Video
+ * 4 [Request] Working With Request Header
+ * ===========================================================================
+ * 
+ */
+// send by postman jason
+// Adress: get/post http://127.0.0.1:8000/api/hello
+ 
+// data send use by header of postman
+
+ class demoController extends Controller
+{
+    public function DemoAction(Request $request):string{
+        $name = $request->header(key: 'name');
+        $age = $request->header(key: 'age');
+    
+        return "My name is ${name} and i am ${age} year old. ";
+    }
+}
+Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
