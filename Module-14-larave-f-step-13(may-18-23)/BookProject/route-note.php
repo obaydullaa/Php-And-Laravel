@@ -204,3 +204,43 @@ class demoController extends Controller
     }
 }
 Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+
+/**
+* Module-14-Pre recode Video
+ * 5 [Request] Working With Request Header Body Params
+ * ===========================================================================
+ * 
+ */
+// send by postman jason
+// Adress: get http://127.0.0.1:8000/api/hello/obaydul/25
+ 
+// data send use by header, body, url para miter  of postman
+// url para miter:  http://127.0.0.1:8000/api/hello/obaydul/25
+// body :
+    {
+        "city": "dhaka",
+        "postcode": 2645
+    }
+// header :  pin mytoken
+
+class demoController extends Controller
+{
+    public function DemoAction(Request $request):array{
+        $pin = $request->header(key: 'pin');
+        $city = $request->input(key: 'city');
+        $postcode = $request->input(key: 'postcode');
+
+        $name = $request->name;
+        $age = $request->age;
+
+        return array(
+            "pin"=> $pin,
+            "city"=> $city,
+            "postcode"=> $postcode,
+            "name"=> $name,
+            "age"=> $age,
+        );
+    }
+}
+Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'DemoAction']);
