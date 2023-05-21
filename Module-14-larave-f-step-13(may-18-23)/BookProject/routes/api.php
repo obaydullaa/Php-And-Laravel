@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::get(uri:'/hello', [demoController::class, 'demoAction']);
+// {
+//     "name": "jack",
+//     "age": 28
+// }
+Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);

@@ -124,3 +124,60 @@ class VerifyCsrfToken extends Middleware
         'books','header'
     ];
 }
+
+
+/**
+* Module-14-Prerecode Video
+ * 3 [Request] Working With Request JSON Body
+ * ===========================================================================
+ * 
+ */
+
+class demoController extends Controller
+{
+    public function DemoAction(Request $request):string{
+        $name=$request->input('name');
+        $age=$request->input('age');
+
+        return "My name is={$name} and My age is = {$age}";
+    }
+}
+
+// Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+/**
+* Request body with out specipic paramiter send by postman
+*
+*/
+
+// send by postman jason
+Adress: get/post http://127.0.0.1:8000/api/hello
+
+{
+    "name": "Obaydul",
+    "age": 26,
+    "location": "Dhaka",
+    "adress": {
+        "city": "Dahka",
+        "location": "Dhaka"
+    }
+}
+class demoController extends Controller
+{
+    public function DemoAction(Request $request):array{
+    
+        return $request->input();
+    }
+}
+
+// response: 
+//==================
+{
+    "name": "Obaydul",
+    "age": 26,
+    "location": "Dhaka",
+    "adress": {
+        "city": "Dahka",
+        "location": "Dhaka"
+    }
+}
