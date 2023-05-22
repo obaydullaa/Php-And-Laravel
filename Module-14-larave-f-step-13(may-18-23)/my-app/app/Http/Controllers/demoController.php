@@ -5,10 +5,9 @@ use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    // public function DemoAction(Request $request):string{
-    //     $name=$request->input('name');
-    //     $age=$request->input('age');
+    public function DemoAction(Request $request):string{
+        $name = request()->input('name');
 
-    //     return "My name is={$name} and My age is = {$age}";
-    // }
+        return "My name is={$name} and My age is = {$age}";
+    }
 }
