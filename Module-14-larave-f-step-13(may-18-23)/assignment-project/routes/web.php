@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/name',[App\Http\Controllers\DemoController::class, 'name']);
+
 Route::post('/submit', function (Request $request):string {
     $email = $request->input('email');
 
