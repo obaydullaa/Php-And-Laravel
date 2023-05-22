@@ -44,4 +44,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/weather/{city?}', [WeatherController::class, 'getWeather']);
 
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
-Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);

@@ -23,4 +23,5 @@ use Illuminate\Support\Facades\Route;
 //     "name": "jack",
 //     "age": 28
 // }
-Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);

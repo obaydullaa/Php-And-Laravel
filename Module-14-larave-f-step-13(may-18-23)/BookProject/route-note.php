@@ -251,4 +251,38 @@ Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'D
  * 6 [Request] Working With Form Data
  * ===========================================================================
  * 
- */
+ */-------------
+
+ // send by postman jason
+// Adress: post http://127.0.0.1:8000/api/hello/
+ 
+// data send use by header, body, url para miter  of postman
+// url para miter:  http://127.0.0.1:8000/api/hello/obaydul/25
+// body from data:
+    {
+        "city": "dhaka",
+        "postcode": 2645
+    }
+
+
+    class demoController extends Controller
+{
+    public function DemoAction(Request $request):array{
+        $PhotoFile=$request->file(key: 'photo');
+        $FileSize=filesize($PhotoFile);
+        $FileType=filetype($PhotoFile);
+        $FileOriginalName=$PhotoFile->getClientOriginalName();
+        $FileTempName=$PhotoFile->getFilename();
+        $FileExtension=$PhotoFile->extension();
+
+        return array (
+            "FileSize"=>$FileSize,
+            "FileType"=>$FileType,
+            "FileOriginalName"=>$FileOriginalName,
+            "FileTempName"=>$FileTempName,
+            "FileExtension"=>$FileExtension,
+        );
+    }
+}
+
+Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
