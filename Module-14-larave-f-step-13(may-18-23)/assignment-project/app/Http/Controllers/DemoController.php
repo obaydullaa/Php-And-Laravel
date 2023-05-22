@@ -14,14 +14,13 @@ class DemoController extends Controller
         $page = request()->query('page', null);
         $cityName = request()->input('city');
         $age = request()->input('age');
+        $rememberToken = request()->cookie('remember_token', null);
 
         // Handle file upload
         $uploadedFile = request()->file('avatar');
         if ($uploadedFile) {
             $path = $uploadedFile->store('public/uploads');
         }
-
-
 
         return response()->json(
             [
@@ -30,7 +29,8 @@ class DemoController extends Controller
                 'userAgent' => $userAgent,
                 'page' => $page,
                 'cityName' => $cityName,
-                'age' => $age
+                'age' => $age,
+                'rememberToken' => $rememberToken,
             ]
         );
     }
