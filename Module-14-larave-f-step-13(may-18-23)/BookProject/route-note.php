@@ -251,9 +251,9 @@ Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'D
  * 6 [Request] Working With Form Data
  * ===========================================================================
  * 
- */-------------
+ */
 
- // send by postman jason
+ // send by postman body form-data and file
 // Adress: post http://127.0.0.1:8000/api/hello/
  
 // data send use by header, body, url para miter  of postman
@@ -286,3 +286,22 @@ Route::get('/hello/{name}/{age}',[App\Http\Controllers\demoController::class, 'D
 }
 
 Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+/**
+* Module-14-Pre recode Video
+ * 7 [Request] Working With File Upload
+ * ===========================================================================
+ * 
+ */
+// send by postman body form-data and file
+// Adress: post http://127.0.0.1:8000/api/hello/
+
+ class demoController extends Controller
+{
+    public function DemoAction(Request $request):bool{
+        $PhotoFile=$request->file(key: 'photo');
+        $PhotoFile->storeAs('upload', $PhotoFile->getClientOriginalName());
+        $PhotoFile->move(public_path('upload'),$PhotoFile->getClientOriginalName());
+        return true;
+    }
+}

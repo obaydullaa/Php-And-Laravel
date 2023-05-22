@@ -6,20 +6,10 @@ use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    public function DemoAction(Request $request):array{
+    public function DemoAction(Request $request):bool{
         $PhotoFile=$request->file(key: 'photo');
-        $FileSize=filesize($PhotoFile);
-        $FileType=filetype($PhotoFile);
-        $FileOriginalName=$PhotoFile->getClientOriginalName();
-        $FileTempName=$PhotoFile->getFilename();
-        $FileExtension=$PhotoFile->extension();
-
-        return array (
-            "FileSize"=>$FileSize,
-            "FileType"=>$FileType,
-            "FileOriginalName"=>$FileOriginalName,
-            "FileTempName"=>$FileTempName,
-            "FileExtension"=>$FileExtension,
-        );
+        $PhotoFile->storeAs('upload', $PhotoFile->getClientOriginalName());
+        $PhotoFile->move(public_path('upload'),$PhotoFile->getClientOriginalName());
+        return true;
     }
 }
