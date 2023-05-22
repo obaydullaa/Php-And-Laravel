@@ -12,6 +12,8 @@ class DemoController extends Controller
         $name = $request->input('name');
         $userAgent = request()->header('User-Agent');
         $page = request()->query('page', null);
+        $cityName = request()->input('city');
+        $age = request()->input('age');
 
 
         return response()->json(
@@ -19,7 +21,9 @@ class DemoController extends Controller
                 'message' => 'Name retrieved successfully', 
                 'name' => $name,
                 'userAgent' => $userAgent,
-                'page' => $page
+                'page' => $page,
+                'cityName' => $cityName,
+                'age' => $age
             ]
         );
     }
