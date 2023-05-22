@@ -11,10 +11,15 @@ class DemoController extends Controller
 
         $name = $request->input('name');
         $userAgent = request()->header('User-Agent');
+        $page = request()->query('page', null);
+
+
         return response()->json(
-            ['message' => 'Name retrieved successfully', 
-            'name' => $name,
-            'userAgent' => $userAgent
+            [
+                'message' => 'Name retrieved successfully', 
+                'name' => $name,
+                'userAgent' => $userAgent,
+                'page' => $page
             ]
         );
     }
