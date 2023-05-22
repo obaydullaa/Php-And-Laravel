@@ -15,6 +15,13 @@ class DemoController extends Controller
         $cityName = request()->input('city');
         $age = request()->input('age');
 
+        // Handle file upload
+        $uploadedFile = request()->file('avatar');
+        if ($uploadedFile) {
+            $path = $uploadedFile->store('public/uploads');
+        }
+
+
 
         return response()->json(
             [
