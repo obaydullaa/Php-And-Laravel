@@ -5,9 +5,12 @@ use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    public function DemoAction(Request $request):string{
-        $name = request()->input('name');
+    public function DemoAction(Request $request):int{
 
-        return "My name is={$name} and My age is = {$age}";
+       if($request->accepts(['application/json'])){
+        return 1;
+       }else {
+        return 0;
+       }
     }
 }

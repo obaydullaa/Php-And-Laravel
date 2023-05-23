@@ -305,3 +305,44 @@ Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction'])
         return true;
     }
 }
+
+/**
+* Module-14-Pre recode Video
+ * 8 [Request] IP Address And Content
+ * ===========================================================================
+ * 
+ */
+
+ // get for client ip
+Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+ class demoController extends Controller
+{
+    public function DemoAction(Request $request):string{
+
+        return $request->ip();
+    }
+}
+// postman -> header Accept 
+http://127.0.0.1:8000/hello
+class demoController extends Controller
+{
+    public function DemoAction(Request $request):array{
+
+        return $request->getAcceptableContentTypes();
+    }
+}
+
+// header thake pathate hobe
+
+class demoController extends Controller
+{
+    public function DemoAction(Request $request):int{
+
+       if($request->accepts(['application/json'])){
+        return 1;
+       }else {
+        return 0;
+       }
+    }
+}
