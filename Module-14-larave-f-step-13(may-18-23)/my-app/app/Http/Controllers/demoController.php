@@ -18,4 +18,13 @@ class demoController extends Controller
         return "Bangladesh";
         return "null";
     }
+
+    public function DemoAction1(Request $request) {
+
+        return redirect(to:"/hello2");
+    }
+    public function DemoAction2(Request $request) {
+
+        return "Hello2";
+    }
 }

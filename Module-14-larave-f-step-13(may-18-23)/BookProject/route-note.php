@@ -355,9 +355,29 @@ class demoController extends Controller
         return $request->cookie('Cookie_8');
     }
 }
+
+Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+
+ class demoController extends Controller
+{
+    public function DemoAction(Request $request):array|null|bool|string {
+        return [
+            'name'=> 'Bbaydulla',
+            'city'=> 'Gazipur'
+        ];
+        return ['A','B','C'];
+        return array('A','B','C','D');
+        return true;
+        return false;
+        return 55;
+        return "Bangladesh";
+        return "null";
+    }
+}
+
 /**
 * Module-14-Pre recode Video
- * 10 [Response] Different Response Format
+ * 12 [Response] Redirect Response
  * ===========================================================================
  * 
  */

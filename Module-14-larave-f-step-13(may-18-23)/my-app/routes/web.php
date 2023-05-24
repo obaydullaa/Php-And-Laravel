@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
-Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
+Route::get('/hello1',[App\Http\Controllers\demoController::class, 'DemoAction1']);
+Route::get('/hello2',[App\Http\Controllers\demoController::class, 'DemoAction2']);
