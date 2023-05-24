@@ -348,12 +348,6 @@ class demoController extends Controller
 }
 
 
-/**
-* Module-14-Pre recode Video
- * 9 [Request] Working With Request Cookie
- * ===========================================================================
- * 
- */
 class demoController extends Controller
 {
     public function DemoAction(Request $request):string
@@ -361,3 +355,9 @@ class demoController extends Controller
         return $request->cookie('Cookie_8');
     }
 }
+/**
+* Module-14-Pre recode Video
+ * 10 [Response] Different Response Format
+ * ===========================================================================
+ * 
+ */
