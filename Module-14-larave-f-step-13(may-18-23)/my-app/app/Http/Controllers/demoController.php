@@ -19,12 +19,14 @@ class demoController extends Controller
         return "null";
     }
 
-    public function DemoAction1(Request $request) {
+    public function FileBinary() {
 
-        return redirect(to:"/hello2");
+        $filePath = "upload/obaydulla.jpg";
+        return response()->file($filePath);
     }
-    public function DemoAction2(Request $request) {
+    public function FileDwonload() {
 
-        return "Hello2";
+        $filePath = "upload/obaydulla.jpg";
+        return response()->download($filePath);
     }
 }

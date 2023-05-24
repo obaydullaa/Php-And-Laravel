@@ -381,3 +381,37 @@ Route::post('/hello',[App\Http\Controllers\demoController::class, 'DemoAction'])
  * ===========================================================================
  * 
  */
+Route::get('/hello1',[App\Http\Controllers\demoController::class, 'DemoAction1']);
+Route::get('/hello2',[App\Http\Controllers\demoController::class, 'DemoAction2']);
+
+public function DemoAction1(Request $request) {
+    return redirect(to:"/hello2");
+}
+public function DemoAction2(Request $request) {
+    return "Hello2";
+}
+
+/**
+* Module-14-Pre recode Video
+ * 13 [Response] Binary And File Download Response
+ * ===========================================================================
+ * 
+ */
+
+Route::get('/FileBinary',[App\Http\Controllers\demoController::class, 'FileBinary']);
+Route::get('/FileDwonload',[App\Http\Controllers\demoController::class, 'FileDwonload']);
+
+
+class demoController extends Controller
+{
+    public function FileBinary() {
+
+        $filePath = "upload/obaydulla.jpg";
+        return response()->file($filePath);
+    }
+    public function FileDwonload() {
+
+        $filePath = "upload/obaydulla.jpg";
+        return response()->download($filePath);
+    }
+}
