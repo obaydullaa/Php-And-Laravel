@@ -448,16 +448,10 @@ class demoController extends Controller
  Discus view and how to work.
 
 
-/**
-* Module-14-Pre recode Video
- * 17 [LOG] Laravel Log Feature
- * ===========================================================================
- * 
- */
 Route::get('/DemoAction/{num1}/{num2}',[App\Http\Controllers\demoController::class, 'DemoAction']);
 class demoController extends Controller
 {
-    public function DemoAction(Request $request){
+    public function DemoAction(Request $request):int{
         $name1 = $request->num1;
         $name2 = $request->num2;
         $sum = $name1 + $name2;
@@ -465,5 +459,49 @@ class demoController extends Controller
         Log::info($sum);
 
         return $sum;
+    }
+}
+
+/**
+* Module-14-Pre recode Video
+ * 18 [Session] Laravel Session
+  19 [Session] Laravel Session
+ * ===========================================================================
+
+ * Sesstion Niye kaj korar jonno web.php use korbo.. api.php use session niye korte pare na. api.php use kora stack less operaion ar jonno.
+
+ */
+
+Route::get('/SessionPut/{email}',[App\Http\Controllers\demoController::class, 'SessionPut']);
+Route::get('/SessionPull',[App\Http\Controllers\demoController::class, 'SessionPull']);
+Route::get('/SessionGet',[App\Http\Controllers\demoController::class, 'SessionGet']);
+Route::get('/SessionForget',[App\Http\Controllers\demoController::class, 'SessionForget']);
+Route::get('/SessionFlush',[App\Http\Controllers\demoController::class, 'SessionFlush']);
+
+
+ class demoController extends Controller
+{
+    public function SessionPut(Request $request):bool{
+        $email = $request->email;
+        $request->session()->put('userEmail', $email);
+        return true;
+        // $request->session()->pull();
+        // $request->session()->forget();
+        // $request->session()->flush();
+    }
+    public function SessionPull(Request $request):string{
+        return $request->session()->pull('userEmail', default:"Default");
+    }
+    public function SessionGet(Request $request):string{
+        return $request->session()->get('userEmail', default:"Default");
+    }
+
+    public function SessionForget(Request $request):bool{
+         $request->session()->forget('userEmail');
+         return true;
+    }
+    public function SessionFlush(Request $request):bool{
+         $request->session()->flush();
+         return true;
     }
 }

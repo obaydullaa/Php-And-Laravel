@@ -20,4 +20,8 @@ Route::get('/', function () {
 });
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
-Route::get('/DemoAction/{num1}/{num2}',[App\Http\Controllers\demoController::class, 'DemoAction']);
+Route::get('/SessionPut/{email}',[App\Http\Controllers\demoController::class, 'SessionPut']);
+Route::get('/SessionPull',[App\Http\Controllers\demoController::class, 'SessionPull']);
+Route::get('/SessionGet',[App\Http\Controllers\demoController::class, 'SessionGet']);
+Route::get('/SessionForget',[App\Http\Controllers\demoController::class, 'SessionForget']);
+Route::get('/SessionFlush',[App\Http\Controllers\demoController::class, 'SessionFlush']);
