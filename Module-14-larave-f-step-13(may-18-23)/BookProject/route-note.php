@@ -446,3 +446,24 @@ class demoController extends Controller
  * 
  */
  Discus view and how to work.
+
+
+/**
+* Module-14-Pre recode Video
+ * 17 [LOG] Laravel Log Feature
+ * ===========================================================================
+ * 
+ */
+Route::get('/DemoAction/{num1}/{num2}',[App\Http\Controllers\demoController::class, 'DemoAction']);
+class demoController extends Controller
+{
+    public function DemoAction(Request $request){
+        $name1 = $request->num1;
+        $name2 = $request->num2;
+        $sum = $name1 + $name2;
+
+        Log::info($sum);
+
+        return $sum;
+    }
+}

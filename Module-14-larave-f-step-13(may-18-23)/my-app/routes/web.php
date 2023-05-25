@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
-Route::get('/DemoAction',[App\Http\Controllers\demoController::class, 'DemoAction']);
+Route::get('/DemoAction/{num1}/{num2}',[App\Http\Controllers\demoController::class, 'DemoAction']);

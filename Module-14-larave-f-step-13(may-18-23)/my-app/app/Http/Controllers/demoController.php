@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class demoController extends Controller
 {
-    public function DemoAction(){
+    public function DemoAction(Request $request){
+        $name1 = $request->num1;
+        $name2 = $request->num2;
+        $sum = $name1 + $name2;
 
-        return response('Hi From Header.')->header('key1', 'value1');
+        // Log::info($sum);
+        Log::emergency($sum);
+
+        return $sum;
     }
 }
