@@ -428,13 +428,6 @@ Route::get('/DemoAction',[App\Http\Controllers\demoController::class, 'DemoActio
 }
 
 
-
-/**
-* Module-14-Pre recode Video
- * 15 [Response] Response Header
- * ===========================================================================
- * 
- */
 Route::get('/DemoAction',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
 class demoController extends Controller
@@ -445,3 +438,11 @@ class demoController extends Controller
     }
 }
 
+
+/**
+* Module-14-Pre recode Video
+ * 16 [Response] Response View
+ * ===========================================================================
+ * 
+ */
+ Discus view and how to work.
