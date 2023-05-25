@@ -405,13 +405,14 @@ Route::get('/FileDwonload',[App\Http\Controllers\demoController::class, 'FileDwo
 class demoController extends Controller
 {
     public function FileBinary() {
-
         $filePath = "upload/obaydulla.jpg";
         return response()->file($filePath);
     }
-    public function FileDwonload() {
-
-        $filePath = "upload/obaydulla.jpg";
-        return response()->download($filePath);
-    }
 }
+
+/**
+* Module-14-Pre recode Video
+ * 14 [Response] Cookie Response
+ * ===========================================================================
+ * 
+ */

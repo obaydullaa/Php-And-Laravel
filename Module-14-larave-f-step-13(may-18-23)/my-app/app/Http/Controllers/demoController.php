@@ -5,28 +5,15 @@ use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    public function DemoAction(Request $request):array|null|bool|string {
-        return [
-            'name'=> 'Bbaydulla',
-            'city'=> 'Gazipur'
-        ];
-        return ['A','B','C'];
-        return array('A','B','C','D');
-        return true;
-        return false;
-        return 55;
-        return "Bangladesh";
-        return "null";
-    }
+    public function DemoAction(){
+        $name="cookie_name";
+        $value="This is my cookie.";
+        $minutes=120;
+        $path="/profile";
+        $domain=$_SERVER['SERVER_NAME'];
+        $secure=false;
+        $httpOnly= true;
 
-    public function FileBinary() {
-
-        $filePath = "upload/obaydulla.jpg";
-        return response()->file($filePath);
-    }
-    public function FileDwonload() {
-
-        $filePath = "upload/obaydulla.jpg";
-        return response()->download($filePath);
+        return response('Hi')->cookie($name,$value,$minutes,$path,$domain,$secure,$httpOnly);
     }
 }

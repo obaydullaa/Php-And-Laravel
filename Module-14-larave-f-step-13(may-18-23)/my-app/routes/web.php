@@ -20,5 +20,4 @@ Route::get('/', function () {
 });
 // Route::get('/hello',[App\Http\Controllers\demoController::class, 'DemoAction']);
 
-Route::get('/FileBinary',[App\Http\Controllers\demoController::class, 'FileBinary']);
-Route::get('/FileDwonload',[App\Http\Controllers\demoController::class, 'FileDwonload']);
+Route::get('/DemoAction',[App\Http\Controllers\demoController::class, 'DemoAction']);
