@@ -4,7 +4,9 @@
 
     @include('component.Hero');
     @include('component.About');
-    {{-- @include('component.HowWeDoe'); --}}
+    @include('component.WhatWeDo');
+    @include('component.Experience');
+    @include('component.Pricing');
     @include('component.Team');
 
 @endsection
