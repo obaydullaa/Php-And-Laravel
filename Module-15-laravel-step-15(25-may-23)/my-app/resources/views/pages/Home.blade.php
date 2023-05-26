@@ -7,6 +7,9 @@
     @include('component.WhatWeDo');
     @include('component.Experience');
     @include('component.Pricing');
+    @include('component.Project');
+    @include('component.Subscribe');
+    @include('component.Testimonials');
     @include('component.Team');
 
 @endsection
