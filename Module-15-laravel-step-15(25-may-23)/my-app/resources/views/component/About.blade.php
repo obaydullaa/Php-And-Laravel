@@ -6,7 +6,7 @@
             <div class="col-lg-6 position-relative">
                 <div class="about-thumb">
                     <div class="about-thumb__inner">
-                        <img class="img-2" src="assets/images/about/about_us.jpg" alt="image">
+                        <img class="img-2" src="{{asset('images/about/about_us.jpg')}}" alt="image">
                     </div>
                 </div>
             </div>

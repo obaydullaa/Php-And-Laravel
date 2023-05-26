@@ -15,7 +15,7 @@
         <div class="row gy-4 align-items-center">
             <div class="col-lg-4 col-md-4">
                 <div class="Our-Project">
-                    <img class="img-1" src="assets/images/portfolio/portfolio-1.jpg" alt="image">
+                    <img class="img-1" src="{{asset('images/portfolio/portfolio-1.jpg')}}" alt="image">
                     <div class="content">
                         <h4>Developments</h4>
                         <span>Website Service</span>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="Our-Project">
-                    <img class="img-1" src="assets/images/portfolio/portfolio-2.jpg" alt="image">
+                    <img class="img-1" src="{{asset('images/portfolio/portfolio-2.jpg')}}" alt="image">
                     <div class="content">
                         <h4>UI/UX Design</h4>
                         <span>Design Service</span>
@@ -34,7 +34,7 @@
             
             <div class="col-lg-4 col-md-4">
                 <div class="Our-Project">
-                    <img class="img-1" src="assets/images/portfolio/portfolio-3.jpg" alt="image">
+                    <img class="img-1" src="{{asset('images/portfolio/portfolio-3.jpg')}}" alt="image">
                     <div class="content">
                         <h4>App Developments</h4>
                         <span>Android App Service</span>
@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-md-4">
                 <div class="col-lg-12">
                     <div class="Our-Project">
-                        <img class="img-1" src="assets/images/portfolio/portfolio-4.jpg" alt="image">
+                        <img class="img-1" src="{{asset('images/portfolio/portfolio-4.jpg')}}" alt="image">
                         <div class="content">
                             <h4>Content Writing</h4>  
                             <span>content Service</span>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="Our-Project">
-                    <img class="img-1" src="assets/images/portfolio/portfolio-5.jpg" alt="image">
+                    <img class="img-1" src="{{asset('images/portfolio/portfolio-5.jpg')}}" alt="image">
                     <div class="content">
                         <h4>Social Marketing</h4>
                         <span>Marketing Service</span>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="Our-Project">
-                    <img class="img-1" src="assets/images/portfolio/portfolio-6.jpg" alt="image">
+                    <img class="img-1" src="{{asset('images/portfolio/portfolio-6.jpg')}}" alt="image">
                     <div class="content">
                         <h4>Social Marketing</h4>
                         <span>Marketing Service</span>

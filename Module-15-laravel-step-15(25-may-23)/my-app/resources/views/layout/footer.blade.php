@@ -1,12 +1,12 @@
 <!-- ==================== Footer Start Here ==================== -->
-<footer class="footer-area section-bg-light bg-img" style="background-image: url(assets/images/footer/footer-bg.jpg)">
+<footer class="footer-area section-bg-light bg-img" style="background-image: url({{asset('/images/footer/footer-bg.jpg')}})">
     <div class="pb-60 pt-80">
         <div class="container">
             <div class="row justify-content-center gy-5">
                 <div class="col-xl-3 col-sm-6">
                     <div class="footer-item">
                         <div class="footer-item__logo">
-                            <a href="index.html" class="footer-logo-normal"> <img src="assets/images/logo/logo.png" alt=""></a>
+                            <a href="index.html" class="footer-logo-normal"> <img src="{{asset('/images/logo/logo.png')}}" alt=""></a>
                             <a href="index.html" class="footer-logo-dark hidden"> <img src="assets/images/logo/dark-logo.png" alt=""></a>
                         </div>
                         <p class="footer-item__desc mb-3">Let's make something great together. We are trusted by over 5000+ clients. Join them by using our services and grow your business.</p>
@@ -40,7 +40,7 @@
                         <div class="blog-sidebar">
                             <div class="latest-blog">
                                 <div class="latest-blog__thumb">
-                                    <a href="blog-details.html"> <img src="assets/images/blog/blog-1.jpg" alt=""></a>
+                                    <a href="blog-details.html"> <img src="{{asset('/images/blog/blog-1.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="latest-blog__content">
                                     <h6 class="latest-blog__title"><a href="blog-details.html">Sound Everyday Rutine For Your amet.</a></h6>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="latest-blog">
                                 <div class="latest-blog__thumb">
-                                    <a href="blog-details.html"> <img src="assets/images/blog/blog-2.jpg" alt=""></a>
+                                    <a href="blog-details.html"> <img src="{{asset('/images/blog/blog-2.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="latest-blog__content">
                                     <h6 class="latest-blog__title"><a href="blog-details.html">Lorem ipsum dolor sit amet.</a></h6>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="latest-blog">
                                 <div class="latest-blog__thumb">
-                                    <a href="blog-details.html"> <img src="assets/images/blog/blog-3.jpg" alt=""></a>
+                                    <a href="blog-details.html"> <img src="{{asset('/images/blog/blog-3.jpg')}}" alt=""></a>
                                 </div>
                                 <div class="latest-blog__content">
                                     <h6 class="latest-blog__title"><a href="blog-details.html">Lorem ipsum dolor sit amet.</a></h6>

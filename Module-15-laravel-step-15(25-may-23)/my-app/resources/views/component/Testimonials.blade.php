@@ -7,11 +7,9 @@
                     
                     <div class="testimonails-card">
                         <div class="testimonial-item position-relative">
-                           
-
                             <div class="testimonial-item__quate"><i class="fa-solid fa-quote-right"></i></div>
                                 <div class="testimonial-item__thumb">
-                                    <img src="assets/images/1__testimonials/testimonials-01.png" alt="">
+                                    <img src="{{asset('/images/1__testimonials/testimonials-01.png')}}" alt="">
                                 </div>
 
                                 <div class="testimonial-item__content">
@@ -42,7 +40,7 @@
                             <div class="testimonial-item__quate"><i class="fa-solid fa-quote-right"></i></div>
                             
                                 <div class="testimonial-item__thumb">
-                                    <img src="assets/images/1__testimonials/testimonials-02.png" alt="">
+                                    <img src="{{asset('/images/1__testimonials/testimonials-02.png')}}" alt="">
                                 </div>
 
                                 <div class="testimonial-item__content">
@@ -73,7 +71,7 @@
                             <div class="testimonial-item__quate"><i class="fa-solid fa-quote-right"></i></div>
                             
                                 <div class="testimonial-item__thumb">
-                                    <img src="assets/images/1__testimonials/testimonials-03.png" alt="">
+                                    <img src="{{asset('/images/1__testimonials/testimonials-03.png')}}" alt="">
                                 </div>
 
                                 <div class="testimonial-item__content">
@@ -104,7 +102,7 @@
                             <div class="testimonial-item__quate"><i class="fa-solid fa-quote-right"></i></div>
                             
                                 <div class="testimonial-item__thumb">
-                                    <img src="assets/images/1__testimonials/testimonials-04.png" alt="">
+                                    <img src="{{asset('/images/1__testimonials/testimonials-04.png')}}" alt="">
                                 </div>
 
                                 <div class="testimonial-item__content">

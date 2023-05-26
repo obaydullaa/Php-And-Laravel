@@ -16,7 +16,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="team-item">
                     <div class="team-item__thumb">
-                        <img src="assets/images/team/team-1.jpg" alt="">
+                        <img src="{{asset('/images/team/team-1.jpg')}})" alt="">
                     </div>
                     <div class="team-item__content-wrapper">                        
                         <div class="social-wrap d-flex align-items-center justify-content-center mb-3">

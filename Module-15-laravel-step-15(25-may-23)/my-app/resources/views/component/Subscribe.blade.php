@@ -1,5 +1,5 @@
 <!-- ==================== Subscribe Here ==================== -->
-<section class="subscribe-section py-80 bg-img" style="background-image: url(assets/images/subscribe/subscribe-bg.jpg);">
+<section class="subscribe-section py-80 bg-img" style="background-image: url({{asset('/images/subscribe/subscribe-bg.jpg')}});">
     <div class="container">
         <div class="row  gy-4 justify-content-center align-items-center">
             <div class="col-lg-7">

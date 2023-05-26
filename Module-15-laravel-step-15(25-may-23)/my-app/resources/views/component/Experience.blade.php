@@ -1,5 +1,5 @@
 <!-- ==================== Experience Start Here ==================== -->
-<section class="experience-area section-bg py-80 bg-img" style="background-image: url(assets/images/experience/experience-bg.jpg);">
+<section class="experience-area section-bg py-80 bg-img" style="background-image: url({{asset('images/experience/experience-bg.jpg')}});">
     <div class="container">
         <div class="row gy-4 justify-content-center">
             <div class="col-lg-3 col-md-4 col-sm-6">

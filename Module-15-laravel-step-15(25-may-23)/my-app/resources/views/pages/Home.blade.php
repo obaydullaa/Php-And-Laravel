@@ -11,6 +11,7 @@
     @include('component.Subscribe');
     @include('component.Testimonials');
     @include('component.Accordion');
+    @include('component.Blog');
     @include('component.Team');
 
 @endsection
