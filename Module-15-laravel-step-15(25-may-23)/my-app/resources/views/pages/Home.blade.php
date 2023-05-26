@@ -10,6 +10,7 @@
     @include('component.Project');
     @include('component.Subscribe');
     @include('component.Testimonials');
+    @include('component.Accordion');
     @include('component.Team');
 
 @endsection
