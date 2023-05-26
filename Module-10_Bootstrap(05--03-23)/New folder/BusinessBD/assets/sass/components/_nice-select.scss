@@ -1,0 +1,77 @@
+
+// -------------- Form Select Css ------------------------
+.nice--select {
+    color: hsl(var(--white)); 
+    background-color:transparent !important; 
+    border: 1px solid hsl(var(--white) / .3);
+    height: 50px;
+    line-height: initial;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    .current {
+        font-size: 14px;
+        font-family: var(--body-font);
+        color: hsl(var(--white) / .4);
+    }
+    .list {
+        box-shadow: var(--box-shadow);
+        background-color: hsl(var(--base-two));
+        max-height: 200px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+    }
+    &:hover {
+      border: 1px solid hsl(var(--white) / .4);
+    }
+    &:focus {
+        border: 1px solid hsl(var(--base));
+    }
+    &:after {
+        transform: rotate(0deg);
+        width: 5px;
+        border-style: solid;
+        border-width: 5px;
+        border-color: hsl(var(--white) / .4) transparent transparent transparent;
+        display: none;
+    }
+    &::before {
+        position: absolute;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &.open:after {
+        transform: rotate(0deg);
+    }
+  
+    .option {
+        color: hsl(var(--white) / .4) ; 
+        font-size: 14px;
+        font-family: var(--body-font);
+        &.selected.focus {
+            font-weight: 600;
+            background-color: hsl(var(--base)) !important;
+            color: hsl(var(--white));
+            &:hover {
+                background-color: hsl(var(--base)) !important;
+                color: hsl(var(--white)) !important;
+            }
+        }
+        &:hover {
+            background-color: hsl(var(--base));
+            color: hsl(var(--white));
+        }
+    }
+    .wide {
+        border: 1px solid hsl(var(--base-two) / .08);
+        gap: 0px;
+    }
+  }

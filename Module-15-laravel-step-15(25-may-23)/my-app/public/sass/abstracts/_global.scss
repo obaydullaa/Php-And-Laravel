@@ -1,0 +1,243 @@
+
+/*====================== Section Heading ====================*/
+.section-heading {
+  margin-bottom: 50px;
+  position: relative; 
+  @include xxsm-screen {
+    margin-bottom: 30px;
+  }
+  .section-title-top {
+    font-size: 26px;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+    color: hsl(var(--white));
+    z-index: 1;
+    margin: 5px 0px  20px 20px;
+    &::before {
+      position: absolute;
+      left: -9px;
+      top: -6px;
+      height: 50px;
+      width: 50px;
+      background: hsl(var(--base));
+      content: "";
+      z-index: -1;
+      border-radius: 25px 10px 25px 10px;
+    }
+  }
+  
+  .subtitle {
+      font-size: 22px;
+      font-weight: 600;
+      color:  hsl(var(--base));
+      display: inline-block;
+      margin-bottom: 15px;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+  }
+  &__title {
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: capitalize;
+    position: relative;
+    .animate-shape { 
+      position: relative;
+      width: 70%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      @include sm-screen {
+        width: 65%;
+      }
+      img {  
+        position: absolute;
+        top: 35px;
+        left: 0;
+        z-index: -1;
+        -webkit-animation: section-animation 3s infinite;
+        animation: section-animation 3s infinite;
+        @include sm-screen {
+            top: 19px;
+        }
+      }
+      &.center {
+        left: 37%;
+        width: 50%;
+      }
+  }
+    
+    @include sm-screen {
+      font-size: 28px;
+    }
+    @include xxsm-screen {
+      font-size: 25px;
+    }
+  }
+  &__desc {
+    max-width: 750px;
+    left: 0px;
+  }
+
+}
+
+
+.text-center .section-heading__subtitle-big {
+  right: 0;
+}
+.text-center .section-heading__desc {
+   margin: auto;
+}
+// ====================== Section Heading End====================
+
+//================= Slick Arrow & Dots css Start ================
+.slick-initialized.slick-slider {
+  margin: 0 -10px;
+  .slick-track {
+      display: flex;
+  }
+  .slick-slide {
+      height: auto;
+      padding: 0 10px;
+      > div {
+          height: 100%;
+      }
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: hsl(var(--white));;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .2s linear; 
+  background-color: hsl(var(--base));
+  color: hsl(var(--white));;
+  font-size: 20px;
+  @include md-screen {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  @include msm-screen {
+    width: 45px;
+    height: 45px;
+  }
+   &:hover {
+    border-color: hsl(var(--base));
+    background-color: hsl(var(--base-two));
+  }
+}
+.slick-next {
+  right: -20px;
+  @include md-screen {
+    right: -10px;
+  }
+  @include msm-screen {
+    right: 10px;
+  }
+}
+.slick-prev {
+  left: -20px;
+  @include md-screen {
+    left: -10px;
+  }
+  @include msm-screen {
+    left: 10px;
+  }
+}
+
+// -------------- Style two ------------
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+  color: hsl(var(--white));;
+  width: 32px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: .4s;
+  background-color:  hsl(var(--dark));
+  color: hsl(var(--white));
+  top: -67px;
+  @include lg-screen {
+    top: -69px;
+  }
+  @include sm-screen {
+    top: auto; 
+    bottom: -50px;
+    right: 50%;
+  }
+}
+.slick-arrow:hover {
+  background-color: hsl(var(--dark));
+  color: hsl(var(--white));;
+}
+.slick-next {
+  right: 10px;
+  background-color:  hsl(var(--base));
+  @include sm-screen {
+    top: auto; 
+    right: calc(50% + -37px);
+
+  } 
+}
+.slick-prev {
+  right: 52px;
+  @include sm-screen {
+    top: auto; 
+    right: calc(50% - -5px);
+  }
+}
+
+//  Dots
+.slick-dots {
+    text-align: center;
+    padding-top: 20px;
+    li {
+        display: inline-block;
+        button {
+            border: none;
+            background-color: hsl(var(--white));;
+            color: hsl(var(--white));;
+            margin: 0 3px;
+            width: 30px;
+            height: 4px;
+            border-radius: 1px;
+            text-indent: -9999px;
+        }
+        &.slick-active button {
+            background-color: hsl(var(--base));
+        }
+    }
+}
+//================= Slick Arrow & Dots css Start ================
+
+
+/*================= Text Underline Hover ================*/
+.text-hover a {
+  background-image: linear-gradient(to right, hsl(var(--base)) 0%, hsl(var(--base)) 100%);
+  background-position: 0 calc(100% - 0.02em);
+  background-size: 0 2px;
+  transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+  padding: 0;
+  display: inline;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+.text-hover a:hover {
+  background-size: 100% 2px;
+}

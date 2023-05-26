@@ -1,0 +1,438 @@
+
+/*====================== Hexagon Design Css Start ====================*/
+.hex {
+    position: relative;
+    margin: 20px auto;
+    width: 185px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: hsl(var(--base));
+    transform: rotate(30deg);
+  }
+  .hex:before,
+  .hex:after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: '';
+  }
+  .hex:before {
+    transform: rotate(-60deg);
+  }
+  .hex:after {
+    transform: rotate(60deg);
+  }
+// Hexagon Design Css End
+
+
+//  shapes Start
+.shape {
+    position: absolute;
+    &.one {
+        left: 40%;
+        bottom: 20%;
+        max-width: 3%;
+        animation: banner_shape_one 8s linear infinite;           
+    }
+    &.two{
+        right: 6%;
+        top: 15%;
+        max-width: 6%;
+        animation: banner_shape_two 15s linear infinite;
+    }
+    &.three {
+        top: 15%;
+        left: 6%;
+        max-width: 4%; 
+        animation: banner_shape_three 8s linear infinite;           
+    }
+    &.four{
+        bottom: 13%;
+        left: 11%;
+        max-width: 5%; 
+        animation: banner_shape_four 8s linear infinite;           
+    }
+    &.five {
+        right: 6%;
+        bottom: 16%;
+        transform: rotate(108deg);
+        max-width: 4%;
+        animation: banner_shape_five 8s linear infinite;
+    }
+    &.six{
+        right: 6%;
+        top: 15%;
+        max-width: 6%;
+        animation: banner_shape_six 5s linear infinite;
+    }
+    &.seven {
+        top: 15%;
+        left: 6%;
+        max-width: 4%; 
+        animation: banner_shape_seven 8s linear infinite;           
+    }
+    &.eight{
+        bottom: 13%;
+        left: 11%;
+        max-width: 5%; 
+        animation: banner_shape_eight 3s linear infinite;           
+    }
+    &.nine {
+        right: 6%;
+        bottom: 30%;
+        max-width: 4%;
+        transform: rotate(60deg);
+        animation: banner_shape_nine 8s linear infinite;
+    }
+    &.ten{
+        right: 6%;
+        top: 15%;
+        max-width: 6%;
+        animation: banner_shape_ten 10s linear infinite;
+        transform: rotate(-60deg);
+    }
+    &.eleven {
+        top: 15%;
+        left: 6%;
+        max-width: 4%; 
+        animation: banner_shape_eleven 20s linear infinite;           
+    }
+    &.thirteen {
+        right: 0;
+        bottom: 30%;
+        max-width: 4%;
+        animation: banner_shape_thirteen 30s linear infinite;
+    }
+    &.fourteen {
+        right: 6%;
+        bottom: 30%;
+        max-width: 4%;
+        transform: rotate(60deg);
+        animation: banner_shape_fourteen 8s linear infinite;
+    }
+}
+@keyframes banner_shape_one {
+    0% {
+        transform: translate(0px);
+    }
+    50% {
+        transform: translate(20px) ;
+    }
+    100% {
+        transform: translate(0px);
+    }
+}
+@keyframes banner_shape_two {
+    0% {
+        transform: translateX(0px) translateY(40px);
+    }
+    25% {
+        transform: translateX(40px) translateY(0px) ;
+    }
+    50% {
+        transform: translateX(0px) translateY(-40px) ;
+    }
+    75% {
+        transform: translateX(-40px) translateY(0px) ;
+    }
+    100% {
+        transform: translateX(0px) translateY(40px);
+    }
+}
+@keyframes banner_shape_three {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateX(50px) rotate(180deg);
+    }
+    100% {
+        transform: translateX(0px) rotate(360deg);
+    }
+}
+@keyframes banner_shape_four {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(.8); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+@keyframes banner_shape_five {
+    0% {
+        transform: translateX(0px) rotate(108deg); 
+    }
+    50% {
+        transform: translateX(50px) rotate(130deg);  
+    }
+    100% {
+        transform: translateX(0px) rotate(108deg); 
+    }
+}
+@keyframes banner_shape_six {
+    0% {
+        transform: scaleX(1);  
+    }
+    50% {
+        transform: scaleX(0);   
+    }
+    100% {
+        transform: scaleX(1);  
+    }
+}
+@keyframes banner_shape_seven {
+    0% {
+      transform: scaleY(.0);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(.0);
+    }
+}
+@keyframes banner_shape_eight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+}
+@keyframes banner_shape_nine { 
+    0% {
+        transform: translateY(100px) rotate(0deg);  
+    }
+    50% {
+        transform: translateY(0px) rotate(180deg);   
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);  
+    }
+}
+@keyframes banner_shape_ten {
+    0% {
+        transform: translateY(100px) rotate(0deg);   
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);    
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);   
+    }
+}
+@keyframes banner_shape_thirteen {
+    0% {
+        bottom: 0;  
+    }
+    50% {
+        bottom: 50%;   
+    }
+    100% {
+        bottom: 0;  
+    }
+}
+@keyframes banner_shape_fourteen {
+    0% {
+        left: 10px;
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 100px; 
+        transform: rotate(1000deg);
+    }
+    100% {
+        left: 10px;
+        transform: rotate(360deg);
+    }
+}
+@keyframes banner_shape_eleven {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*==================== Custom Shape =================*/
+.square-shape-1 {
+    position: absolute;
+    z-index: -1;
+    .item {
+        margin-top: -7px;
+        span {
+            width: 8px;
+            height: 8px;
+            background: hsl(var(--base)/.7);
+            display: inline-block;
+            margin: 0 3px;
+            border-radius: 50%;
+        }
+    }
+}
+.square-shape-2 {
+    .item {
+        margin-top: -7px;
+        span {
+            width: 8px;
+            height: 8px;
+            background: hsl(var(--base)/.7);
+            display: inline-block;
+            margin: 0 3px;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+.round-shape-1 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 26%;
+    left: 18%;
+    border: 16px solid hsl(var(--base)/.4);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    @include xl-screen {
+        left: 15%;
+    } 
+    @include sm-screen {
+        height: 40px;
+        width: 40px;
+        border: 9px solid hsl(var(--base)/.4);
+    }  
+     
+    @include  msm-screen {
+        top: 15%;
+    }
+}
+.octagon-shape-1 {
+    position: absolute;
+    top: 20%;
+    right: 23%;
+    background: hsl(var(--base)/0.4);
+    width: 80px;
+    height: 45px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    @include xl-screen {
+        right: 15%;
+    } 
+    @include sm-screen {
+        width: 45px;
+        height: 25px;
+        margin-top: 20px;
+    } 
+     
+    @include  msm-screen {
+        top: 10%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 25px solid hsl(var(--base)/0.4);
+        
+        @include sm-screen {
+            top: -14px;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-bottom: 14px solid hsl(var(--base)/0.4);
+        } 
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 25px solid hsl(var(--base)/0.4);
+        @include sm-screen {
+            bottom: -14px;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 14px solid hsl(var(--base)/0.4);
+        } 
+    }
+}
+.star-shape-1 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
+    background: hsl(var(--base)/.4);;
+    -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    
+    @include xl-screen {
+        left: 20%;
+    } 
+    @include sm-screen {
+        height: 40px;
+        width: 40px;
+    }  
+    @include  msm-screen {
+        bottom: 5%;
+    }
+}
+.star-shape-2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    background: hsl(var(--base)/.4);;
+    -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    @include sm-screen {
+        height: 40px;
+        width: 40px;
+    }  
+}
+.triangle-shape-1 {
+    position: absolute;
+    bottom: 20%;
+    right: 30%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid hsl(var(--base)/.4);
+    border-radius: 10px;
+    @include xl-screen {
+        right: 20%;
+    }   
+    @include sm-screen {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 40px solid hsl(var(--base)/0.4);
+        border-radius: 5px;
+    } 
+    @include  msm-screen {
+        bottom: 5%;
+    }
+}

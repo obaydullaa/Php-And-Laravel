@@ -1,0 +1,255 @@
+/*====================== Why choose ====================*/
+.why-choose-area.py-80 {
+    position: relative;
+    .why-choose-bg {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border: 40px solid hsl(var(--base)/0.4);
+        right: 20%;
+        top: 5%;
+        opacity: 0.2;
+        border-radius: 50%;
+        @include md-screen {
+            height: 100px;
+            width: 100px;
+            border: 20px solid hsl(var(--base)/0.4);
+        }
+    }
+}
+
+
+.why-choose-us {
+    &__thumb {
+        .img-1 {
+            border-radius: var(--border-radius);
+        }
+        position: relative;
+        .popup-vide-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .play-video {
+                height: 80px;
+                width: 80px;
+                line-height: 84px;
+                display: inline-block;
+                border-radius: 50%;
+                position: relative;
+                z-index: 3;
+                text-align: center;
+            }
+            .waves {
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                background: hsl(var(--base)/0.2);
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                border-radius: 50%;
+                right: -34px;
+                bottom: -35px;
+                z-index: 1;
+                -webkit-animation: waves 3s ease-in-out infinite;
+                animation: waves 3s ease-in-out infinite;
+            }
+        }
+    }
+    &__content {
+        @include md-screen {
+            padding-left: 0;
+        }
+       h3 {
+        font-size: 28px;
+        font-weight: 600; 
+        @include msm-screen {
+            font-size: 22px;
+        }
+       }
+    }
+    &__topic {
+        display: flex;
+        flex-direction: column;
+       .item {
+        margin-bottom: 15px;
+        .why-title-cont {
+            i {
+                color: hsl(var(--base));
+                font-size: 24px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                text-align: center;
+                background: hsl(var(--base)/.2);
+            }
+            .content {
+                width: calc(100% - 50px);
+                h4 {
+                    color: hsl(var(--black));
+                    font-weight: 700;
+                    font-size: 24px;
+                    margin-bottom: 3px;
+                }
+                p{
+                    width: 60%;
+                    @include md-screen {
+                        width: 80%;
+                    }
+                    @include xsm-screen {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+       }
+    }
+
+
+    .wave-1 {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+      
+      .wave-2 {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+      }
+      
+      .wave-3 {
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s;
+      }
+}
+
+
+/***
+=====================================================
+Counter One
+=====================================================
+***/
+.counter-one {
+    position: relative;
+    display: block;
+    padding: 0px 0px 60px;
+    z-index: 5;
+  }
+  
+  .counter-one__inner {
+    position: relative;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 117px;
+  }
+  
+  .counter-one__box {
+    position: relative;
+    display: block;
+  }
+  
+  .counter-one__single {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+  
+  .counter-one__single::before {
+    position: absolute;
+    top: -7px;
+    right: 0;
+    bottom: 0px;
+    background: #e1e1e1;
+    width: 1px;
+    content: "";
+  }
+  
+  .counter-one__box li.counter-one__single {
+    position: relative;
+    display: inline-block;
+    margin-right: 46px;
+    padding-right: 55px;
+  }
+  
+  .counter-one__box li:last-child.counter-one__single {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+  
+  .counter-one__single:last-child:before {
+    display: none;
+  }
+  
+  .counter-one__single-inner {
+    position: relative;
+    display: block;
+  }
+  
+  .counter-one__single-inner .icon-box {
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+  }
+  
+  .counter-one__single-inner .icon-box span:before {
+    position: relative;
+    display: inline-block;
+    color: var(--thm-gray);
+    font-size: 60px;
+    line-height: 60px;
+    transition-delay: 0.1s;
+    transition: all 500ms ease;
+  }
+  
+  .counter-one__single:hover .counter-one__single-inner .icon-box span:before {
+    transform: rotateY(180deg);
+    transition-delay: 0.1s;
+  }
+  
+  .counter-one__single-inner .content-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .counter-one__single-inner .content-box .left-text {
+    position: relative;
+    display: block;
+  }
+  
+  .counter-one__single-inner .content-box .left-text h2 {
+    position: relative;
+    color: var(--thm-black);
+    font-size: 80px;
+    line-height: 0.8em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  
+  .counter-one__single-inner .content-box .left-text h2 .letter {
+    position: relative;
+    display: inline-block;
+    left: -10px;
+  }
+  
+  .counter-one__single-inner .odometer.odometer-auto-theme,
+  .counter-one__single-inner .odometer.odometer-theme-default {
+    font-family: var(--thm-font-2);
+    line-height: 0.8em;
+  }
+  
+  .counter-one__single-inner .content-box .right-text {
+    position: relative;
+    display: block;
+    margin-left: 18px;
+  }
+  
+  .counter-one__single-inner .content-box .right-text h3 {
+    color: var(--thm-gray);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    text-transform: capitalize;
+  }
+  

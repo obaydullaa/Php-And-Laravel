@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/components/floating-input.scss"
+    ],
+    "names": [],
+    "file": "floating-input.css"
+}

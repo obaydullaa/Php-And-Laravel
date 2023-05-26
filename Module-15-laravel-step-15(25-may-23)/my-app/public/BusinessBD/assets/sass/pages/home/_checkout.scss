@@ -1,0 +1,21 @@
+/*====================== Checkout Page ====================*/
+.cuppon-accor {
+    span {
+        cursor: pointer;
+        transition: all .4s;
+        &:hover {
+            color: hsl(var(--base));
+        }
+    }
+}
+.product-card {
+    &__cupon {
+        span {
+            cursor: pointer;
+            transition: all .4s;
+            &:hover {
+                color: hsl(var(--base));
+            }
+        }
+    }
+}

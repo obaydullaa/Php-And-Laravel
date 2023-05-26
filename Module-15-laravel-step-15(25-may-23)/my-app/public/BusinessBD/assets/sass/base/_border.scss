@@ -1,0 +1,25 @@
+/*====================== Border Color ====================*/
+.border--base {
+    border-color: hsl(var(--base)) !important;
+}
+.border--primary {
+    border-color: hsl(var(--primary)) !important;
+}
+.border--secondary {
+    border-color: hsl(var(--secondary)) !important;
+}
+.border--success {
+    border-color: hsl(var(--success)) !important;
+}
+.border--danger {
+    border-color: hsl(var(--danger)) !important;
+}
+.border--warning {
+    border-color: hsl(var(--warning)) !important;
+}
+.border--info {
+    border-color: hsl(var(--info)) !important;
+}
+.border--violet {
+    border-color: hsl(var(--violet)) !important;
+}

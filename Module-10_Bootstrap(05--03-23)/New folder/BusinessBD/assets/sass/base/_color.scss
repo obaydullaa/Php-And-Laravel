@@ -1,0 +1,25 @@
+/*====================== Color Variable ====================*/
+.text--base {
+    color: hsl(var(--base)) !important;
+}
+.text--primary {
+    color: hsl(var(--primary)) !important;;
+}
+.text--secondary {
+    color: hsl(var(--secondary)) !important;;
+}
+.text--success {
+    color: hsl(var(--success)) !important;;
+}
+.text--danger {
+    color: hsl(var(--danger)) !important;;
+}
+.text--warning {
+    color: hsl(var(--warning)) !important;;
+}
+.text--info {
+    color: hsl(var(--info)) !important;;
+}
+.text--violet {
+    color: hsl(var(--violet)) !important;;
+}

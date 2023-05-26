@@ -1,0 +1,40 @@
+/*============== Search Form Start ==================*/
+.search-form {
+    margin-top: 50px;
+    border: 12px solid hsl(var(--white) / .15);
+    border-radius: 40px;
+    overflow: hidden;
+    @include msm-screen {
+        border-width: 7px;
+    }
+    .form--control {
+        background-color: hsl(var(--white));
+        color: hsl(var(--base-two));
+        border-radius: 0;
+        font-weight: 500;
+        border-radius: 40px;
+        padding: 15px;
+        padding-right: 150px; 
+        &::placeholder {
+            color: hsl(var(--black) / .4) !important;
+            font-weight: 500;
+        }
+    }
+    .btn--base {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        height: auto;
+        align-items: center;
+        border-radius: 40px !important;
+        padding: 10px 20px;
+        font-size: 15px;
+        &:hover, &:focus {
+            color: hsl(var(--white)); 
+            background-color: hsl(var(--base));
+        }
+    }
+}
+// ============== Search Form End ==================

@@ -1,0 +1,98 @@
+/*====================== Product Section ====================*/
+.product {
+    box-shadow: 0px 15px 30px rgb(61 90 125 / 8%);
+    border-radius: 20px;
+    padding: 20px 20px 27px;
+    border: 1px solid hsl(var(--base)/0.07);
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 10%);
+        border: 1px solid hsl(var(--base)/.4);
+        transform: translateY(-3px);
+    }
+    &__thumb {
+        margin-bottom: 25px;
+        border-radius: 10px;
+        img {
+            border-radius: 10px;
+        }
+    }
+    &__price-title {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid hsl(var(--base)/.2);
+        padding-bottom: 20px;
+        margin-bottom: 18px;
+        span {
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            i {
+                color: hsl(var(--base));
+                font-size: 16px;
+                font-weight: 800;
+            }
+            &:last-child {
+            font-size: 20px;
+        }
+        }
+        
+    }
+    &__title {
+        margin-bottom: 23px;
+        a {
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+    &__rating-view {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__rating-view {
+        .social-list__item {
+            margin-right: 5px;
+            font-size: 14px;
+            color: hsl(var(--base));
+        }
+        a {
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid hsl(var(--base)/.5);
+            padding: 3px 7px;
+            border-radius: 5px;
+            &:hover {
+                background-color: hsl(var(--base));
+                border: 1px solid hsl(var(--base));
+                color: hsl(var(--white));
+            }
+        }
+    }
+}
+
+
+.product-detials {
+    border: 1px solid hsl(var(--base)/0.1);
+    border-radius: 20px;
+    margin-right: 30px;
+    @include md-screen {
+        margin-right: 0px;
+    }
+    .product {
+        box-shadow: none;
+        border: 0;
+        padding-bottom: 0;
+        &:hover {
+            border: none;
+            transform: none;
+        }
+        &__thumb img {
+            border-radius: 10px;
+            width: 100%;
+        }
+        &.product__price-title {
+            padding-bottom: 25px;
+            margin-bottom: 27px;
+        }
+    }
+}
