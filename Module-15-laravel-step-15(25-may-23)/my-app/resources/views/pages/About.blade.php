@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @include('component.BreadCumb')
     @include('component.About')
     @include('component.WhatWeDo')
     @include('component.Experience')
