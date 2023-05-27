@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', ([HomeController::class, 'Home']));
+Route::get('/about', ([AboutController::class, 'About']));
+
 Route::get('/hello', function () {
     // return view('welcome');
     echo 'welcome';
