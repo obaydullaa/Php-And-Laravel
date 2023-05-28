@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', ([HomeController::class, 'Home']));
 Route::get('/about', ([AboutController::class, 'About']));
+Route::get('/blog', ([BlogController::class, 'blog']));
 
 Route::get('/hello', function () {
     // return view('welcome');
