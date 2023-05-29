@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/home', function () {
+    return redirect('/dashboard');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        // Profile route logic
+    });
+
+    Route::get('/settings', function () {
+        // Settings route logic
+    });
+
+    // Additional routes for authenticated users
+});
+
