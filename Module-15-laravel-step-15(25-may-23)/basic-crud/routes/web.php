@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/home', function () {
     return redirect('/dashboard');
 });
@@ -30,4 +30,5 @@ Route::middleware(['auth'])->group(function () {
 
     // Additional routes for authenticated users
 });
+Route::post('/contact', 'ContactController')->name('contact');
 
