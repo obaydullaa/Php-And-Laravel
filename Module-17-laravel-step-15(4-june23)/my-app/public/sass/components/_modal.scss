@@ -1,0 +1,54 @@
+/*====================== Modal Style ====================*/
+.custom--modal {
+    .modal-header {
+        border-bottom: 1px solid hsl(var(--black) / .08);
+        margin-bottom: 25px;
+        padding: 25px 25px 15px 25px;
+        &.close {
+            width: 35px;
+            height: 35px;
+            background-color: hsl(var(--danger));
+            font-size: 25px;
+            line-height: 1;
+            border-radius: 4px;
+            transition: .2s linear;
+            &:hover {
+                background-color: hsl(var(--danger-l-100));
+            }
+            :focus {
+                box-shadow: none;
+              }
+        } 
+    }
+    .modal-content {
+        text-align: center;
+        background-color: hsl(var(--base-two));
+        border-radius: 10px !important;
+    }
+   
+    .modal-body {
+    padding: 0 25px 25px;
+    }
+    .modal-icon i {
+        font-size: 32px;
+        color: hsl(var(--base)); 
+        border: 3px solid hsl(var(--base)); 
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 25px 15px;
+        border-top: 1px solid hsl(var(--black) / .08);
+        justify-content: flex-end;
+    }
+}
+  

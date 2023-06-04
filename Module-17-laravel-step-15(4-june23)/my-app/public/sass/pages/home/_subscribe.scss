@@ -1,0 +1,107 @@
+/*============= Breaking News =============*/
+.subscribe-section  {
+    position: relative;
+    z-index: 1;
+    &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: hsl(var(--dark)/.95);
+        top: 0;
+        left: 0;
+    }
+    .square-shape-1 {
+        right: 0;
+    }
+}
+.subscribe-wrap {
+    padding: 30px 70px 30px;
+    // border: 1px solid hsl(var(--base)/.2);
+    border-radius: 0px;
+    .banner-effect {
+        content: "";
+        position: absolute;
+        width: 215px;
+        height: 250px;
+        background: linear-gradient(43.32deg, hsl(var(--base-two)/.4) 14.73%, hsl(var(--base)/.3) 86.35%, hsl(var(--base)) 86.35%);
+        opacity: 0.8;
+        filter: blur(91px);
+        border-radius: 1% 50% 50% 0%;
+        z-index: 1;
+        @include sm-screen {
+            width: 190px;
+            height: 190px;
+            opacity: 0.8;
+            filter: blur(80px);
+        }
+    }
+    @include sm-screen {
+        padding: 40px;
+    }
+    @include xxsm-screen {
+        padding: 20px;
+    }
+    .section-heading__title {
+        @include md-screen {
+            font-size: 34px;
+        }
+        @include sm-screen {
+            font-size: 27px;
+        }
+        @include xsm-screen {
+            font-size: 22px;
+        }
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    &__input {
+        position: relative;
+        input {
+            height: 60px;
+            border-radius: 10px;
+            background-color:hsl(var(--base)/0.05);
+            padding-right: 70px;
+            color: hsl(var(--white)/.4);
+            &::placeholder {
+                color: hsl(var(--white)/.4);
+            }
+        }
+        .form--control:focus {
+            color: hsl(var(--white)/.4);
+        }
+        button {
+            position: absolute;
+            height: 100%;
+            width: 62px;
+            background-color: hsl(var(--base));
+            border-radius: 0px 0px 0px 0;
+            right: 0;
+            border-radius: 0px 10px 10px 0px;    
+        }
+    }
+}
+
+.subscribe-right {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        left: 0px;
+        bottom: 0px;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, hsl(var(--base)/.5) 100%);
+    }
+    .thumb{
+        img {
+            border-radius: var(--border-radius);
+        }
+    }
+
+}

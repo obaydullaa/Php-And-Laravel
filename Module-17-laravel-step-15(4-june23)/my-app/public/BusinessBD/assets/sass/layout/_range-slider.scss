@@ -1,0 +1,39 @@
+/*====================== Range Style ====================*/
+.custom--range {
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        label {
+            width: 40%;
+        }
+        input {
+            width: calc(100% - 40%);
+            text-align: right;
+        }
+    }
+    input {
+        border: 0;
+        color: hsl(var(--body-color));
+        font-weight: 500;
+    }
+    #slider-range {
+        height: 5px;
+        border: 0;
+        background: hsl(var(--base-two)/.2);
+        .ui-widget-header {
+            background-color: hsl(var(--base));
+        }
+        span:focus{
+            background-color: hsl(var(--base));
+        }
+        .ui-slider-handle {
+            width: 15px !important;
+            height: 15px !important;
+            background-color: hsl(var(--white)) !important;
+            border: 2px solid hsl(var(--base)) !important;
+            border-radius: 50%;
+        }
+    }
+}

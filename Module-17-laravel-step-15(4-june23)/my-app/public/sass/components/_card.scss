@@ -1,0 +1,20 @@
+
+.custom--card {
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    background-color: hsl(var(--white));;
+    border: transparent;
+    .card-body {
+        background-color: hsl(var(--white));;
+        padding: 30px;
+        border-radius: 5px;
+        &__icon {
+            font-size: 26px;
+            color: hsl(var(--white));;
+        }
+    }
+    .card-title {
+        font-size: 25px;
+    }
+}
+

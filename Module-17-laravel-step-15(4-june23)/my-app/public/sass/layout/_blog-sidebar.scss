@@ -1,0 +1,256 @@
+.blog-sidebar-wrapper {
+    position: sticky;
+    top: 100px;
+}
+/*============ Sidebar search box =============*/
+.search-box {
+    position: relative;
+    &__button {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: hsl(var(--base)); 
+    }
+}
+
+/*============ google-add-sidebar-1 =============*/
+.google-add-sidebar-1 {
+    height: 300px;
+    overflow: hidden;
+    max-width: 374px;
+    border-radius: 6px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+/*============ Auth box =============*/
+.blog-sidebar {
+    &__auth-thumb {
+        height: 120px;
+        width: 120px;
+        margin: auto;
+        margin-bottom: 20px;
+        img {
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__auth-content{
+        .social-list {
+            justify-content: center;
+        }
+        h4 {
+            margin-bottom: 10px;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+        
+    }
+}
+
+.social-list__item .social-list__link {
+    border: 1px solid hsl(var(--base)/0.4);
+    color: hsl(var(--dark));
+    &:hover {
+        color: hsl(var(--white));
+    }
+}
+/*================== Sidebar Box & Title ===================*/
+.blog-sidebar {
+    background: hsl(var(--base)/0.06);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    @include msm-screen {
+        padding: 20px 15px;
+    }
+    span.border {
+        display: block;
+        margin-bottom: 32px;
+        width: 100%;
+        height: 4px;
+        background: hsl(var(--base)/0.1);
+        border-radius: 30px;
+    }
+    .hr-line {
+        height: 4px;
+        width: 60px;
+        margin-top: 10px;
+        margin-left: 6px;
+        border-radius: 30px;
+        background-color: hsl(var(--base));
+        display: inline-block;
+    }
+
+    &__title {
+        position: relative;
+        color: hsl(var(--dark)) !important;
+        display: inline-block;
+        font-weight: 700;
+        margin-bottom: 25px;
+        font-size: 23px;
+    } 
+    &__sub-title {
+        font-size: 19px;
+        font-weight: 600;
+    }  
+}
+
+/*========================= Category & Tags List Style ========================= */
+
+.text-list {
+    margin: 0;
+    // Category
+    &.style-category {
+        .text-list__item {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            margin-bottom: 10px;
+            transition: all .5s linear;
+            border-radius: 5px;
+            &:hover:before{
+                opacity: 0.8;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: hsl(var(--dark));
+                opacity: .6;
+                z-index: 1;
+                transition: all .5s linear;
+            }
+            .thumb {
+                border-radius: 6px;
+                img {
+                    width: 100%;
+                    height: 70px;
+                    object-fit: cover;
+                }
+            }
+            a {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                height: 100%;
+                font-size: 17px;
+                font-weight: 600;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                z-index: 1;
+                padding: 0 20px;
+                color: hsl(var(--white)) !important;
+                justify-content: space-between;
+                span {
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 30px;
+                    margin-left: auto;
+                    background: hsl(var(--base));
+                    color: hsl(var(--white));
+                }
+            }
+        }
+        .text-list__link{
+            color: hsl(var(--dark)) !important;
+            &:hover {
+                color: hsl(var(--base)); 
+            }
+        }
+    }
+    /*====================== Tag Style ====================*/
+    &.style-tag {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: -7px;
+        .text-list__item {
+           padding: 7px;
+        }
+        .text-list__link{
+            color: hsl(var(--dark)); 
+            border: 1px solid hsl(var(--base) / .2); 
+            padding: 6px 20px;
+            border-radius: 3px;
+            &.active {
+                color: hsl(var(--white)); 
+                background-color: hsl(var(--base)); 
+                border-color: hsl(var(--base)); 
+            }
+            &:hover {
+                color: hsl(var(--white)); 
+                background-color: hsl(var(--base)); 
+                border-color: hsl(var(--base)); 
+            }
+        }
+
+    }
+}
+
+/*======================== Latest blog========================*/
+.latest-blog {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid hsl(var(--black)/.1);
+    &:last-of-type {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0;
+    }
+    &__thumb {
+        width: 80px;
+        max-height: 80px;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        @include xsm-screen {
+            width: 60px;
+        }
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        width: calc(100% - 80px);
+        padding-left: 15px;
+        @include xsm-screen {
+            width: calc(100% - 60px);
+        }
+    }
+    &__title {
+        margin-bottom: 5px;
+        a {
+            font-weight: 500;
+            font-size: 16px;
+            &:hover {
+                color: hsl(var(--base));
+            }
+        }
+    }
+}

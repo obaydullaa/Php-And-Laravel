@@ -1,0 +1,66 @@
+/*============= Custom cursor  start  =============*/
+.cursor-outer {
+    margin-left: -18px;
+    margin-top: -18px;
+    width: 35px;
+    height: 35px;
+    background: hsl(var(--base));
+    box-sizing: border-box;
+    z-index: 10000000;
+    opacity: .2;
+    transition: all 0.3s ease-out;
+  }
+  .mouseCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translateZ(0);
+    visibility: hidden;
+    text-align: center;
+  }
+  [dir=rtl] .mouseCursor {
+    left: 0;
+    right: auto;
+  }
+  .cursor-inner {
+    margin-left: -4px;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    z-index: 10000001;
+    background-color: hsl(var(--base));
+    transition: width 0.3s ease-in-out, 
+    height 0.3s ease-in-out, 
+    margin 0.3s ease-in-out, 
+    opacity 0.3s ease-in-out;
+  }
+  .cursor-inner span {
+    color:hsl(var(--white));
+    line-height: 80px;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  .cursor-inner.cursor-big span {
+    opacity: 1;
+  }
+  .mouseCursor.cursor-big {
+    width: 80px;
+    height: 80px;
+    margin-inline-start: -40px;
+    margin-top: -40px;
+  }
+  .mouseCursor.cursor-big.cursor-outer {
+    display: none;
+  }
+  .mouseCursor.cursor-big.d-none {
+    display: none;
+  }
+  .slider-drag .swiper-slide {
+    cursor: none;
+  }

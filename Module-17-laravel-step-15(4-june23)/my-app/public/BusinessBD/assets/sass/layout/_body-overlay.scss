@@ -1,0 +1,38 @@
+/*================================ Body Overlay Start ===========================*/ 
+.body-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: hsl(var(--black) / .6);
+    z-index: 2;
+    transition: .2s linear;
+    visibility: hidden;
+    opacity: 0;
+    &.show-overlay {
+        visibility: visible;
+        opacity: 0;
+    }
+}
+
+.sidebar-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: hsl(var(--black) / .6);
+    z-index: 99;
+    transition: .2s linear;
+    visibility: hidden;
+    opacity: 0;
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        z-index: 9;
+    }
+}
+// ================================= Body Overlay End =========================== 
