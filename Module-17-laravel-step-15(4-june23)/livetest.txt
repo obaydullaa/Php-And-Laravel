@@ -1,0 +1,25 @@
+Question
+==================
+Create a new migration file named "create_posts_table" that will be responsible for creating a table called "posts" in the database. The "posts" table should have the following columns:
+id: an auto-incrementing integer and primary key.
+title: a string column to store the post's title.
+content: a text column to store the post's content.
+user_id: an unsigned integer column to establish a foreign key relationship with the "id" column of the "users" table public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->text('content');
+            $table->unsignedInteger('user_id');
+
+            // Establishing foreign key relationship
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps();
+        });
+    }
+
+php artisan migrate   
+
+then all okay
+
