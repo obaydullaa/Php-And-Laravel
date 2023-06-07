@@ -12,11 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('city');
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->boolean('is_bangladesh');
+            $table->bigInteger('vote');
+            $table->binary('photo');
+            $table->char('name', length: 50);
+            $table->dateTime('voting__date_time');
+            $table->double('population');
+            $table->enum('group', ['A', 'B']);
         });
     }
 
