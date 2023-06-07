@@ -16,4 +16,4 @@ public function up(): void
             $table->double('population');
             $table->enum('group', ['A', 'B']);
         }); 
-    } 
+    }  
