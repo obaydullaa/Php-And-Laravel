@@ -15,5 +15,5 @@ public function up(): void
             $table->dateTime('voting__date_time');
             $table->double('population');
             $table->enum('group', ['A', 'B']);
-        });
-    }
+        }); 
+    } 
