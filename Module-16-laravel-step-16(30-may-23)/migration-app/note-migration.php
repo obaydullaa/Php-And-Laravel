@@ -17,3 +17,7 @@ public function up(): void
             $table->enum('group', ['A', 'B']);
         }); 
     }  
+
+/**
+* 47 [Migration] Working With Column Types
+*/
