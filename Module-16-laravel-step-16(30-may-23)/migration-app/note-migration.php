@@ -37,3 +37,21 @@ public function up(): void
     }
 
     php artisan migrate:refresh
+
+/**
+* 48 [Migration] Working With Column Types
+*/
+
+/**
+* 49 [Migration] Exploring Column Attributes
+* Exploring column attributes study
+*/
+
+
+
+
+
+
+
+
+
