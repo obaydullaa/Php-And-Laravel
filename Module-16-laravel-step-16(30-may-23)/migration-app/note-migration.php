@@ -21,3 +21,19 @@ public function up(): void
 /**
 * 47 [Migration] Working With Column Types
 */
+
+public function up(): void
+    {
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->id();
+            $table->float('dollar');
+            $table->geometryCollection('positions');
+            $table->geometry('positions_2');
+            $table->integer('populations');
+            $table->ipAddress('visitor');
+            $table->json('user_details');
+            $table->longText('blog_post');
+        });
+    }
+
+    php artisan migrate:refresh
