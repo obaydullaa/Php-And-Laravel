@@ -47,6 +47,10 @@ public function up(): void
 * Exploring column attributes study
 */
 
+/**
+* 50 [Migration] Working With Column Attributes
+*/
+
 
 
 
