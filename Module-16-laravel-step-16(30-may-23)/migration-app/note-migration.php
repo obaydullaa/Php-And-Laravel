@@ -57,6 +57,32 @@ public function up(): void
 */
 
 
+/**
+* 52 [Migration] Rename and Drop Table
+* command for migration
+*
+*
+*/
+
+php artisan make:migration rename_profiles
+
+public function up(): void
+    {
+        Schema::rename('profiles', 'new_profiles');
+    }
+
+php artisan migrate
+
+php artisan make:migration drop_new_profiles_table 
+
+public function up(): void
+    {
+        Schema::dropIfExists('new_profiles');
+    }
+
+    php artisan migrate
+
+
 
 
 
