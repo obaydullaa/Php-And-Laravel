@@ -52,6 +52,11 @@ public function up(): void
 */
 
 
+/**
+* 51 [Migration] Working With Column Attributes
+*/
+
+
 
 
 
