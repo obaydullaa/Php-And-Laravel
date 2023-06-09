@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->float('dollar');
-            $table->geometryCollection('positions');
-            $table->geometry('positions_2');
-            $table->integer('populations');
-            $table->ipAddress('visitor');
-            $table->json('user_details');
-            $table->longText('blog_post');
+            $table->string('email', length: 50);
+            $table->string('name', length: 50);
+            $table->string('city', length: 50);
+            $table->timestamps();
         });
     }
 

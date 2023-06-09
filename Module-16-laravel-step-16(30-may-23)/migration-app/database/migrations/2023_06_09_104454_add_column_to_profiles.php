@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('new_profiles');
+        Schema::table('profiles', function (Blueprint $table) {
+            $table->after('name', function(Blueprint $table){
+                $table->string('phone');
+                $table->string('gender');
+            });
+        });
     }
 
     /**
@@ -19,8 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('profiles', function (Blueprint $table) {
+            //
+        });
     }
 };
-
-

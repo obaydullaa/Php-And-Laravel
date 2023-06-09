@@ -60,8 +60,6 @@ public function up(): void
 /**
 * 52 [Migration] Rename and Drop Table
 * command for migration
-*
-*
 */
 
 php artisan make:migration rename_profiles
@@ -82,11 +80,19 @@ public function up(): void
 
     php artisan migrate
 
+/**
+*   53 [Migration] Adding new column to table
+*/
+php artisan make:migration add_column_to_profiles
 
+public function up(): void
+    {
+        Schema::table('profiles', function (Blueprint $table) {
+            $table->after('name', function(Blueprint $table){
+                $table->string('phone');
+                $table->string('gender');
+            });
+        });
+    }
 
-
-
-
-
-
-
+    php artisan migrate
