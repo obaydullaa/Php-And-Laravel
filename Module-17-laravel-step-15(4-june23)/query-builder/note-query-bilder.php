@@ -43,3 +43,13 @@ Route::get('categories', [DemoController::class, 'DemoAction']);
         return $results;
     }
 }
+
+// go to Kernel.php and VerifyCsrfToken comment..
+
+/**
+*  70 [Query] Retriving Single Rows
+*/
+// Retriving Single Rows
+
+    $results =  DB::table('brands')->pluck('brandImg', 'brandName');
+    return $results;
