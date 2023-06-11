@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Category_Controller;
+
+use App\Http\Controllers\DemoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('categories', [Category_Controller:: class, 'getCategory']);
+// Route::get('categories', [DemoController::class, 'GetCategory']);
+Route::get('categories', [DemoController::class, 'DemoAction']);
