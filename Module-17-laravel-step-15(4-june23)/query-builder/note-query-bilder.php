@@ -57,6 +57,21 @@ Route::get('categories', [DemoController::class, 'DemoAction']);
 /**
 * 71 [Query] Aggregates
 */
-// Retriving Single Rows
+//$results =  DB::table('products')->count(); // return how much column: result: 27
+    //    $results =  DB::table('products')->min('price');
+    //    $results =  DB::table('products')->max('price');
+    //    $results =  DB::table('products')->avg('price');
+       $results =  DB::table('products')->sum('price');
+       return $results;
+
+  
+/**
+* 72 [Query] Select Clauses
+*/
+//    $results =  DB::table('products')->select('title', 'price', 'stock', 'discount')->get();
+
+    $results =  DB::table('products')->select('title')->distinct()->get();
+       return $results;
+    
 
   

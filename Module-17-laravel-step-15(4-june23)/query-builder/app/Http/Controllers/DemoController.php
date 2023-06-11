@@ -28,7 +28,12 @@ class DemoController extends Controller
     //    $results =  DB::table('products')->min('price');
     //    $results =  DB::table('products')->max('price');
     //    $results =  DB::table('products')->avg('price');
-       $results =  DB::table('products')->sum('price');
+    //    $results =  DB::table('products')->sum('price');
+
+    //72 [Query] Select Clauses
+    //    $results =  DB::table('products')->select('title', 'price', 'stock', 'discount')->get();
+
+    $results =  DB::table('products')->select('title')->distinct()->get();
        return $results;
     }
 }
