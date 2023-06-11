@@ -19,7 +19,16 @@ class DemoController extends Controller
         // return $results;
 
         // retriving specific colum data
-        $results =  DB::table('brands')->pluck('brandImg', 'brandName');
-        return $results;
+        // $results =  DB::table('products')->min('brandImg', 'brandName');
+        // return $results;
+
+
+        // 71 [Query] Aggregates
+        //$results =  DB::table('products')->count(); // return how much column: result: 27
+    //    $results =  DB::table('products')->min('price');
+    //    $results =  DB::table('products')->max('price');
+    //    $results =  DB::table('products')->avg('price');
+       $results =  DB::table('products')->sum('price');
+       return $results;
     }
 }

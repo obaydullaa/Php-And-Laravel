@@ -53,3 +53,10 @@ Route::get('categories', [DemoController::class, 'DemoAction']);
 
     $results =  DB::table('brands')->pluck('brandImg', 'brandName');
     return $results;
+
+/**
+* 71 [Query] Aggregates
+*/
+// Retriving Single Rows
+
+  
