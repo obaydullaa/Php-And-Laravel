@@ -94,10 +94,11 @@ echo "Number of affected rows: " . $affectedRows;
 
 11.Explain the purpose and usage of the aggregate methods count(), sum(), avg(), max(), and min() in Laravel's query builder. Provide an example of each.
 
-Ans: yy
-
-
-
+Ans: 
+the count() method is used to retrieve the number of records that match the specified conditions. It can be used to count all records or apply conditions to count specific records.
+The sum() method is used to calculate the sum of a specific column in the table.
+The avg() method is used to calculate the average value of a specific column in the table.
+The min() method is used to retrieve the minimum value from a specific column in the table.
 
 
 
