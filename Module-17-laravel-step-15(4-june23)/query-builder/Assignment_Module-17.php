@@ -105,7 +105,26 @@ The min() method is used to retrieve the minimum value from a specific column in
 
 Ans:
 In Laravel's query builder, the whereNot() method is used to add a "WHERE NOT" clause to the query. It allows you to specify a condition that should not be met for the query to include a row in the result set. This method helps you retrieve records that do not match a specific condition.
+  example: 
+  $users = DB::table('users')
+            ->whereNot('status', '=', 'active')
+            ->orWhereNot('role', 'admin')
+            ->get();
 
 
+13.Explain the difference between the exists() and doesntExist() methods in Laravel's query builder. How are they used to check the existence of records?
 
+Ans:
+1. exists() Method:
+The exists() method is used to check if any records exist in the table that match a specified condition. It returns a boolean value, true if at least one record exists, and false otherwise. This method is typically used when you want to determine if there are any records that meet a specific condition.
+example: 
+$hasActiveUsers = DB::table('users')
+                   ->where('status', 'active')
+                   ->exists();
 
+2. doesntExist() Method:
+The doesntExist() method is the inverse of exists(). It checks if no records exist in the table that match a specified condition. It returns a boolean value, true if no records exist, and false if there is at least one matching record. This method is useful when you want to ensure that no records satisfy a given condition.
+
+$noInactiveUsers = DB::table('users')
+                    ->where('status', 'inactive')
+                    ->doesntExist();
