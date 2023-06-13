@@ -101,10 +101,10 @@ The avg() method is used to calculate the average value of a specific column in 
 The min() method is used to retrieve the minimum value from a specific column in the table.
 
 
+12.Describe how the whereNot() method is used in Laravel's query builder. Provide an example of its usage.
 
-
-
-
+Ans:
+In Laravel's query builder, the whereNot() method is used to add a "WHERE NOT" clause to the query. It allows you to specify a condition that should not be met for the query to include a row in the result set. This method helps you retrieve records that do not match a specific condition.
 
 
 
