@@ -128,3 +128,22 @@ The doesntExist() method is the inverse of exists(). It checks if no records exi
 $noInactiveUsers = DB::table('users')
                     ->where('status', 'inactive')
                     ->doesntExist();
+
+
+14.Write the code to retrieve records from the "posts" table where the "min_to_read" column is between 1 and 5 using Laravel's query builder. Store the result in the $posts variable. Print the $posts variable.
+
+Ans:
+$posts = DB::table('posts')
+            ->whereBetween('min_to_read', [1, 5])
+            ->get();
+
+print_r($posts);
+
+15.Write the code to increment the "min_to_read" column value of the record with the "id" of 3 in the "posts" table by 1 using Laravel's query builder. Print the number of affected rows.
+
+Ans:
+$affectedRows = DB::table('posts')
+                ->where('id', 3)
+                ->increment('min_to_read', 1);
+
+echo "Number of affected rows: " . $affectedRows;
