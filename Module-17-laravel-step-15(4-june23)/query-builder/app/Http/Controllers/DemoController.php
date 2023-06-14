@@ -33,7 +33,17 @@ class DemoController extends Controller
     //72 [Query] Select Clauses
     //    $results =  DB::table('products')->select('title', 'price', 'stock', 'discount')->get();
 
-    $results =  DB::table('products')->select('title')->distinct()->get();
+    // $results =  DB::table('products')->select('title')->distinct()->get();
+    //    return $results;
+    // }
+
+    // 74 [Query] Inner Join
+
+    $results =  DB::table('products')
+    ->join('categories', 'products.category_id', '=', 'categories.id')
+    ->join('brands', 'products.brand_id', '=', 'categories.id')
+    ->get();
+
        return $results;
     }
 }

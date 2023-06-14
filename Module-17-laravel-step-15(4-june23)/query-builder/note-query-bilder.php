@@ -72,11 +72,13 @@ Route::get('categories', [DemoController::class, 'DemoAction']);
     $results =  DB::table('products')->select('title')->distinct()->get();
        return $results;
 
-/**
-* 73 [Query] Understading JOIN
-*/
 * Inner Join 
 * =================
 * The name of the table to Join // Tble name 
 * The column on the current table to join on // Parent table foren key
 * The column on the joined table to join on  // child table primary key
+
+/**
+* 74 [Query] Inner Join
+*/
+
