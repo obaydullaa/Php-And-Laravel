@@ -40,8 +40,7 @@ class DemoController extends Controller
     // 74 [Query] Inner Join
 
     $results =  DB::table('products')
-    ->join('categories', 'products.category_id', '=', 'categories.id')
-    ->join('brands', 'products.brand_id', '=', 'categories.id')
+    ->crossJoin( 'brands')
     ->get();
 
        return $results;

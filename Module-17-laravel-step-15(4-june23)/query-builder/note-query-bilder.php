@@ -82,3 +82,25 @@ Route::get('categories', [DemoController::class, 'DemoAction']);
 * 74 [Query] Inner Join
 */
 
+$results =  DB::table('products')
+    ->join('categories', 'products.category_id', '=', 'categories.id')
+    ->join('brands', 'products.brand_id', '=', 'categories.id')
+    ->get();
+
+    return $results;
+
+/**
+* 76 [Query] Cross Join
+*/
+
+$results =  DB::table('products')
+    ->crossJoin( 'brands')
+    ->get();
+
+       return $results;
+    
+
+
+
+
+
