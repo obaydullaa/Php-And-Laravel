@@ -90,6 +90,17 @@ $results =  DB::table('products')
     return $results;
 
 /**
+* 75 [Query] Left Right
+*/
+$results =  DB::table('products')
+    ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
+    ->rightJoin('brands', 'products.category_id', '=', 'categories.id')
+    ->get();
+
+       return $results;
+
+
+/**
 * 76 [Query] Cross Join
 */
 

@@ -37,10 +37,11 @@ class DemoController extends Controller
     //    return $results;
     // }
 
-    // 74 [Query] Inner Join
+    // 75 [Query] Left Right
 
     $results =  DB::table('products')
-    ->crossJoin( 'brands')
+    ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
+    ->rightJoin('brands', 'products.category_id', '=', 'categories.id')
     ->get();
 
        return $results;
