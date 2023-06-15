@@ -108,8 +108,22 @@ $results =  DB::table('products')
     
 /**
 * 77 [Query] Advanced Join Clauses
+* discus
+*/
+    
+/**
+* 78 [Query] Advance Join Clauses
+*
 */
 
+$results = DB::table('products')
+    ->join('categories', function ($join) {
+        $join->on('products.category_id', '=', 'categories.id')
+            // ->where('products.price', '=', 2000);
+            ->where('categories.categoryName', '=', 'Food');
+    })
+    ->get();
 
+    return $results;
 
 

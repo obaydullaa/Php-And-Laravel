@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -37,13 +38,16 @@ class DemoController extends Controller
     //    return $results;
     // }
 
-    // 75 [Query] Left Right
+    // 78 [Query] Advance Join Clauses
 
-    $results =  DB::table('products')
-    ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
-    ->rightJoin('brands', 'products.category_id', '=', 'categories.id')
+    $results = DB::table('products')
+    ->join('categories', function ($join) {
+        $join->on('products.category_id', '=', 'categories.id')
+            // ->where('products.price', '=', 2000);
+            ->where('categories.categoryName', '=', 'Food');
+    })
     ->get();
 
-       return $results;
+    return $results;
     }
 }
