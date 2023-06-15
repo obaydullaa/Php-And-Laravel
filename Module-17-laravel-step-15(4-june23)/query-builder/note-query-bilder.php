@@ -100,17 +100,15 @@ $results =  DB::table('products')
        return $results;
 
 
-/**
-* 76 [Query] Cross Join
-*/
-
 $results =  DB::table('products')
     ->crossJoin( 'brands')
     ->get();
 
        return $results;
     
-
+/**
+* 77 [Query] Advanced Join Clauses
+*/
 
 
 
