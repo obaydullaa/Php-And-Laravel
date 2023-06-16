@@ -59,10 +59,12 @@ class DemoController extends Controller
 
  // ======================================
 
-        $results = DB::table('brands')->skip(2)->take(2)->get();
+        $results = DB::table('products')
+        ->groupBy('title')
+        ->where('price', '>',  30)
+        
+        ->get();
 
-        // $results = DB::table('brands')->oldest()->first();
-        // $results = DB::table('brands')->latest()->first();
 
         return $results;
 

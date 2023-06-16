@@ -230,3 +230,14 @@ $results = DB::table('brands')->inRandomOrder()->first();
 * 86 [Query] Latest Oldest Skip Take
 */
 
+$results = DB::table('brands')->skip(2)->take(2)->get();
+
+// $results = DB::table('brands')->oldest()->first();  // need some time pagination
+// $results = DB::table('brands')->latest()->first(); // need some time pagination
+
+return $results;
+
+/**
+* 87 [Query] Group By And Having
+* Note: database.php -> and 'strict' => true, will be false 
+*/
