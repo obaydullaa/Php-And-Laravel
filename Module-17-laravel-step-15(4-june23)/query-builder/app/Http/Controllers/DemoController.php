@@ -59,11 +59,10 @@ class DemoController extends Controller
 
  // ======================================
 
-        $results = DB::table('products')
-        ->whereColumn('price', '<', 'discount_price')
-
-        // ->whereColumn('updated_at', '<', 'created_at')
-        ->get();
+        $results = DB::table('brands')->inRandomOrder()->first();
+        // $results = DB::table('brands')->inRandomOrder()->get();
+        // $results = DB::table('brands')->orderBy('brandName', 'desc')->get();
+        // $results = DB::table('brands')->orderBy('brandName', 'asc')->get();
 
         return $results;
 
