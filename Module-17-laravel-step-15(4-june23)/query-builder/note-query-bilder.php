@@ -117,7 +117,7 @@ $results =  DB::table('products')
 */
 
 $results = DB::table('products')
-    ->join('categories', function ($join) {
+    ->join('categories', function (JoinClause $join) {
         $join->on('products.category_id', '=', 'categories.id')
             // ->where('products.price', '=', 2000);
             ->where('categories.categoryName', '=', 'Food');
@@ -127,3 +127,14 @@ $results = DB::table('products')
     return $results;
 
 
+    
+/**
+* 79 [Query] Unions
+*
+*/
+$query1 = DB::table('products')->where('products.price', '>', 2000);
+    $query2 = DB::table('products')->where('products.discount', '=', 1);
+    
+   $results = $query1->union($query2)->get();
+
+    return $results;
