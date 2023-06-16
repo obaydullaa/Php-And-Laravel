@@ -59,18 +59,11 @@ class DemoController extends Controller
 
  // ======================================
 
-        $results = DB::table('brands')
-        ->whereDate('created_at', '2023-02-09')
-        // ->whereDate('updated_at', '2023-06-17')
-        
-        
-        // ->whereYear('updated_at', '2023')
-        // ->whereDay('updated_at', '11')
-        // ->whereMonth('updated_at', '11')
-            
-            // ->whereNotNull('products.price')
-            // ->whereNull('products.price')
-            ->get();
+        $results = DB::table('products')
+        ->whereColumn('price', '<', 'discount_price')
+
+        // ->whereColumn('updated_at', '<', 'created_at')
+        ->get();
 
         return $results;
 

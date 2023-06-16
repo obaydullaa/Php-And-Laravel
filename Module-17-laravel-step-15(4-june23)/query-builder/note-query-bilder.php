@@ -205,3 +205,13 @@ $results = DB::table('brands')
             ->get();
 
         return $results;
+
+/**
+* 84 [Query] Advance Where Clauses ( column )
+*/
+
+$results = DB::table('products')
+        ->whereColumn('price', '<', 'discount_price')
+
+        // ->whereColumn('updated_at', '<', 'created_at')
+        ->get();
