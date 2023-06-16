@@ -130,7 +130,6 @@ $results = DB::table('products')
     
 /**
 * 79 [Query] Unions
-*
 */
 $query1 = DB::table('products')->where('products.price', '>', 2000);
     $query2 = DB::table('products')->where('products.discount', '=', 1);
@@ -138,3 +137,10 @@ $query1 = DB::table('products')->where('products.price', '>', 2000);
    $results = $query1->union($query2)->get();
 
     return $results;
+
+/**
+* 80 [Query] Basic Where Clauses
+*/
+
+
+    

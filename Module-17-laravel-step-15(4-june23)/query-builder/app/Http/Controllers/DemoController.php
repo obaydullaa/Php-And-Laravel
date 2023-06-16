@@ -50,21 +50,22 @@ class DemoController extends Controller
 
     // return $results;
 
-    // 79 [Query] Unions
-
-    $query1 = DB::table('products')->where('products.price', '>', 2000);
-    $query2 = DB::table('products')->where('products.discount', '=', 1);
+//     $query1 = DB::table('products')->where('products.price', '>', 2000);
+//     $query2 = DB::table('products')->where('products.discount', '=', 1);
     
-   $results = $query1->union($query2)->get();
+//    $results = $query1->union($query2)->get();
 
-    return $results;
+//     return $results;
 
+ // 80 [Query] Basic Where Clauses
 
-
-
-
-
-
+        $results = DB::table('products')
+            ->whereNotIN('products.price',[20, 4000])
+            // ->whereIN('products.price',[20, 4000])
+            // ->where('products.title', 'NOT LIKE', '%Ca%')
+            // ->where('products.title', 'LIKE', '%Ca%')
+            ->get();
+        return $results;
 
     }
 }
