@@ -187,6 +187,21 @@ $results = DB::table('products')
             // ->whereNull('products.price')
             ->get();
 
+/**
+* 83 [Query] Advance Where Clauses
+*/
 
+$results = DB::table('brands')
+        ->whereDate('created_at', '2023-02-09')
+        // ->whereDate('updated_at', '2023-06-17')
+        
+        
+        // ->whereYear('updated_at', '2023')
+        // ->whereDay('updated_at', '11')
+        // ->whereMonth('updated_at', '11')
+            
+            // ->whereNotNull('products.price')
+            // ->whereNull('products.price')
+            ->get();
 
-    
+        return $results;

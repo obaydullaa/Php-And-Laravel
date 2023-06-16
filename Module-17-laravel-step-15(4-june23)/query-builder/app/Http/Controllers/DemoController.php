@@ -57,16 +57,16 @@ class DemoController extends Controller
 
 //     return $results;
 
- // 81 [Query] Advance Where Clauses
+ // ======================================
 
-        $results = DB::table('products')
-        ->whereTime('updated_at', '15:56:30')
+        $results = DB::table('brands')
+        ->whereDate('created_at', '2023-02-09')
+        // ->whereDate('updated_at', '2023-06-17')
         
         
         // ->whereYear('updated_at', '2023')
         // ->whereDay('updated_at', '11')
         // ->whereMonth('updated_at', '11')
-        // ->whereDate('updated_at', '2023-06-17')
             
             // ->whereNotNull('products.price')
             // ->whereNull('products.price')
