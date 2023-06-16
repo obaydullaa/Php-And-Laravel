@@ -226,4 +226,7 @@ $results = DB::table('brands')->inRandomOrder()->first();
         // $results = DB::table('brands')->orderBy('brandName', 'asc')->get();
 
         return $results;
-        
+/**
+* 86 [Query] Latest Oldest Skip Take
+*/
+
