@@ -171,4 +171,22 @@ $results = DB::table('products')
 
         return $results;
         
+/**
+* 82 [Query] Advance Where Clauses
+*/
+$results = DB::table('products')
+        ->whereTime('updated_at', '15:56:30')
+        
+        
+        // ->whereYear('updated_at', '2023')
+        // ->whereDay('updated_at', '11')
+        // ->whereMonth('updated_at', '11')
+        // ->whereDate('updated_at', '2023-06-17')
+            
+            // ->whereNotNull('products.price')
+            // ->whereNull('products.price')
+            ->get();
+
+
+
     

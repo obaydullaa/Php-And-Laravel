@@ -60,20 +60,17 @@ class DemoController extends Controller
  // 81 [Query] Advance Where Clauses
 
         $results = DB::table('products')
-            ->whereNotBetween('products.price', [1, 2000])
+        ->whereTime('updated_at', '15:56:30')
+        
+        
+        // ->whereYear('updated_at', '2023')
+        // ->whereDay('updated_at', '11')
+        // ->whereMonth('updated_at', '11')
+        // ->whereDate('updated_at', '2023-06-17')
+            
+            // ->whereNotNull('products.price')
+            // ->whereNull('products.price')
             ->get();
-
-            // ->whereBetween('products.price', [1, 80])
-            // ->get();
-
-            // ->where('products.price', '>', 2000)
-            // ->WhereNot('products.price', '=', 20)
-            // ->get();
-
-
-            // ->where('products.price', '>', 2000)
-            // ->orWhere('products.price', '=', 20)
-            // ->get();
 
         return $results;
 
