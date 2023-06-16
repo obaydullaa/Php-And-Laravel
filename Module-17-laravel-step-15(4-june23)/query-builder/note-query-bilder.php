@@ -142,5 +142,33 @@ $query1 = DB::table('products')->where('products.price', '>', 2000);
 * 80 [Query] Basic Where Clauses
 */
 
+$results = DB::table('products')
+            ->whereNotIN('products.price',[20, 4000])
+            // ->whereIN('products.price',[20, 4000])
+            // ->where('products.title', 'NOT LIKE', '%Ca%')
+            // ->where('products.title', 'LIKE', '%Ca%')
+            ->get();
+        return $results;
+/**
+*81 [Query] Advance Where Clauses
+*/
 
+$results = DB::table('products')
+            ->whereNotBetween('products.price', [1, 2000])
+            ->get();
+
+            // ->whereBetween('products.price', [1, 80])
+            // ->get();
+
+            // ->where('products.price', '>', 2000)
+            // ->WhereNot('products.price', '=', 20)
+            // ->get();
+
+
+            // ->where('products.price', '>', 2000)
+            // ->orWhere('products.price', '=', 20)
+            // ->get();
+
+        return $results;
+        
     
