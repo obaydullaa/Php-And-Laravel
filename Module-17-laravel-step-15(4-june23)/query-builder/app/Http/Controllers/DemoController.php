@@ -13,8 +13,9 @@ class DemoController extends Controller
     {
 
         $results = DB::table('brands')
-           ->where('id', '=', $request->id)
-            ->update($request->input());
-            return $results;
+          ->updateOrInsert(
+            ['brandName'=> $request->bName],
+            $request->input()
+          );
     }
 }

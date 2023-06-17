@@ -306,6 +306,22 @@ $results = DB::table('brands')
     ->where('id', '=', $request->id)
     ->update($request->input());
     return $results;
+/**
+* 91 [Query] Update or Insert
+*/
+<!-- api   -->
+Route::post('/upsert/{bName}', [DemoController::class, 'DemoAction']);
+
+<!-- postman   -->
+postman route: http://127.0.0.1:8000/api/upsert/NewBrand
+{
+"brandName":"New Brand Name Postman",
+"brandImg": "New Brand Img"
+}
 
 
-    
+$results = DB::table('brands')
+          ->updateOrInsert(
+            ['brandName'=> $request->bName],
+            $request->input()
+          );
