@@ -261,3 +261,31 @@ $results = DB::table('brands')
         );
 
 return $results;
+
+/**
+* 89 [Query] Insert Query
+*/
+<!-- api.php  -->
+Route::post('/insert', [DemoController::class, 'DemoAction']);
+
+<!-- post man post request  -->
+http://127.0.0.1:8000/api/insert
+
+<!-- // controller -->
+$results = DB::table('brands')
+        ->insert($request->input());
+            return $results;
+
+<!-- another way  -->
+// postman 
+{
+"name":"BBBName From Postman",
+"img":"BBBBimg from Postman"
+}
+
+$results = DB::table('brands')
+    ->insert([
+        'brandName'=>$request->input('name'),
+        'brandImg'=>$request->input('img')
+    ]);
+    return $results;
