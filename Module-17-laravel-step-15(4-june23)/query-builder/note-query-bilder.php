@@ -241,3 +241,23 @@ return $results;
 * 87 [Query] Group By And Having
 * Note: database.php -> and 'strict' => true, will be false 
 */
+    $results = DB::table('products')
+        ->groupBy('title')
+        ->where('price', '>',  30)
+        
+        ->get();
+
+        return $results;
+
+/**
+* 88 [Query] Insert Query
+*/
+$results = DB::table('brands')
+    ->insert(
+        [
+            'brandImg' => 'Demo Brand Img',
+            'brandName' => 'Demo Brand Name'
+        ]
+        );
+
+return $results;

@@ -59,12 +59,13 @@ class DemoController extends Controller
 
  // ======================================
 
-        $results = DB::table('products')
-        ->groupBy('title')
-        ->where('price', '>',  30)
-        
-        ->get();
-
+        $results = DB::table('brands')
+            ->insert(
+                [
+                    'brandImg' => 'Demo Brand Img',
+                    'brandName' => 'Demo Brand Name'
+                ]
+                );
 
         return $results;
 
