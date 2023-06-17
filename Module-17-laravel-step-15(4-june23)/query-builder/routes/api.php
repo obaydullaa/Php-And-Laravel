@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/insert', [DemoController::class, 'DemoAction']);
+Route::post('/insert/{id}', [DemoController::class, 'DemoAction']);

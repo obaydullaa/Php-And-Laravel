@@ -289,3 +289,23 @@ $results = DB::table('brands')
         'brandImg'=>$request->input('img')
     ]);
     return $results;
+
+/**
+* 90 [Query] Update Query
+*/
+<!-- postman  -->
+http://127.0.0.1:8000/api/insert/3
+{
+"brandName":"New Brand Name Postman"
+}
+
+Route::post('/insert/{id}', [DemoController::class, 'DemoAction']);
+
+<!-- controller  -->
+$results = DB::table('brands')
+    ->where('id', '=', $request->id)
+    ->update($request->input());
+    return $results;
+
+
+    

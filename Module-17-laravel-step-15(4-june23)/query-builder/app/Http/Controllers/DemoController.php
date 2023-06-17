@@ -13,11 +13,8 @@ class DemoController extends Controller
     {
 
         $results = DB::table('brands')
-        ->insert([
-            'brandName'=>$request->input('name'),
-            'brandImg'=>$request->input('img')
-        ]);
-
+           ->where('id', '=', $request->id)
+            ->update($request->input());
             return $results;
     }
 }
