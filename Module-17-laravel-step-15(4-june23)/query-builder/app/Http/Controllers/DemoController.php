@@ -11,11 +11,13 @@ class DemoController extends Controller
 {
     public function DemoAction(Request $request)
     {
+        $results = DB::table('brands')
+        ->where('id', $request->id)
+          ->delete();
 
-        $results = DB::table('products')
-          ->where('id', $request->id)
-          ->decrement('price', 2);
-        //   ->increment('price', 5);
-        //   ->increment('price');
+        // delete all table 
+        $deletedTable = DB::table('user')->truncate();
+        return $deletedTable;
+
     }
 }

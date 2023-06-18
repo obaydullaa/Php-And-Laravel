@@ -346,4 +346,22 @@ public function DemoAction(Request $request)
 /**
 * 93 [Query] Delete Query
 */
-    
+http://127.0.0.1:8000/api/delete/8
+
+
+Route::post('/delete/{id}', [DemoController::class, 'DemoAction']);
+
+class DemoController extends Controller
+{
+    public function DemoAction(Request $request)
+    {
+        $results = DB::table('brands')
+        ->where('id', $request->id)
+          ->delete();
+
+        // delete all table 
+        $deletedTable = DB::table('user')->truncate();
+        return $deletedTable;
+
+    }
+}

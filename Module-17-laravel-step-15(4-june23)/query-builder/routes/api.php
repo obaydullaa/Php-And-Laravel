@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/increment/{id}', [DemoController::class, 'DemoAction']);
+Route::post('/delete/{id}', [DemoController::class, 'DemoAction']);
