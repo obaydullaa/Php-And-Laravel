@@ -321,7 +321,7 @@ postman route: http://127.0.0.1:8000/api/upsert/NewBrand
 
 
 $results = DB::table('brands')
-          ->updateOrInsert(
-            ['brandName'=> $request->bName],
-            $request->input()
-          );
+    ->updateOrInsert(
+    ['brandName'=> $request->bName],
+    $request->input()
+    );
