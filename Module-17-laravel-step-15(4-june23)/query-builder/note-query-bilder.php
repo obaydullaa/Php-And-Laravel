@@ -329,4 +329,21 @@ $results = DB::table('brands')
 /**
 * 92 [Query] Increment Decrement
 */
- 
+http://127.0.0.1:8000/api/increment/1
+
+Route::post('/increment/{id}', [DemoController::class, 'DemoAction']);
+
+public function DemoAction(Request $request)
+    {
+
+        $results = DB::table('products')
+          ->where('id', $request->id)
+          ->decrement('price', 2);
+        //   ->increment('price', 5);
+        //   ->increment('price');
+    }
+
+/**
+* 93 [Query] Delete Query
+*/
+    
