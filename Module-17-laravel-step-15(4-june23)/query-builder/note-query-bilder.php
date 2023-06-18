@@ -325,3 +325,8 @@ $results = DB::table('brands')
     ['brandName'=> $request->bName],
     $request->input()
     );
+
+/**
+* 92 [Query] Increment Decrement
+*/
+ 

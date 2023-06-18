@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/upsert/{bName}', [DemoController::class, 'DemoAction']);
+Route::post('/increment/{id}', [DemoController::class, 'DemoAction']);
