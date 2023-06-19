@@ -15,6 +15,34 @@
     $('.header-button').trigger('click');
   });
 
+  /*============== Add and remove active class ========*/
+    // Get all the nav-links inside the navbar
+    const navLinks = $('#navbar .nav-link');
+
+    // Add click event handler to each nav-link
+    navLinks.on('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      removeActiveClass(); // Remove active class from all nav-links
+      $(this).addClass('active'); // Add active class to the clicked nav-link
+      // Store the active nav-link in sessionStorage to remember the state after reload
+      sessionStorage.setItem('activeNavLink', $(this).attr('href'));
+      // Navigate to the clicked link
+      window.location.href = $(this).attr('href');
+    });
+
+    // Remove active class from all nav-links
+    function removeActiveClass() {
+      navLinks.removeClass('active');
+    }
+
+    // Check if there is a stored active nav-link and add active class on page load
+    const storedActiveNavLink = sessionStorage.getItem('activeNavLink');
+    if (storedActiveNavLink) {
+      removeActiveClass();
+      const activeNavLink = $(`#navbar .nav-link[href="${storedActiveNavLink}"]`);
+      activeNavLink.addClass('active');
+    }
+
 
 /*============== Button Effect  Js ========*/
 $('.btn').on('mouseenter', function (e) {
