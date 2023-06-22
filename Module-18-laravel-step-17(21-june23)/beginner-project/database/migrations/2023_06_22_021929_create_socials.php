@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('twitter', 300);
+            $table->string('githubLink', 300);
+            $table->string('linkedinLink', 300);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

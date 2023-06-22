@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('heroproperties', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('keyLine', 100);
+            $table->string('title', 100);
+            $table->string('short_title', 100);
+            $table->string('img', 100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
