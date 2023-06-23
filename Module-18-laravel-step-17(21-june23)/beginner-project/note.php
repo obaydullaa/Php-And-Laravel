@@ -58,3 +58,9 @@ Schema::create('resumes', function (Blueprint $table) {
     $table->timestamp('created_at')->useCurrent();
     $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 });
+
+php artisan make:controller 
+php artisan make:controller ContactController
+php artisan make:controller HomeController
+php artisan make:controller ProjectController
+php artisan make:controller ResumeController
