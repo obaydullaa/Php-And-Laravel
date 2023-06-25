@@ -64,3 +64,11 @@ php artisan make:controller ContactController
 php artisan make:controller HomeController
 php artisan make:controller ProjectController
 php artisan make:controller ResumeController
+
+create method...
+
+Route create and test use postman..
+
+Step 2:
+    views file create...
+    

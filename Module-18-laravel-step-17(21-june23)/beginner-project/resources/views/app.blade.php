@@ -15,14 +15,14 @@
 
     <body class="d-flex flex-column h-100">
 
+    @include('components.navbar')
+    @include('components.loader')
 
+    <div class="" id="content-div">
+        @yield('content')
+    </div>
 
-
-
-
-
-
-
+    @include('components.footer')
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
