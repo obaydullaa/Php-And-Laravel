@@ -43,7 +43,7 @@
 
 <script>
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit',(event)=>{
+    contactForm.addEventListener('submit',async (event)=>{
         event.preventDefault();
 
         let name = document.getElementById('name').value;
@@ -57,7 +57,34 @@
             alert('Email Is Required');
         }else if(phone.length === 0){
             alert('Phone Is Required');
-        } 
+        } else {
+            let fromData = {
+                fullName:name,
+                email:email,
+                phone:phone,
+                message:msg,
+            }
+
+            let URL="/contactRequest";
+            // Loder show content hide
+            document.getElementById('loading-div').classList.remove('d-none')
+            document.getElementById('content-div').classList.add('d-none')
+
+            let result = await axios.post(URL, fromData);
+
+            // Loder hide content show
+            document.getElementById('loading-div').classList.add('d-none')
+            document.getElementById('content-div').classList.remove('d-none')
+
+
+            if(result.status === 200 && result.data ===1){
+                alert('Your Request Data has been submitted successfuly.');
+                contactForm.reset();
+            }else {
+                contactForm.alert('Something is wrong..');
+            }
+
+        }
 
 
 
