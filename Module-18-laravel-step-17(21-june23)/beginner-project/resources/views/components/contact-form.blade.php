@@ -32,11 +32,37 @@
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
                             <label for="message">Message</label>
                         </div>
-                        </div>
                         <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit',(event)=>{
+        event.preventDefault();
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+        let msg = document.getElementById('message').value;
+
+        if(name.length === 0){
+            alert('Name Is Required');
+        }else if(email.length === 0){
+            alert('Email Is Required');
+        }else if(phone.length === 0){
+            alert('Phone Is Required');
+        } 
+
+
+
+    })
+
+
+
+</script>
