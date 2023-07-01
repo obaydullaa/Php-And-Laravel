@@ -21,7 +21,4 @@ class HomeController extends Controller
         return DB::table('socials')->get();
     }
 
-
-
-
 }
