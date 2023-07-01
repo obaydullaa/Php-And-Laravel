@@ -165,6 +165,149 @@ class ResumeController extends Controller
 }
 
 
-Step 2:
-    views file create...
-    
+/**
+ * 11 Step 05 Back End Testing
+ * testing use postman
+ */
+
+ /**
+  * 12 Step 6 Blade Component Design
+  *
+  */
+
+  <!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>MR-X</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+    <script src="{{asset('js/axios.min.js')}}"></script>
+</head> 
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+
+        @include('components.navbar')
+        @include('components.loader')
+
+        <div class="" id="content-div">
+            @yield('content')
+        </div>
+
+        @include('components.footer')
+
+
+        <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+</body>
+ 
+</html>
+
+
+/**
+ * 3 Step 7 HTML to Blade Conversion
+ * html cut and past component
+ */
+
+
+ /**
+ * 14 Step 8 Ajax Call
+ */
+
+ <!-- contact-form.blade.php  -->
+ <script>
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit',async (event)=>{
+        event.preventDefault();
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+        let msg = document.getElementById('message').value;
+
+        if(name.length === 0){
+            alert('Name Is Required');
+        }else if(email.length === 0){
+            alert('Email Is Required');
+        }else if(phone.length === 0){
+            alert('Phone Is Required');
+        } else {
+            let fromData = {
+                fullName:name,
+                email:email,
+                phone:phone,
+                message:msg,
+            }
+
+            let URL="/contactRequest";
+            // Loder show content hide
+            document.getElementById('loading-div').classList.remove('d-none')
+            document.getElementById('content-div').classList.add('d-none')
+
+            let result = await axios.post(URL, fromData);
+
+            // Loder hide content show
+            document.getElementById('loading-div').classList.add('d-none')
+            document.getElementById('content-div').classList.remove('d-none')
+
+
+            if(result.status === 200 && result.data ===1){
+                alert('Your Request Data has been submitted successfuly.');
+                contactForm.reset();
+            }else {
+                contactForm.alert('Something is wrong..');
+            }
+        }
+    })
+
+</script>
+
+/**
+* 15 Step 8 Ajax Call
+*/
+<!-- project-list.blade.php   -->
+
+<script>
+    getProjectList();
+    async function getProjectList () {
+        let URL="/projectsData"; 
+
+        try{
+            
+            // Loder show content hide
+            document.getElementById('loading-div').classList.remove('d-none')
+            document.getElementById('content-div').classList.add('d-none')
+
+            const response = await axios.get(URL);
+
+            // Loder hide content show
+            document.getElementById('loading-div').classList.add('d-none')
+            document.getElementById('content-div').classList.remove('d-none')
+
+            response.data.forEach((item)=>{
+                
+                document.getElementById('project-list').innerHTML+=(`<div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                    <div class="card-body p-0">
+                        <div class="d-flex align-items-center">
+                            <div class="p-5">
+                                <h2 class="fw-bolder">${item['title']}</h2>
+                                <p>${item['details']}</p>
+                                <a class="text-decoration-none" target="_blank" href="${item['previewLink']}">View Projec</a>
+                            </div>
+                            <img class="w-100" src="${item['thumbnailLink']}" alt="..." />
+                        </div>
+                    </div>
+                </div>`)
+            })
+        }catch(error){
+            alert(error);
+        }
+    }
+
+</script>

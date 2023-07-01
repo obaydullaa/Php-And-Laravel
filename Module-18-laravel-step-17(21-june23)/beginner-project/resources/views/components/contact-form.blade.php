@@ -83,13 +83,8 @@
             }else {
                 contactForm.alert('Something is wrong..');
             }
-
         }
-
-
-
     })
-
 
 
 </script>
