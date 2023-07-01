@@ -311,3 +311,28 @@ class ResumeController extends Controller
     }
 
 </script>
+
+
+/**
+* 16 Step 8 Ajax Call
+* 
+*/
+<!-- languages.blade.php  -->
+<script>
+        LanguagesList();
+        async function LanguagesList() {
+            try {
+                let URL="/languageData";
+                let response = await axios.get(URL);
+
+                response.data.forEach((item)=>{
+                    document.getElementById('skill-list').innerHTML +=(`<div class="col mb-4 mb-md-0">
+                                    <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">${item['name']}</div>
+                                </div>`)
+                })
+            } catch(error) {
+                alert(error); 
+            }
+        }
+    </script>
+
