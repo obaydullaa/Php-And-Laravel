@@ -9,8 +9,8 @@
             <!-- Experience Section-->
             <section>
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                    <a class="btn btn-primary px-4 py-3" href="#!">
+                    <h2 class="text-primary fw-bolder mb-0" >Experience</h2>
+                    <a target="_blank" class="btn btn-primary px-4 py-3" id="CVDwonloadLink"  href="">
                         <div class="d-inline-block bi bi-download me-2"></div>
                         Download Resume
                     </a>
@@ -27,6 +27,45 @@
 </div>
    
 <script>
+    
+//     getResumeLink();
+//     async function getResumeLink() {
+//     try {
+//         let URL="/resumeLink";
+//         let response = await axios.get(URL);
+//         let link=response.data['downloadLink'];
+//         document.getElementById('CVDwonloadLink').setAttribute('href',link);
+//     } catch (error) {
+//         alert(error);
+//     }
+
+//  }
+    getResumeLink();
+    async function getResumeLink() {
+            try {
+                let URL="/resumeLink";
+                document.getElementById('loading-div').classList.remove('d-none');
+                document.getElementById('content-div').classList.add('d-none');
+                debugger;
+                
+                let response = await axios.get(URL);
+                let link=response.data['downloadLink'];
+                document.getElementById('CVDwonloadLink').setAttribute('href',link);
+            }
+            catch (e) {
+                alert(e)
+            }
+    }
+
+
+
+
+
+
+
+
+
+
     GetExpList();
 
     async function GetExpList() {

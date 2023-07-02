@@ -22,8 +22,8 @@
 </div>
    
 <script>
-    getEducList()
 
+    getEducList()
     async function getEducList() {
         try{
             let URL = "/educationData";
