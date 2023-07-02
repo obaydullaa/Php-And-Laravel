@@ -336,3 +336,7 @@ class ResumeController extends Controller
         }
     </script>
 
+    /**
+    * 17 Step 8 Ajax Call
+    */
+
