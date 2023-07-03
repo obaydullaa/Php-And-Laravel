@@ -47,7 +47,7 @@
                 document.getElementById('loading-div').classList.remove('d-none');
                 document.getElementById('content-div').classList.add('d-none');
                 debugger;
-                
+
                 let response = await axios.get(URL);
                 let link=response.data['downloadLink'];
                 document.getElementById('CVDwonloadLink').setAttribute('href',link);
@@ -56,15 +56,6 @@
                 alert(e)
             }
     }
-
-
-
-
-
-
-
-
-
 
     GetExpList();
 

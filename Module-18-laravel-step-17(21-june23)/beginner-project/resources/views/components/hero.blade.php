@@ -23,3 +23,17 @@
         </div>
     </div>
 </header>
+<script>
+    GetHero();
+    async function GetHero() {
+        try{
+            let URL = "/heroData";
+            let response = await axios.get(URL)
+
+        } catch(error) {
+            alert(error);
+        }
+    }
+
+
+</script>
