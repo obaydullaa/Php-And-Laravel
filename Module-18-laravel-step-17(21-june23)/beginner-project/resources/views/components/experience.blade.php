@@ -42,19 +42,19 @@
 //  }
     getResumeLink();
     async function getResumeLink() {
-            try {
-                let URL="/resumeLink";
-                document.getElementById('loading-div').classList.remove('d-none');
-                document.getElementById('content-div').classList.add('d-none');
-                debugger;
+        try {
+            let URL="/resumeLink";
+            document.getElementById('loading-div').classList.remove('d-none');
+            document.getElementById('content-div').classList.add('d-none');
+            debugger;
 
-                let response = await axios.get(URL);
-                let link=response.data['downloadLink'];
-                document.getElementById('CVDwonloadLink').setAttribute('href',link);
-            }
-            catch (e) {
-                alert(e)
-            }
+            let response = await axios.get(URL);
+            let link=response.data[0]['downloadLink'];
+            document.getElementById('CVDwonloadLink').setAttribute('href',link);
+        }
+        catch (e) {
+            alert(e)
+        }
     }
 
     GetExpList();
