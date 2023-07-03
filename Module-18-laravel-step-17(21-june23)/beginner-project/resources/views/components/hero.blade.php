@@ -23,6 +23,7 @@
         </div>
     </div>
 </header>
+
 <script>
     GetHero();
     async function GetHero() {
@@ -40,6 +41,4 @@
             alert(error);
         }
     }
-
-
 </script>

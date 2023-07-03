@@ -445,3 +445,32 @@ class ResumeController extends Controller
     }
 
 </script>
+
+/**
+* 18 Step 8 Ajax Call
+*/
+
+<!-- hero.blade.php  -->
+
+<script>
+    GetHero();
+    async function GetHero() {
+        try{
+            let URL = "/heroData";
+            let response = await axios.get(URL)
+            console.log(response.data)
+            console.log(response.data['keyLine'])
+            document.getElementById('key-line').innerHTML= response.data[0]['keyLine'];
+            document.getElementById('short-title').innerHTML= response.data[0]['short_title'];
+            document.getElementById('title').innerHTML= response.data[0]['title'];
+            document.getElementById('hero-img').src= response.data[0]['img'];
+
+        } catch(error) {
+            alert(error);
+        }
+    }
+</script>
+
+/**
+* 19 Step 8 Ajax Call
+*/
