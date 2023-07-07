@@ -20,7 +20,6 @@
 
 
 <script>
-
     GetAboutDetails()
     async function GetAboutDetails() {
 
@@ -55,7 +54,5 @@
             alert(error);
         }
     }
-
-
 
 </script>
