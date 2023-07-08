@@ -515,5 +515,21 @@ class ResumeController extends Controller
 /**
 * 20 Step 9 SEO Properties
 */
+<!-- same as other pages ->Home,  Project, resume, Contact -->
+$seo = DB::table('seoproperties')->where('pageName', '=', 'home')->first();
+return view('pages.home',['seo'=> $seo]);
+
+function page(Request $request) {
+        $seo = DB::table('seoproperties')->where('pageName', '=', 'home')->first();
+        return view('pages.home',['seo'=> $seo]);
+    }
 
 
+<meta name="description" content="{{$seo->description}}" />
+    <meta name="keywords" content="{{$seo->keywords}}" />
+    <meta name="og:site_name" content="{{$seo->ogSiteName}}" />
+    <meta name="og:Url" content="{{$seo->ogUrl}}" />
+    <meta name="og:Description" content="{{$seo->ogDescription}}" />
+    <meta name="og:image" content="{{$seo->ogImage}}" />
+
+    <title>{{$seo->title}}</title>
