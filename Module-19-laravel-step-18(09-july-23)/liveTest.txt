@@ -1,3 +1,12 @@
 Question
 
 Create a new model called 'User' that extends the Eloquent Model class. The table name associated with this model should be 'users'.Define the fillable properties for the 'User' model. The fillable properties should include 'name', 'email', and 'password'. 
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    protected $table = 'users';
+
+    protected $fillable = ['name', 'email', 'password'];
+}
