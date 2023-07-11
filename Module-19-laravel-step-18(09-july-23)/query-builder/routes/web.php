@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 
 // Route::get('categories', [DemoController::class, 'GetCategory']);
-Route::get('categories', [DemoController::class, 'DemoAction']);
+
+Route::get('/', [DemoController::class, 'DemoAction']);
