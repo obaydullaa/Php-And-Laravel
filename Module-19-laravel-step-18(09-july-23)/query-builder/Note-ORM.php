@@ -50,3 +50,7 @@ class Brand extends Model
 {
     protected $fillable = ['brandName','brandImg'];
 }
+
+/**
+* 98 [ORM] Update
+*/

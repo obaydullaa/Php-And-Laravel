@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/create-band', [DemoController::class, 'DemoAction']);
+Route::post('/update-brand/{id}', [DemoController::class, 'DemoAction']);
