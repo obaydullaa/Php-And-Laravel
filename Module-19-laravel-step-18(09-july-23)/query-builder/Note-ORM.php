@@ -75,9 +75,35 @@ Route::post('/update-brand/{id}', [DemoController::class, 'DemoAction']);
 /**
 *  99 [ORM] Why Fillable Properties
 */
+
 Because:
  1. Security
  2. Performance
  3. Readability
  4. Consistency
  5. Extensibility
+
+/**
+*  100 [ORM] Update or Create
+*/
+class Brand extends Model
+{
+    protected $fillable = ['brandName','brandImg'];
+}
+
+class DemoController extends Controller
+{
+    public function DemoAction(Request $request)
+    {
+    //    return Brand::create($request->input()); // create 
+    //    return Brand::where('id', $request->id)->Update($request->input()); // updated
+       return Brand::updateOrCreate(
+        ['brandName'=> $request->brandName],
+        $request->input()
+
+       ); // updated or create
+
+    }
+}
+
+Route::post('/create-update-brand/{brandName}', [DemoController::class, 'DemoAction']);

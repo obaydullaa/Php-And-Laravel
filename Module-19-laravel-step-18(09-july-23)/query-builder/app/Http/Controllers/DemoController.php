@@ -10,7 +10,12 @@ class DemoController extends Controller
     public function DemoAction(Request $request)
     {
     //    return Brand::create($request->input()); // create 
-       return Brand::where('id', $request->id)->Update($request->input()); // updated
+    //    return Brand::where('id', $request->id)->Update($request->input()); // updated
+       return Brand::updateOrCreate(
+        ['brandName'=> $request->brandName],
+        $request->input()
+
+       ); // updated or create
 
     }
 }
