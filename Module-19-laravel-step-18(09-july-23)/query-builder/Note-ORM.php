@@ -54,3 +54,30 @@ class Brand extends Model
 /**
 * 98 [ORM] Update
 */
+class Brand extends Model
+{
+    protected $fillable = ['brandName','brandImg'];
+}
+
+class DemoController extends Controller
+{
+    public function DemoAction(Request $request)
+    {
+    //    return Brand::create($request->input()); // create 
+       return Brand::where('id', $request->id)->Update($request->input()); // updated
+
+    }
+}
+
+Route::post('/update-brand/{id}', [DemoController::class, 'DemoAction']);
+
+
+/**
+*  99 [ORM] Why Fillable Properties
+*/
+Because:
+ 1. Security
+ 2. Performance
+ 3. Readability
+ 4. Consistency
+ 5. Extensibility
