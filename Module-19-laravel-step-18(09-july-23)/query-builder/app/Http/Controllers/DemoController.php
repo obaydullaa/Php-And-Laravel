@@ -11,11 +11,13 @@ class DemoController extends Controller
     {
     //    return Brand::create($request->input()); // create 
     //    return Brand::where('id', $request->id)->Update($request->input()); // updated
-       return Brand::updateOrCreate(
-        ['brandName'=> $request->brandName],
-        $request->input()
+    //    return Brand::updateOrCreate(
+    //     ['brandName'=> $request->brandName],
+    //     $request->input()
 
-       ); // updated or create
+    //    ); // updated or create
+
+    return Brand::where('id', $request->id)->delete();
 
     }
 }

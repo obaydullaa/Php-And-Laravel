@@ -97,6 +97,7 @@ class DemoController extends Controller
     {
     //    return Brand::create($request->input()); // create 
     //    return Brand::where('id', $request->id)->Update($request->input()); // updated
+    
        return Brand::updateOrCreate(
         ['brandName'=> $request->brandName],
         $request->input()
@@ -107,3 +108,29 @@ class DemoController extends Controller
 }
 
 Route::post('/create-update-brand/{brandName}', [DemoController::class, 'DemoAction']);
+
+/**
+*  101 [ORM] Delete
+*/
+
+class Brand extends Model
+{
+    protected $fillable = ['brandName','brandImg'];
+}
+
+class DemoController extends Controller
+{
+    public function DemoAction(Request $request)
+    {
+    //    return Brand::create($request->input()); // create 
+    //    return Brand::where('id', $request->id)->Update($request->input()); // updated
+    //    return Brand::updateOrCreate(
+    //     ['brandName'=> $request->brandName],
+    //     $request->input()
+
+    //    ); // updated or create
+
+    return Brand::where('id', $request->id)->delete();
+
+    }
+}
