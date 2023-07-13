@@ -1,0 +1,260 @@
+/*====================== Table Style ====================*/
+.table {
+	margin: 0;
+	font-size: 15px;
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	thead {
+		tr {
+			th {
+				background-color: hsl(var(--base) / .1); 
+				text-align: center;
+				font-size: 15px;
+				padding: 15px 20px;
+				color: hsl(var(--dark)); 
+				font-family: var(--heading-font);
+				font-weight: 500;
+                border: 1px solid hsl(var(--base)/0.1);
+				max-width: 170px;
+				&:first-child {
+					text-align: left;
+					border-radius: 0px 0 0 0;
+					border-right: 0;
+				}
+				&:last-child {
+					border-radius: 0 0px 0 0;
+					text-align: right;
+					border-left: 0;
+				}
+			}
+		}
+	}
+	tbody {
+		border: 0 !important;
+        // background-color: hsl(var(--black)); 
+		color: hsl(var(--dark)); 
+		border: 1px solid hsl(var(--base)/0.1);
+		tr {
+			&:nth-child(even) {
+				background-color: hsl(var(--base)/0.02);
+                border-bottom: 1px solid  hsl(var(--dark) / .06);
+			}
+			&:last-child {
+				td {
+					&:first-child {
+						border-radius: 0 0 0px 5px;
+						border-right: 0;
+					}
+					&:last-child {
+						border-radius: 0 0 5px 0;
+						border-left: 0;
+					}
+				}
+			}
+			td {
+				vertical-align: middle;
+				padding: 20px 15px;
+				border-width: 1px;
+                border: 0;
+				font-family: var(--heading-font);
+                color: hsl(var(--dark)); 
+				max-width: 170px;
+				text-align: center;
+				border: 1px solid hsl(var(--base)/0.1);
+				img {
+					width: 100px;
+				}
+				&::before {
+					content: attr(data-label);
+					font-family: var(--heading-font);
+					font-size: 15px;
+					color: hsl(var(--dark)); 
+					font-weight: 500;
+					display: none;
+                    width: 50% !important;
+                    text-align: left;
+				}
+				&:first-child {
+					text-align: left;
+				}
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+.table--responsive--md {
+    @include sm-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+	@include sm-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}
+.table--responsive--lg {
+    @include md-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+					    display: block;
+					}
+				}
+			}
+		}
+    }
+    // @include md-screen {
+    //     tbody {
+	// 		tr {
+	// 			td {
+	// 				border: none;
+	// 			}
+	// 		}
+	// 	}
+    // }
+}
+.table--responsive--xl {
+    @include lg-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+    
+    @include lg-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}
+.table--responsive--xl {
+    @include xl-screen {
+        thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: block;
+				td {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 35px;
+					text-align: right;
+					padding: 10px 15px;
+					border: none;
+					border-bottom: 1px solid hsl(var(--black) / .08);  
+					max-width: unset;
+					&:last-child {
+						border: none;
+					}
+					&:first-child {
+						text-align: right;
+					}
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+    }
+    
+    @include xl-screen {
+        tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+    }
+}
+
+.table-wrapper {
+	@include md-screen {
+		.table--responsive--lg tbody tr td {
+			display: block;
+		}
+	}
+}

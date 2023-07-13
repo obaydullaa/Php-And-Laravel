@@ -1,0 +1,103 @@
+/*================== Dark Style Color ==================*/
+ /*===== Dark and light logo hide and show =====*/
+ .logo-wrapper .normal-logo {
+    display: block;
+    &.hidden {
+        display: none;
+    }
+}
+ .logo-wrapper .dark-logo {
+    display: block;
+    &.hidden {
+        display: none;
+    }
+}
+
+.footer-item {
+    &__logo {
+        .footer-logo-normal {
+            display: block;
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}
+.footer-item {
+    &__logo {
+        .footer-logo-dark {
+            display: block;
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}
+
+/* ========== light and dark button style ==========*/
+.light-dark-btn-wrap {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    // position: fixed;
+    // top: 14%;
+    z-index: 7;
+    cursor: pointer;
+    @include lg-screen {
+        margin-left: 20px;
+    }
+    .light-dark-checkbox {
+        display: none;
+        opacity: 0;
+    }
+    .light-dark-label {
+        width: 33px;
+        height: 14px;
+        background-color: hsl(var(--black));
+        display: flex;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        position: relative;
+        transform: scale(1.5);
+        cursor: pointer;
+    }
+    .fa-moon {
+        color: hsl(var(--black));
+        font-size: 9px;
+        margin-bottom: 1px;
+    }
+    .ball {
+        width: 12px;
+        height: 12px;
+        background-color: hsl(var(--white));
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+}
+  
+  /* light and dark mood changes*/
+  .light-dark-checkbox:checked + .light-dark-label .ball {
+    transform: translateX(15px);
+  }
+
+  .light-dark-btn-wrap {
+    .sun-icon  {
+        display: none;
+        color: hsl(var(--white));
+        &.show {
+            display: block;
+        }
+    }
+    .mon-icon {
+        font-size: 16px;
+        color: hsl(var(--black));
+        &.show {
+            display: none;
+        }
+    }
+  }

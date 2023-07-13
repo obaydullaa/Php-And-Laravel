@@ -1,0 +1,23 @@
+.error-wrap {
+    img {
+        background: hsl(var(--danger));
+    }
+    &__title {
+        margin-bottom: 0;
+    }
+    &__desc {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+}  
+
+.error__text {
+    span {
+        font-size: 75px;
+        font-weight: 800; 
+    }
+}
+
+.error__text span:nth-child(2) {
+    color: red;
+}
