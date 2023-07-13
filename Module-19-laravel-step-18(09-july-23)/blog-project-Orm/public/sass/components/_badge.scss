@@ -1,0 +1,47 @@
+/*====================== Bage Color ====================*/
+.badge{
+    border-radius:30px;
+    padding: 4px 15px;
+    font-size: 11px;
+    font-weight: 500;
+    &--base {
+        background-color: hsl(var(--base) / .1) !important; 
+        border: 1px solid hsl(var(--base)) !important;
+        color: hsl(var(--base)) !important;
+    }
+    &--primary {
+        background-color: hsl(var(--primary) / .1) !important; 
+        border: 1px solid hsl(var(--primary)) !important;
+        color: hsl(var(--primary)) !important;
+    }
+    &--secondary {
+        background-color: hsl(var(--secondary) / .1) !important; 
+        border: 1px solid hsl(var(--secondary)) !important;
+        color: hsl(var(--secondary)) !important;
+    }
+    &--success {
+        background-color: hsl(var(--success) / .1) !important; 
+        border: 1px solid hsl(var(--success)) !important;
+        color: hsl(var(--success)) !important;
+    }
+    &--danger {
+        background-color: hsl(var(--danger) / .1) !important; 
+        border: 1px solid hsl(var(--danger)) !important;
+        color: hsl(var(--danger)) !important;
+    }
+    &--warning {
+        background-color: hsl(var(--warning) / .1) !important; 
+        border: 1px solid hsl(var(--warning)) !important;
+        color: hsl(var(--warning)) !important;
+    }
+    &--info {
+        background-color: hsl(var(--info) / .1) !important; 
+        border: 1px solid hsl(var(--info)) !important;
+        color: hsl(var(--info)) !important;
+    }
+    &--violet {
+        background-color: hsl(var(--violet) / .1) !important; 
+        border: 1px solid hsl(var(--violet)) !important;
+        color: hsl(var(--violet)) !important;
+    }
+}

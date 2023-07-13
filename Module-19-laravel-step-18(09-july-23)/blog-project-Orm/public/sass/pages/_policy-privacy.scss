@@ -1,0 +1,122 @@
+/*=================== Left Css =========*/
+
+.policy-left {
+    position: sticky;
+    top: 100px;
+    &__wrapper {
+        background-color: hsl(var(--white) / .2);
+        padding: 45px 20px !important;
+        border-radius: 5px;
+        @include md-screen {
+           padding: 30px 10px !important;
+        }
+        @include sm-screen {
+           padding: 35px 15px !important;
+        }
+    }
+    .nav-link {
+        padding: 0px ;
+        margin: 5px 0;
+        &:hover {
+            color: hsl(var(--base));
+        }
+    }
+    &__list {
+        color: hsl(var(--white));
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+        padding-left: 10px !important;
+        &.active {
+            background-color: transparent !important;
+            color: hsl(var(--base)) !important;
+            &::before {
+                background-color: hsl(var(--base));
+            }
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 3px;
+            height: 70%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: hsl(var(--white));
+        }
+    }
+    &__item {
+        color: hsl(var(--body-color));
+        span {
+            font-size: 13px;
+            margin-right: 10px;
+        }
+        &.active {
+            color: hsl(var(--base)) !important;
+            background-color: transparent !important;
+        }
+    }
+}
+
+// Right Css
+.policy-right {
+    &__list {
+        margin-top: 30px;
+        @include sm-screen {
+            margin-top: 20px;
+        }
+    }
+}
+
+.policy-card {
+    background-color: hsl(var(--white) / .2);
+    padding: 25px;
+    border-radius: 5px;
+    @include md-screen {
+        padding: 20px;
+    }
+    @include sm-screen {
+        padding: 15px;
+    }
+    &:not(:last-child) {
+        margin-bottom: 50px;
+        @include md-screen {
+            margin-bottom: 40px;
+        }
+        @include sm-screen {
+            margin-bottom: 40px;
+        }
+        @include msm-screen {
+            margin-bottom: 30px;
+        }
+    }
+  
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__desc {
+        margin-bottom: 30px;
+        @media (max-width: 757px) {
+            margin-bottom: 20px;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*============** Term Of Service **============*/
+.single-terms {
+    h3 {
+      font-size: 30px;
+      font-weight: 500;
+      position: relative;
+      border-bottom: 1px solid hsl(var(--base));
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+    }
+    p{
+      margin-bottom: 15px;
+    }
+  }
+  

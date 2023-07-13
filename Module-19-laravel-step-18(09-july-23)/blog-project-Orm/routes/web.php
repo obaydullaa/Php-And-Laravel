@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/', 'blogPage')->name('home');
+    Route::get('blog/details/{id}', 'blogDetail')->name('blog.details');
+
+    // Ajax Route 
+    Route::get('/allBlog', 'allBlog');
+    Route::get('/comment', 'comment');
+
+
 });

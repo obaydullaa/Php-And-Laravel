@@ -1,0 +1,97 @@
+/*==================== Category Start Here ==================== */
+
+.category-wrap {
+    padding-right: 40px;
+    @include lg-screen {
+        padding-right: 0;
+    }
+}
+.category-item{
+    border-bottom: 1px solid hsl(var(--base)/0.1);
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    @include sm-screen {
+        flex-direction: column;
+        margin-bottom: 37px;
+    }
+    &:hover {
+        .category-item__thumb img {
+            transform: scale(1.2);
+        }
+    }
+    &__thumb {
+        overflow: hidden;
+        margin-bottom: 30px;
+        position: relative;
+        border-radius: 17px;
+        min-width: 280px;
+        height: 200px;
+        img {
+            min-width: 280px;
+            height: 200px;
+            object-fit: cover;
+            transform: scale(1);
+            transition: all .5s linear;
+        }
+    }
+    &__content  {
+        padding-left: 20px;
+        margin-top: -7px;
+        @include sm-screen {
+            padding-left: 0px;
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            a {
+                background-image: linear-gradient(to right, hsl(var(--base)) 0%, hsl(var(--base)) 100%);
+                background-position: 0 calc(100% - 0.02em);
+                background-size: 0 2px;
+                transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+                padding: 0;
+                display: inline;
+                background-repeat: no-repeat;
+                box-sizing: border-box;
+                &:hover {
+                    background-size: 100% 2px;
+                    color: inherit;
+                }
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    }
+} 
+
+.meta-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    .view-commetn-wrap {
+        li {
+            a {
+                font-size: 14px;
+                &.right-dot {
+                    position: relative;
+                    margin-left: 20px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: -16px;
+                        top: 8px;
+                        width: 7px;
+                        height: 7px;
+                        background: hsl(var(--black));
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

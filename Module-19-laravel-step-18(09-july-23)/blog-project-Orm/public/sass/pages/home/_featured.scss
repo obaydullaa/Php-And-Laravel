@@ -1,0 +1,48 @@
+/* =================== Featured Start Here ==================== */
+
+.single-featured {
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        left: -11px;
+        bottom: -20px;
+        background-color: hsl(var(--base));
+        z-index: 2;
+        border-radius: 50%;
+        transition: all .5s;
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__thumb {
+        text-align: right;
+        img {
+            transform: scale(1);
+            transition: all .4s ease-in-out;
+        }
+    }
+    &:hover {
+        .single-featured  {
+            &__thumb  {
+            img {
+                transform: scale(1.3);
+            }
+
+            }
+        }
+        &::before {
+            height: 100px;
+            width: 100px;
+        }
+
+    }
+}
