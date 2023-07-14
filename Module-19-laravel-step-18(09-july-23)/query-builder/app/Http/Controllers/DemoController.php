@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class DemoController extends Controller
@@ -17,7 +18,9 @@ class DemoController extends Controller
 
     //    ); // updated or create
 
-    return Brand::where('id', $request->id)->delete();
+    // return Brand::where('id', $request->id)->delete();
+
+    return Product::where('id', 1)->increment('price'); // default 1+-
 
     }
 }

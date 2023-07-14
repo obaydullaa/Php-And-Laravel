@@ -134,3 +134,13 @@ class DemoController extends Controller
 
     }
 }
+
+/**
+*  102 [ORM] Increment Decrement
+*/
+public function DemoAction(Request $request)
+    {
+
+    return Product::where('id', 1)->increment('price'); // default 1+-
+
+    }
