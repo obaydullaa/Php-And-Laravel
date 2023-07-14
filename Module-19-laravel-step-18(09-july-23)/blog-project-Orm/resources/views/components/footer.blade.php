@@ -1,5 +1,5 @@
 <!-- ==================== Subscribe Here ==================== -->
-<section class="subscribe-section py-80 bg-img" style="background-image: url(assets/images/subscribe/subscribe-bg.jpg);">
+{{-- <section class="subscribe-section py-80 bg-img" style="background-image: url(assets/images/subscribe/subscribe-bg.jpg);">
     <div class="container">
         <div class="row  gy-4 justify-content-center align-items-center">
             <div class="col-lg-7">
@@ -79,11 +79,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ==================== Subscribe Here ==================== -->
 
 <!--========================== Coverage Section Start ==========================-->
-<div class="client py-60 ">
+{{-- <div class="client py-60 ">
     <div class="container">
         <div class="client-logos client-slider">
             <img src="assets/images/2__brands/client-01.png" alt="">
@@ -95,7 +95,7 @@
             <img src="assets/images/2__brands/client-03.png" alt="">
         </div>
     </div>
-</div>
+</div> --}}
 <!--========================== Coverage Section End ==========================-->
 
 <!-- Footer -->

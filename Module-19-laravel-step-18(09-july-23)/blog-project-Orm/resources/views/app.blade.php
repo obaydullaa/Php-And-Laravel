@@ -61,13 +61,14 @@
     <!-- ==================== Scroll to Top End Here ==================== -->
 
 
+
+
     @include('components.header')
 
     @yield('content')
-
     @include('components.footer')
 
-
+    {{-- @yield('script') --}}
 
 
     <!-- Jquery js -->
@@ -89,6 +90,7 @@
 
     <!-- main js -->
     <script src="{{ asset('js/main.js') }}"></script>
+    
 </body>
 
 </html>
