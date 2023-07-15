@@ -144,3 +144,22 @@ public function DemoAction(Request $request)
     return Product::where('id', 1)->increment('price'); // default 1+-
 
     }
+
+/**
+*  103 [ORM] Retrieving All Rows
+*/
+class DemoController extends Controller
+{
+    public function DemoAction(Request $request)
+    {
+
+    //  return Brand::get(); //retrieving all data 
+    //  return Brand::all(); //retrieving all data 
+    // return Brand::first(); //retrieving all data 
+    
+    return Brand::find(1); //retrieving all data 
+
+
+    }
+}
+    

@@ -20,7 +20,13 @@ class DemoController extends Controller
 
     // return Brand::where('id', $request->id)->delete();
 
-    return Product::where('id', 1)->increment('price'); // default 1+-
+    // return Product::where('id', 1)->increment('price'); // default 1+-
+
+    //  return Brand::get(); //retrieving all data 
+    //  return Brand::all(); //retrieving all data 
+    // return Brand::first(); //retrieving all data 
+    return Brand::find(1); //retrieving all data 
+
 
     }
 }
