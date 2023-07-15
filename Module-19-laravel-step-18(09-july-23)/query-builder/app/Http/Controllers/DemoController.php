@@ -33,7 +33,9 @@ class DemoController extends Controller
     // return Product::avg('price'); 
     // return Product::max('price'); 
     // return Product::min('price'); 
-    return Product::count('price'); 
+    
+    // return Product::select('title', 'price', 'star')->get(); 
+    return Product::select('price')->distinct()->get(); // retrieving unique title.
 
 
     }

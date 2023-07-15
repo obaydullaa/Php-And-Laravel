@@ -187,3 +187,15 @@ public function DemoAction(Request $request)
 
 
     }
+
+/**
+*  106 [ORM] Select Clause
+*/
+    
+public function DemoAction(Request $request)
+    {
+    // return Product::select('title', 'price', 'star')->get(); 
+    return Product::select('price')->distinct()->get(); // retrieving unique title.
+
+
+    }
