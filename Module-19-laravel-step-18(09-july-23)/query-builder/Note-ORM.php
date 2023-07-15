@@ -156,10 +156,19 @@ class DemoController extends Controller
     //  return Brand::get(); //retrieving all data 
     //  return Brand::all(); //retrieving all data 
     // return Brand::first(); //retrieving all data 
-    
+
     return Brand::find(1); //retrieving all data 
 
 
     }
 }
     
+/**
+*  103 104 [ORM] Retrieving List Of Column
+*/
+
+public function DemoAction(Request $request)
+    { 
+    return Product::pluck('price','title'); //retrieving all data 
+
+    }
