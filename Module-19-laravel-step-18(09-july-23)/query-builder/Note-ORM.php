@@ -163,12 +163,27 @@ class DemoController extends Controller
     }
 }
     
-/**
-*  103 104 [ORM] Retrieving List Of Column
-*/
+
 
 public function DemoAction(Request $request)
     { 
     return Product::pluck('price','title'); //retrieving all data 
+
+    }
+    
+/**
+*  105 [ORM] Aggregation
+*/
+public function DemoAction(Request $request)
+    {
+
+    // Aggregatest method
+
+    // return Product::sum('price'); 
+    // return Product::avg('price'); 
+    // return Product::max('price'); 
+    // return Product::min('price'); 
+    return Product::count('price'); 
+
 
     }

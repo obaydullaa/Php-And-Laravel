@@ -25,7 +25,15 @@ class DemoController extends Controller
     //  return Brand::get(); //retrieving all data 
     //  return Brand::all(); //retrieving all data 
     // return Brand::first(); //retrieving all data 
-    return Product::pluck('price','title'); //retrieving all data 
+    // return Product::pluck('price','title'); //retrieving all data 
+
+    // Aggregatest method
+
+    // return Product::sum('price'); 
+    // return Product::avg('price'); 
+    // return Product::max('price'); 
+    // return Product::min('price'); 
+    return Product::count('price'); 
 
 
     }
