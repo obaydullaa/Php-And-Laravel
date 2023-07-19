@@ -16,7 +16,6 @@ class UserController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => $request->input('password'),
         ]);
-
         
     }
 }
