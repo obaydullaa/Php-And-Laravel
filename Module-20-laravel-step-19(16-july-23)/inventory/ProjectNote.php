@@ -72,3 +72,35 @@ Route::post('/user-registration', [UserController::class,'UserRegistration']);
 
 // Off in kernel.php 
 // \App\Http\Middleware\VerifyCsrfToken::class, 
+
+/**
+* 3 [POS] Registration
+*/
+
+class UserController extends Controller
+{
+    function UserRegistration(Request $request) {
+
+       try{
+        User::create([
+            'firstName' => $request->input('firstName'),
+            'lastName' => $request->input('lastName'),
+            'email' => $request->input('email'),
+            'mobile' => $request->input('mobile'),
+            'password' => $request->input('password'),
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User Registration Successfully'
+        ], status: 200);
+
+       }catch (Exception $err){
+            return response()->json([
+                'status' => 'Failed',
+                'message' => 'User Registration Failed'
+            ], status: 200);
+       }
+        
+    }
+}
