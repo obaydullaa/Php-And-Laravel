@@ -73,9 +73,11 @@ Route::post('/user-registration', [UserController::class,'UserRegistration']);
 // Off in kernel.php 
 // \App\Http\Middleware\VerifyCsrfToken::class, 
 
+
 /**
 * 3 [POS] Registration
 */
+
 
 class UserController extends Controller
 {
@@ -103,4 +105,52 @@ class UserController extends Controller
        }
         
     }
+}
+
+
+
+/**
+* 4 [POS] JWT For Authentication
+*/
+create folder App->Helper->JWTToken.php
+
+PHP-JWT package install
+.env ( create key )
+
+JWT_KEY=12XYSPOHBN7864wLKP
+
+
+<?php
+
+namespace App\Helper;
+
+use Exception;
+use Firebase\JWT\JWT;
+
+class JWTToken 
+{
+    function CreateToken($userEmail):string {
+        $key = env('JWT_KEY');
+
+        $payload = [
+            'iss'=> 'laravel_token',
+            'iat'=> time(),
+            'exp'=> time()+60*60,
+            'userEmail'=> $userEmail
+        ];
+        return JWT::encode($payload, $key, 'HS256');
+    }
+
+    function VerifyToken($token) {
+
+        try {
+            $key = env('JWT_KEY');
+            $decode = JWT::decode($token, key($key, 'HS256'));
+            return $decode->userEmail;
+        }catch(Exception) {
+            return 'unauthorized' ;
+        }
+        
+    }
+
 }
