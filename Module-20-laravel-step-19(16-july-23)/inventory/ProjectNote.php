@@ -156,3 +156,32 @@ class JWTToken
 /**
 * 5 [POS] User Login And Issue JWT Token
 */
+<!-- create token Key in env file  -->
+JWT_KEY=12XYSPOHBN7864wLKP
+
+<!-- JWTToken.php and static this function  -->
+public static function  CreateToken($userEmail):string 
+
+<!-- UserController -->
+function UserLogin (Request $request) {
+        $count = User::where('email', '=', $request->input('email'))
+        ->where('password', '=', $request->input('password'))
+        ->count();
+
+        if($count ==1 ) {
+            // User login -> jWT Token Issue 
+            $token = JWTToken::CreateToken($request->input('email'));
+            return response()->json([
+                'status' => 'success',
+                'message'=> 'User Login Successful',
+                'token'=> $token
+            ] ,status: 200);
+
+        }else {
+            return response()->json([
+                'status' => 'failed',
+                'message' > 'unauthorized'
+            ] ,status: 200);
+
+        }
+    }
