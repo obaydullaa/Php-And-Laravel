@@ -108,10 +108,10 @@ class UserController extends Controller
 }
 
 
-
 /**
 * 4 [POS] JWT For Authentication
 */
+
 create folder App->Helper->JWTToken.php
 
 PHP-JWT package install
@@ -119,8 +119,6 @@ PHP-JWT package install
 
 JWT_KEY=12XYSPOHBN7864wLKP
 
-
-<?php
 
 namespace App\Helper;
 
@@ -154,3 +152,7 @@ class JWTToken
     }
 
 }
+
+/**
+* 5 [POS] User Login And Issue JWT Token
+*/
