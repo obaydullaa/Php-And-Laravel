@@ -9,6 +9,12 @@ Developing User Auth Back-End Features
 6. Allow user to get profile details (end point)
 7. Allow user ot update profile details (end point)
 
+<!-- Use All package  -->
+1. PHP-JWT package install
+
+
+<!-- Use All Command  -->
+
 /**
 * 1 [POS] Introduction
 */
@@ -18,8 +24,8 @@ Developing User Auth Back-End Features
 */
 
 /**
-     * Run the migrations.
-     */
+* Run the migrations.
+*/
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
@@ -185,3 +191,7 @@ function UserLogin (Request $request) {
 
         }
     }
+
+/**
+* 6 [POS] Working With OTP Email
+*/
