@@ -195,3 +195,5 @@ function UserLogin (Request $request) {
 /**
 * 6 [POS] Working With OTP Email
 */
+
+php artisan make:mail OTPMail
