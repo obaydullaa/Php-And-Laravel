@@ -220,6 +220,9 @@ MAIL_USERNAME=info@teamrabbil.com
 MAIL_PASSWORD=~sR4[bhaC[Qs
 MAIL_ENCRYPTION=tls
 
+MAIL_FROM_ADDRESS="info@teamrabbil.com"
+MAIL_FROM_NAME="Pos Application"
+
 UserController ->
 ====================
 function sedOTPCode(Request $request) {
@@ -240,3 +243,44 @@ function sedOTPCode(Request $request) {
 
 
     }
+/**
+* 8 [POS] Working With OTP Email
+*/
+
+function sedOTPCode(Request $request) {
+        $email = $request->input('email');
+        $otp=rand(1000,9999);
+        $count=User::where('email','=', $email)->count();
+
+        if($count == 1) {
+            // WORK HERE
+            // OTP Email Address
+        Mail::to($email)->send(new OTPMail($otp));
+            // OTP Code Table Update
+            User::where('email','=', $email)->update(['otp'=>$otp]);
+            return response()->json([
+                'status' => 'Success',
+                'message' > '4 Digit OTP Code Has Been Send To Your Email.'
+            ] ,status: 200);
+
+
+        }else {
+            return response()->json([
+                'status' => 'Failed',
+                'message' > 'unauthorized'
+            ] ,status: 200);
+        }
+
+
+    }
+
+<!-- web.php  -->
+====================
+crete route Route::post('/send-otp', [UserController::class,'sedOTPCode']);
+
+*And Test Postman
+
+set .env file ->
+
+MAIL_FROM_ADDRESS="info@teamrabbil.com"
+MAIL_FROM_NAME="Pos Application"

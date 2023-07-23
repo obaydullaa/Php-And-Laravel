@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Helper\JWTToken;
+use App\Mail\OTPMail;
 use App\Models\User;
 use Exception;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -64,12 +66,20 @@ class UserController extends Controller
         $count=User::where('email','=', $email)->count();
 
         if($count == 1) {
-            // OTP 
-            // OTO Code Table Insert
+            // OTP Email Address
+        Mail::to($email)->send(new OTPMail($otp));
+            // OTP Code Table Update
+            User::where('email','=', $email)->update(['otp'=>$otp]);
+
+            return response()->json([
+                'status' => 'Success',
+                'message' => '4 Digit OTP Code Has Been Send To Your Email.'
+            ] ,status: 200);
+
 
         }else {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'Failed',
                 'message' > 'unauthorized'
             ] ,status: 200);
         }
