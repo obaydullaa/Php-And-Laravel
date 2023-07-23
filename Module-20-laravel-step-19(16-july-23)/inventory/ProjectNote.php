@@ -201,11 +201,42 @@ php artisan make:mail OTPMail
 create folder in view email -> OTPMail.blade.php
 
 <!-- OTPMail.PHP  -->
-/**
-* Create a new message instance.
-*/
+============================
+
+<!-- * Create a new message instance. -->
+
 public $otp;
 public function __construct($otp)
 {
     $this->otp=$otp;
 }
+
+.env file ->
+
+MAIL_MAILER=smtp
+MAIL_HOST=mail.teamrabbil.com
+MAIL_PORT=25
+MAIL_USERNAME=info@teamrabbil.com
+MAIL_PASSWORD=~sR4[bhaC[Qs
+MAIL_ENCRYPTION=tls
+
+UserController ->
+====================
+function sedOTPCode(Request $request) {
+        $email = $request->input('email');
+        $otp=rand(1000,9999);
+        $count=User::where('email','=', $email)->count();
+
+        if($count == 1) {
+            // OTP 
+            // OTO Code Table Insert
+
+        }else {
+            return response()->json([
+                'status' => 'failed',
+                'message' > 'unauthorized'
+            ] ,status: 200);
+        }
+
+
+    }

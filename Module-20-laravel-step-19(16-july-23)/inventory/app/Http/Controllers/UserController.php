@@ -57,4 +57,24 @@ class UserController extends Controller
 
         }
     }
+
+    function sedOTPCode(Request $request) {
+        $email = $request->input('email');
+        $otp=rand(1000,9999);
+        $count=User::where('email','=', $email)->count();
+
+        if($count == 1) {
+            // OTP 
+            // OTO Code Table Insert
+
+        }else {
+            return response()->json([
+                'status' => 'failed',
+                'message' > 'unauthorized'
+            ] ,status: 200);
+        }
+
+
+    }
+
 }
