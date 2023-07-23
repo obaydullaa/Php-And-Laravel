@@ -195,5 +195,17 @@ function UserLogin (Request $request) {
 /**
 * 6 [POS] Working With OTP Email
 */
-
+<!-- Install Otp mail package  -->
 php artisan make:mail OTPMail
+
+create folder in view email -> OTPMail.blade.php
+
+<!-- OTPMail.PHP  -->
+/**
+* Create a new message instance.
+*/
+public $otp;
+public function __construct($otp)
+{
+    $this->otp=$otp;
+}
