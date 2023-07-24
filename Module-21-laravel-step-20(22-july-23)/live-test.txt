@@ -1,0 +1,107 @@
+Assume that you have a fresh laravel project.Create a Task model  and a corresponding controller to handle CRUD operations for tasks.
+
+1. composer create-project --prefer-dist laravel/laravel your-project-name
+cd your-project-name
+
+2. php artisan make:model Task -m
+
+3. 
+// database/migrations/xxxx_xx_xx_create_tasks_table.php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTasksTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->boolean('completed')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('tasks');
+    }
+}
+
+4. php artisan migrate
+
+5.php artisan make:controller TaskController --resource
+
+6. 
+// app/Http/Controllers/TaskController.php
+
+namespace App\Http\Controllers;
+
+use App\Models\Task;
+use Illuminate\Http\Request;
+
+class TaskController extends Controller
+{
+    public function index()
+    {
+        $tasks = Task::all();
+        return view('tasks.index', compact('tasks'));
+    }
+
+    public function create()
+    {
+        return view('tasks.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'nullable',
+        ]);
+
+        Task::create($request->all());
+
+        return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', compact('task'));
+    }
+
+    public function edit(Task $task)
+    {
+        return view('tasks.edit', compact('task'));
+    }
+
+    public function update(Request $request, Task $task)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'nullable',
+        ]);
+
+        $task->update($request->all());
+
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+    }
+
+    public function destroy(Task $task)
+    {
+        $task->delete();
+
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+    }
+}
+
+7. 
+// routes/web.php
+
+use App\Http\Controllers\TaskController;
+
+Route::resource('tasks', TaskController::class);
+
