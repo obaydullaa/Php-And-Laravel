@@ -284,3 +284,66 @@ set .env file ->
 
 MAIL_FROM_ADDRESS="info@teamrabbil.com"
 MAIL_FROM_NAME="Pos Application"
+
+/**
+* 9 [POS] Verify OTP And Issue JWT Password Reset Token
+*/
+<!-- UserController  -->
+=================================
+function VerifyOTP(Request $request) {
+        $email = $request->input('email');
+        $otp = $request->input('otp');
+        $count = User::where('email', '=', $email)
+            ->where('otp', '=', $otp);
+
+            if($count == 1){
+                // Database OTP Update
+                User::where('email','=', $email)->update(['otp'=>'0']);
+
+
+                // Pass Reset Token Issue
+                $token = JWTToken::CreateTokenForSetPassword($request->input('email'));
+                return response()->json([
+                    'status' => 'success',
+                    'message'=> 'OTP Verification Successful',
+                    'token'=> $token
+                ] ,status: 200);
+
+
+
+            }else{
+                return response()->json([
+                    'status' => 'Failed',
+                    'message' > 'unauthorized'
+                ] ,status: 200);
+
+            }
+
+    }
+
+
+
+
+<!-- JWTToken.php  -->
+==================================
+public static function  CreateTokenForSetPassword($userEmail):string {
+        $key = env('JWT_KEY');
+
+        $payload = [
+            'iss'=> 'laravel_token',
+            'iat'=> time(),
+            'exp'=> time()+60*60,
+            'userEmail'=> $userEmail
+        ];
+        return JWT::encode($payload, $key, 'HS256');
+    }
+
+<!-- web.php  -->
+===================
+Route::post('/verify-otp', [UserController::class,'VerifyOTP']);
+
+<!-- check postman  check -->
+{
+    "email": "mdobaydulla17@gmail.com",
+    "otp": "1432"
+}
