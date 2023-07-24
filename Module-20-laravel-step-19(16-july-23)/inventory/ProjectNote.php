@@ -347,3 +347,10 @@ Route::post('/verify-otp', [UserController::class,'VerifyOTP']);
     "email": "mdobaydulla17@gmail.com",
     "otp": "1432"
 }
+
+/**
+* 10 [POST] Working With Token Verification Middleware And Password 
+*/
+
+<!-- আমাদের অনেক জাইগায় Token verification করতে হবে । তাইম আমরা Middleware Create করে নিব। যেন বার বার ইউজ করে পারি ।  -->
+php artisan make:middleware TokenVerificationMiddleware
