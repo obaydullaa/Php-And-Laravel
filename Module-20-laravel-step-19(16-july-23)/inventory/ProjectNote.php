@@ -353,4 +353,52 @@ Route::post('/verify-otp', [UserController::class,'VerifyOTP']);
 */
 
 <!-- আমাদের অনেক জাইগায় Token verification করতে হবে । তাইম আমরা Middleware Create করে নিব। যেন বার বার ইউজ করে পারি ।  -->
-php artisan make:middleware TokenVerificationMiddleware
+<!-- php artisan make:middleware TokenVerificationMiddleware  -->
+============================================================================
+class TokenVerificationMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        $token=$request->header('token');
+        $result=JWTToken::VerifyToken($token);
+        if($result == "unauthorized"){
+            return response()->json([
+                'status' => 'Failed',
+                'message' > 'unauthorized'
+            ] ,status: 401);
+        }else {
+            $request->headers->set('email', $request);
+            return $next($request);
+        }
+    }
+}
+
+
+<!-- UserController  -->
+function ResetPassword(Request $request) {
+
+try {
+    $email =$request->header('email');
+    $password=$request->input('password');
+    User::where('email', '=', $email)->update(['password' =>$password]);
+    return response()->json([
+        'status' => 'success',
+        'message' => 'Request Successfully'
+    ], status: 200);
+
+   }catch (Exception $exception){
+        return response()->json([
+            'status' => 'Fail',
+            'message' => 'Something Went Failed'
+        ], status: 200);
+   }
+}
+
+<!-- web.php   -->
+//Token Verify
+Route::post('/reset-password', [UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);

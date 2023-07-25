@@ -30,7 +30,7 @@ class JWTToken
         return JWT::encode($payload, $key, 'HS256');
     }
 
-    function static VerifyToken($token) {
+     public static function VerifyToken($token) {
 
         try {
             $key = env('JWT_KEY');

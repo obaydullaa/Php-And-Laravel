@@ -17,13 +17,12 @@ class TokenVerificationMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $token=$request->header('token');
-        // $result=JWTToken::VerifyToken($token);
-        JWTToken::Ve
-        if($request == "unauthorized"){
+        $result=JWTToken::VerifyToken($token);
+        if($result == "unauthorized"){
             return response()->json([
                 'status' => 'Failed',
                 'message' > 'unauthorized'
-            ] ,status: 200);
+            ] ,status: 401);
         }else {
             $request->headers->set('email', $request);
             return $next($request);
