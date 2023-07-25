@@ -402,3 +402,8 @@ try {
 <!-- web.php   -->
 //Token Verify
 Route::post('/reset-password', [UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
+
+
+/**
+* 11 [POS] Completing Password Reset
+*/
