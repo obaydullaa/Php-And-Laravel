@@ -4,6 +4,7 @@ namespace App\Helper;
 
 use Exception;
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class JWTToken 
 {
@@ -30,7 +31,7 @@ class JWTToken
         return JWT::encode($payload, $key, 'HS256');
     }
 
-     public static function VerifyToken($token):string 
+     public static function VerifyToken($token) 
      {
 
         try {
