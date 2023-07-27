@@ -407,3 +407,16 @@ Route::post('/reset-password', [UserController::class,'ResetPassword'])->middlew
 /**
 * 11 [POS] Completing Password Reset
 */
+
+POST: http://127.0.0.1:8000/reset-password
+
+body: 
+{
+    "password": "abc"
+}
+header: 
+token -> JWT-Token
+
+/**
+* 12 [POS] Front End Explain Front End Assets
+*/

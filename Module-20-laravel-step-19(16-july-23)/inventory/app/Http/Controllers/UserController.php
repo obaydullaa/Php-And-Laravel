@@ -7,11 +7,18 @@ use App\Mail\OTPMail;
 use App\Models\User;
 use Exception;
 use Firebase\JWT\JWT;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+
+    function LoginPage() :View {
+        return view('pages.auth.login-page');
+    }
+    
+
     function UserRegistration(Request $request) {
 
        try{
