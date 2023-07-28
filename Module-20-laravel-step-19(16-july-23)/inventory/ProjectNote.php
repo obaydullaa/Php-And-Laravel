@@ -17,10 +17,12 @@ Developing User Auth Back-End Features
 
 /**
 * 1 [POS] Introduction
+=======================================================================
 */
 
 /**
 * 2 [POS] Registration
+=======================================================================
 */
 
 /**
@@ -82,6 +84,7 @@ Route::post('/user-registration', [UserController::class,'UserRegistration']);
 
 /**
 * 3 [POS] Registration
+=======================================================================
 */
 
 
@@ -116,6 +119,7 @@ class UserController extends Controller
 
 /**
 * 4 [POS] JWT For Authentication
+=======================================================================
 */
 
 create folder App->Helper->JWTToken.php
@@ -161,6 +165,7 @@ class JWTToken
 
 /**
 * 5 [POS] User Login And Issue JWT Token
+=======================================================================
 */
 <!-- create token Key in env file  -->
 JWT_KEY=12XYSPOHBN7864wLKP
@@ -194,6 +199,7 @@ function UserLogin (Request $request) {
 
 /**
 * 6 [POS] Working With OTP Email
+=======================================================================
 */
 <!-- Install Otp mail package  -->
 php artisan make:mail OTPMail
@@ -245,6 +251,7 @@ function sedOTPCode(Request $request) {
     }
 /**
 * 8 [POS] Working With OTP Email
+=======================================================================
 */
 
 function sedOTPCode(Request $request) {
@@ -287,6 +294,7 @@ MAIL_FROM_NAME="Pos Application"
 
 /**
 * 9 [POS] Verify OTP And Issue JWT Password Reset Token
+=======================================================================
 */
 <!-- UserController  -->
 =================================
@@ -419,7 +427,9 @@ token -> JWT-Token
 
 /**
 * 12 [POS] Front End Explain Front End Assets
+================================================================
 */
+
 views -> 
  -Component
     -auth
@@ -430,3 +440,9 @@ views ->
 -pages
     -auth
     -dashboard
+
+
+/**
+* 13 [POS] Front End User Login
+================================================================
+*/
