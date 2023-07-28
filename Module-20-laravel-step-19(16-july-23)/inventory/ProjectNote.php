@@ -420,3 +420,13 @@ token -> JWT-Token
 /**
 * 12 [POS] Front End Explain Front End Assets
 */
+views -> 
+ -Component
+    -auth
+    -category
+    -dashboard
+-email
+-layout
+-pages
+    -auth
+    -dashboard
