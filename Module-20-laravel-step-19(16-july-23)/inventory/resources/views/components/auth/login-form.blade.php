@@ -40,13 +40,13 @@
                 password: password
             });
             hideLoader()
-            console.log(email, password);
-            // if (res.status === 200) {
-               
-            // } else {
-            //     errorToast(res.data['message']);
-            // }
-            window.location.href = "/dashboard";
+            
+            if (res.status === 200) {
+                window.location.href = "/dashboard";
+                // alert('dashboard');
+            } else {
+                errorToast(res.data['message']);
+            }
         }
     }
 </script>

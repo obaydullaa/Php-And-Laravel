@@ -84,7 +84,7 @@ class UserController extends Controller
             ], status: 200)->cookie('token', $token, 60 * 24 * 30);
         } else {
             return response()->json([
-                'status' => 'failed',
+                'status' => '+',
                 'message' > 'unauthorized'
             ], status: 200);
         }
