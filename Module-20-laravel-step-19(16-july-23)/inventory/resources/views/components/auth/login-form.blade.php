@@ -40,11 +40,13 @@
                 password: password
             });
             hideLoader()
-            if (res.status === 200 && res.data['status'] === 'success') {
-                window.location.href = "/dashboard";
-            } else {
-                errorToast(res.data['message']);
-            }
+            console.log(email, password);
+            // if (res.status === 200) {
+               
+            // } else {
+            //     errorToast(res.data['message']);
+            // }
+            window.location.href = "/dashboard";
         }
     }
 </script>
