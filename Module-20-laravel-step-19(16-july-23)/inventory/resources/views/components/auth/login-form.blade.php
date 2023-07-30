@@ -41,7 +41,7 @@
             });
             hideLoader()
             
-            if (res.status === 200) {
+            if(res.status===200 && res.data['status']==='success'){
                 window.location.href = "/dashboard";
                 // alert('dashboard');
             } else {
