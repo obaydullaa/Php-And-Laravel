@@ -39,6 +39,7 @@
                 email: email,
                 password: password
             });
+            console.log(res);
             hideLoader()
             
             if(res.status===200 && res.data['status']==='success'){

@@ -16,7 +16,7 @@
 </div>
 
 <script>
-   async function VerifyEmail() {
+    async function VerifyEmail() {
         let email = document.getElementById('email').value;
         if(email.length === 0){
            errorToast('Please enter your email address')
@@ -36,6 +36,5 @@
                 errorToast(res.data['message'])
             }
         }
-
     }
 </script>
