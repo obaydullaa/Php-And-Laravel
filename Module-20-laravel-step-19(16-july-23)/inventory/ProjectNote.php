@@ -538,3 +538,75 @@ else{
 
 send-otp-form.blade.php->
 =====================================
+
+<script>
+    async function VerifyEmail() {
+        let email = document.getElementById('email').value;
+        if(email.length === 0){
+           errorToast('Please enter your email address')
+        }
+        else{
+            showLoader();
+            let res = await axios.post('/send-otp', {email: email});
+            hideLoader();
+            // && res.data['status']==='success'
+            if(res.status===200 ){
+                successToast(res.data['message'])
+                sessionStorage.setItem('email', email);
+                setTimeout(function (){
+                    window.location.href = '/verifyOtp';
+                }, 1000)
+            }
+            else{
+                errorToast(res.data['message'])
+            }
+        }
+    }
+</script>
+
+
+/**
+ * 16 [POS] Front End Verify OTP
+ *======================================================================
+ */
+ UserController->
+ ---------------------
+ verifyOtp class->
+ // Pass Reset Token Issue
+            $token = JWTToken::CreateTokenForSetPassword($request->input('email'));
+            return response()->json([
+                'status' => 'success',
+                'message' => 'OTP Verification Successful'
+            ], status: 200)->cookie('token', $token, 60*24*30); // change here
+
+
+
+ <script>
+   async function VerifyOtp() {
+        let otp = document.getElementById('otp').value;
+        if(otp.length !==4){
+           errorToast('Invalid OTP')
+        }
+        else{
+            showLoader();
+            let res=await axios.post('/verify-otp', {
+                otp: otp,
+                email:sessionStorage.getItem('email')
+            })
+            hideLoader();
+
+            if(res.status===200 && res.data['status']==='success'){
+                successToast(res.data['message'])
+                sessionStorage.clear();
+                setTimeout(() => {
+                    window.location.href='/resetPassword'
+                }, 1000);
+            }
+            else{
+                errorToast(res.data['message'])
+            }
+        }
+    }
+</script>
+
+
