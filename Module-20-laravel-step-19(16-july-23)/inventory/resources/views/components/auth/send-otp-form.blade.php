@@ -25,7 +25,7 @@
             showLoader();
             let res = await axios.post('/send-otp', {email: email});
             hideLoader();
-            if(res.status===200 && res.data['status']==='success'){
+            if(res.status===200){
                 successToast(res.data['message'])
                 sessionStorage.setItem('email', email);
                 setTimeout(function (){
