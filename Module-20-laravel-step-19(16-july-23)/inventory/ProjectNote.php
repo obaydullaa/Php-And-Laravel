@@ -663,3 +663,12 @@ sidenav-layout.blade.php ->
 <a href="{{url("/logout")}}" class="side-bar-item">
     <span class="side-bar-item-caption">Logout</span>
 </a>
+
+
+/***
+* 19 [POS] Auth Restriction In Page And End Point
+* ===========================================================
+*/
+
+
+
