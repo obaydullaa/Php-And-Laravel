@@ -1,4 +1,4 @@
-Phase 01 
+Phase 01
 ======================
 Developing User Auth Back-End Features
 1. User registration (end point)
@@ -28,58 +28,58 @@ Developing User Auth Back-End Features
 /**
 * Run the migrations.
 */
-    public function up(): void
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('firstName', length: 50);
-            $table->string('lastName', length: 50);
-            $table->string('email', length: 50)->unique();
-            $table->string('mobile', length: 50);
-            $table->string('password', length: 50);
-            $table->string('otp', length: 50);
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('users');
-    }
-
-    <!-- User Model  -->
-    class User extends Model
+public function up(): void
 {
-    protected $fillable = ['firstName', 'lastName', 'email', 'mobile', 'password', 'otp'];
-    protected $attributes = [
-        'otp' => '0'
-    ];
+Schema::create('users', function (Blueprint $table) {
+$table->id();
+$table->string('firstName', length: 50);
+$table->string('lastName', length: 50);
+$table->string('email', length: 50)->unique();
+$table->string('mobile', length: 50);
+$table->string('password', length: 50);
+$table->string('otp', length: 50);
+$table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+});
+}
+
+/**
+* Reverse the migrations.
+*/
+public function down(): void
+{
+Schema::dropIfExists('users');
+}
+
+<!-- User Model  -->
+class User extends Model
+{
+protected $fillable = ['firstName', 'lastName', 'email', 'mobile', 'password', 'otp'];
+protected $attributes = [
+'otp' => '0'
+];
 }
 
 class UserController extends Controller
 {
-    function UserRegistration(Request $request) {
+function UserRegistration(Request $request) {
 
-        return User::create([
-            'firstName' => $request->input('firstName'),
-            'lastName' => $request->input('lastName'),
-            'email' => $request->input('email'),
-            'mobile' => $request->input('mobile'),
-            'password' => $request->input('password'),
-        ]);
+return User::create([
+'firstName' => $request->input('firstName'),
+'lastName' => $request->input('lastName'),
+'email' => $request->input('email'),
+'mobile' => $request->input('mobile'),
+'password' => $request->input('password'),
+]);
 
-        
-    }
+
+}
 }
 
 Route::post('/user-registration', [UserController::class,'UserRegistration']);
 
-// Off in kernel.php 
-// \App\Http\Middleware\VerifyCsrfToken::class, 
+// Off in kernel.php
+// \App\Http\Middleware\VerifyCsrfToken::class,
 
 
 /**
@@ -90,30 +90,30 @@ Route::post('/user-registration', [UserController::class,'UserRegistration']);
 
 class UserController extends Controller
 {
-    function UserRegistration(Request $request) {
+function UserRegistration(Request $request) {
 
-       try{
-        User::create([
-            'firstName' => $request->input('firstName'),
-            'lastName' => $request->input('lastName'),
-            'email' => $request->input('email'),
-            'mobile' => $request->input('mobile'),
-            'password' => $request->input('password'),
-        ]);
+try{
+User::create([
+'firstName' => $request->input('firstName'),
+'lastName' => $request->input('lastName'),
+'email' => $request->input('email'),
+'mobile' => $request->input('mobile'),
+'password' => $request->input('password'),
+]);
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'User Registration Successfully'
-        ], status: 200);
+return response()->json([
+'status' => 'success',
+'message' => 'User Registration Successfully'
+], status: 200);
 
-       }catch (Exception $err){
-            return response()->json([
-                'status' => 'Failed',
-                'message' => 'User Registration Failed'
-            ], status: 200);
-       }
-        
-    }
+}catch (Exception $err){
+return response()->json([
+'status' => 'Failed',
+'message' => 'User Registration Failed'
+], status: 200);
+}
+
+}
 }
 
 
@@ -135,31 +135,31 @@ namespace App\Helper;
 use Exception;
 use Firebase\JWT\JWT;
 
-class JWTToken 
+class JWTToken
 {
-    function CreateToken($userEmail):string {
-        $key = env('JWT_KEY');
+function CreateToken($userEmail):string {
+$key = env('JWT_KEY');
 
-        $payload = [
-            'iss'=> 'laravel_token',
-            'iat'=> time(),
-            'exp'=> time()+60*60,
-            'userEmail'=> $userEmail
-        ];
-        return JWT::encode($payload, $key, 'HS256');
-    }
+$payload = [
+'iss'=> 'laravel_token',
+'iat'=> time(),
+'exp'=> time()+60*60,
+'userEmail'=> $userEmail
+];
+return JWT::encode($payload, $key, 'HS256');
+}
 
-    function VerifyToken($token) {
+function VerifyToken($token) {
 
-        try {
-            $key = env('JWT_KEY');
-            $decode = JWT::decode($token, key($key, 'HS256'));
-            return $decode->userEmail;
-        }catch(Exception) {
-            return 'unauthorized' ;
-        }
-        
-    }
+try {
+$key = env('JWT_KEY');
+$decode = JWT::decode($token, key($key, 'HS256'));
+return $decode->userEmail;
+}catch(Exception) {
+return 'unauthorized' ;
+}
+
+}
 
 }
 
@@ -171,31 +171,31 @@ class JWTToken
 JWT_KEY=12XYSPOHBN7864wLKP
 
 <!-- JWTToken.php and static this function  -->
-public static function  CreateToken($userEmail):string 
+public static function CreateToken($userEmail):string
 
 <!-- UserController -->
 function UserLogin (Request $request) {
-        $count = User::where('email', '=', $request->input('email'))
-        ->where('password', '=', $request->input('password'))
-        ->count();
+$count = User::where('email', '=', $request->input('email'))
+->where('password', '=', $request->input('password'))
+->count();
 
-        if($count ==1 ) {
-            // User login -> jWT Token Issue 
-            $token = JWTToken::CreateToken($request->input('email'));
-            return response()->json([
-                'status' => 'success',
-                'message'=> 'User Login Successful',
-                'token'=> $token
-            ] ,status: 200);
+if($count ==1 ) {
+// User login -> jWT Token Issue
+$token = JWTToken::CreateToken($request->input('email'));
+return response()->json([
+'status' => 'success',
+'message'=> 'User Login Successful',
+'token'=> $token
+] ,status: 200);
 
-        }else {
-            return response()->json([
-                'status' => 'failed',
-                'message' > 'unauthorized'
-            ] ,status: 200);
+}else {
+return response()->json([
+'status' => 'failed',
+'message' > 'unauthorized'
+] ,status: 200);
 
-        }
-    }
+}
+}
 
 /**
 * 6 [POS] Working With OTP Email
@@ -214,7 +214,7 @@ create folder in view email -> OTPMail.blade.php
 public $otp;
 public function __construct($otp)
 {
-    $this->otp=$otp;
+$this->otp=$otp;
 }
 
 .env file ->
@@ -232,54 +232,54 @@ MAIL_FROM_NAME="Pos Application"
 UserController ->
 ====================
 function sedOTPCode(Request $request) {
-        $email = $request->input('email');
-        $otp=rand(1000,9999);
-        $count=User::where('email','=', $email)->count();
+$email = $request->input('email');
+$otp=rand(1000,9999);
+$count=User::where('email','=', $email)->count();
 
-        if($count == 1) {
-            // OTP 
-            // OTO Code Table Insert
+if($count == 1) {
+// OTP
+// OTO Code Table Insert
 
-        }else {
-            return response()->json([
-                'status' => 'failed',
-                'message' > 'unauthorized'
-            ] ,status: 200);
-        }
+}else {
+return response()->json([
+'status' => 'failed',
+'message' > 'unauthorized'
+] ,status: 200);
+}
 
 
-    }
+}
 /**
 * 8 [POS] Working With OTP Email
 =======================================================================
 */
 
 function sedOTPCode(Request $request) {
-        $email = $request->input('email');
-        $otp=rand(1000,9999);
-        $count=User::where('email','=', $email)->count();
+$email = $request->input('email');
+$otp=rand(1000,9999);
+$count=User::where('email','=', $email)->count();
 
-        if($count == 1) {
-            // WORK HERE
-            // OTP Email Address
-        Mail::to($email)->send(new OTPMail($otp));
-            // OTP Code Table Update
-            User::where('email','=', $email)->update(['otp'=>$otp]);
-            return response()->json([
-                'status' => 'Success',
-                'message' > '4 Digit OTP Code Has Been Send To Your Email.'
-            ] ,status: 200);
-
-
-        }else {
-            return response()->json([
-                'status' => 'Failed',
-                'message' > 'unauthorized'
-            ] ,status: 200);
-        }
+if($count == 1) {
+// WORK HERE
+// OTP Email Address
+Mail::to($email)->send(new OTPMail($otp));
+// OTP Code Table Update
+User::where('email','=', $email)->update(['otp'=>$otp]);
+return response()->json([
+'status' => 'Success',
+'message' > '4 Digit OTP Code Has Been Send To Your Email.'
+] ,status: 200);
 
 
-    }
+}else {
+return response()->json([
+'status' => 'Failed',
+'message' > 'unauthorized'
+] ,status: 200);
+}
+
+
+}
 
 <!-- web.php  -->
 ====================
@@ -299,52 +299,52 @@ MAIL_FROM_NAME="Pos Application"
 <!-- UserController  -->
 =================================
 function VerifyOTP(Request $request) {
-        $email = $request->input('email');
-        $otp = $request->input('otp');
-        $count = User::where('email', '=', $email)
-            ->where('otp', '=', $otp);
+$email = $request->input('email');
+$otp = $request->input('otp');
+$count = User::where('email', '=', $email)
+->where('otp', '=', $otp);
 
-            if($count == 1){
-                // Database OTP Update
-                User::where('email','=', $email)->update(['otp'=>'0']);
-
-
-                // Pass Reset Token Issue
-                $token = JWTToken::CreateTokenForSetPassword($request->input('email'));
-                return response()->json([
-                    'status' => 'success',
-                    'message'=> 'OTP Verification Successful',
-                    'token'=> $token
-                ] ,status: 200);
+if($count == 1){
+// Database OTP Update
+User::where('email','=', $email)->update(['otp'=>'0']);
 
 
+// Pass Reset Token Issue
+$token = JWTToken::CreateTokenForSetPassword($request->input('email'));
+return response()->json([
+'status' => 'success',
+'message'=> 'OTP Verification Successful',
+'token'=> $token
+] ,status: 200);
 
-            }else{
-                return response()->json([
-                    'status' => 'Failed',
-                    'message' > 'unauthorized'
-                ] ,status: 200);
 
-            }
 
-    }
+}else{
+return response()->json([
+'status' => 'Failed',
+'message' > 'unauthorized'
+] ,status: 200);
+
+}
+
+}
 
 
 
 
 <!-- JWTToken.php  -->
 ==================================
-public static function  CreateTokenForSetPassword($userEmail):string {
-        $key = env('JWT_KEY');
+public static function CreateTokenForSetPassword($userEmail):string {
+$key = env('JWT_KEY');
 
-        $payload = [
-            'iss'=> 'laravel_token',
-            'iat'=> time(),
-            'exp'=> time()+60*60,
-            'userEmail'=> $userEmail
-        ];
-        return JWT::encode($payload, $key, 'HS256');
-    }
+$payload = [
+'iss'=> 'laravel_token',
+'iat'=> time(),
+'exp'=> time()+60*60,
+'userEmail'=> $userEmail
+];
+return JWT::encode($payload, $key, 'HS256');
+}
 
 <!-- web.php  -->
 ===================
@@ -352,12 +352,12 @@ Route::post('/verify-otp', [UserController::class,'VerifyOTP']);
 
 <!-- check postman  check -->
 {
-    "email": "mdobaydulla17@gmail.com",
-    "otp": "1432"
+"email": "mdobaydulla17@gmail.com",
+"otp": "1432"
 }
 
 /**
-* 10 [POST] Working With Token Verification Middleware And Password 
+* 10 [POST] Working With Token Verification Middleware And Password
 */
 
 <!-- আমাদের অনেক জাইগায় Token verification করতে হবে । তাইম আমরা Middleware Create করে নিব। যেন বার বার ইউজ করে পারি ।  -->
@@ -365,25 +365,25 @@ Route::post('/verify-otp', [UserController::class,'VerifyOTP']);
 ============================================================================
 class TokenVerificationMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
-    {
-        $token=$request->header('token');
-        $result=JWTToken::VerifyToken($token);
-        if($result == "unauthorized"){
-            return response()->json([
-                'status' => 'Failed',
-                'message' > 'unauthorized'
-            ] ,status: 401);
-        }else {
-            $request->headers->set('email', $request);
-            return $next($request);
-        }
-    }
+/**
+* Handle an incoming request.
+*
+* @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
+*/
+public function handle(Request $request, Closure $next): Response
+{
+$token=$request->header('token');
+$result=JWTToken::VerifyToken($token);
+if($result == "unauthorized"){
+return response()->json([
+'status' => 'Failed',
+'message' > 'unauthorized'
+] ,status: 401);
+}else {
+$request->headers->set('email', $request);
+return $next($request);
+}
+}
 }
 
 
@@ -391,20 +391,20 @@ class TokenVerificationMiddleware
 function ResetPassword(Request $request) {
 
 try {
-    $email =$request->header('email');
-    $password=$request->input('password');
-    User::where('email', '=', $email)->update(['password' =>$password]);
-    return response()->json([
-        'status' => 'success',
-        'message' => 'Request Successfully'
-    ], status: 200);
+$email =$request->header('email');
+$password=$request->input('password');
+User::where('email', '=', $email)->update(['password' =>$password]);
+return response()->json([
+'status' => 'success',
+'message' => 'Request Successfully'
+], status: 200);
 
-   }catch (Exception $exception){
-        return response()->json([
-            'status' => 'Fail',
-            'message' => 'Something Went Failed'
-        ], status: 200);
-   }
+}catch (Exception $exception){
+return response()->json([
+'status' => 'Fail',
+'message' => 'Something Went Failed'
+], status: 200);
+}
 }
 
 <!-- web.php   -->
@@ -418,11 +418,11 @@ Route::post('/reset-password', [UserController::class,'ResetPassword'])->middlew
 
 POST: http://127.0.0.1:8000/reset-password
 
-body: 
+body:
 {
-    "password": "abc"
+"password": "abc"
 }
-header: 
+header:
 token -> JWT-Token
 
 /**
@@ -430,16 +430,16 @@ token -> JWT-Token
 ================================================================
 */
 
-views -> 
- -Component
-    -auth
-    -category
-    -dashboard
+views ->
+-Component
+-auth
+-category
+-dashboard
 -email
 -layout
 -pages
-    -auth
-    -dashboard
+-auth
+-dashboard
 
 
 /**
@@ -465,8 +465,8 @@ login-form.blade.php->
                 password: password
             });
             hideLoader()
-            
-            if(res.status===200 && res.data['status']==='success'){
+
+            if (res.status === 200 && res.data['status'] === 'success') {
                 window.location.href = "/dashboard";
                 // alert('dashboard');
             } else {
@@ -493,39 +493,39 @@ let mobile = document.getElementById('mobile').value;
 let password = document.getElementById('password').value;
 
 if(email.length===0){
-    errorToast('Email is required')
+errorToast('Email is required')
 }
 else if(firstName.length===0){
-    errorToast('First Name is required')
+errorToast('First Name is required')
 }
 else if(lastName.length===0){
-    errorToast('Last Name is required')
+errorToast('Last Name is required')
 }
 else if(mobile.length===0){
-    errorToast('Mobile is required')
+errorToast('Mobile is required')
 }
 else if(password.length===0){
-    errorToast('Password is required')
+errorToast('Password is required')
 }
 else{
-    showLoader();
-    let res=await axios.post("/user-registration",{
-        email:email,
-        firstName:firstName,
-        lastName:lastName,
-        mobile:mobile,
-        password:password
-    })
-    hideLoader();
-    if(res.status===200 && res.data['status']==='success'){
-        successToast(res.data['message']);
-        setTimeout(function (){
-            window.location.href='/userLogin'
-        },2000)
-    }
-    else{
-        errorToast(res.data['message'])
-    }
+showLoader();
+let res=await axios.post("/user-registration",{
+email:email,
+firstName:firstName,
+lastName:lastName,
+mobile:mobile,
+password:password
+})
+hideLoader();
+if(res.status===200 && res.data['status']==='success'){
+successToast(res.data['message']);
+setTimeout(function (){
+window.location.href='/userLogin'
+},2000)
+}
+else{
+errorToast(res.data['message'])
+}
 }
 }
 </script>
@@ -542,22 +542,22 @@ send-otp-form.blade.php->
 <script>
     async function VerifyEmail() {
         let email = document.getElementById('email').value;
-        if(email.length === 0){
-           errorToast('Please enter your email address')
-        }
-        else{
+        if (email.length === 0) {
+            errorToast('Please enter your email address')
+        } else {
             showLoader();
-            let res = await axios.post('/send-otp', {email: email});
+            let res = await axios.post('/send-otp', {
+                email: email
+            });
             hideLoader();
             // && res.data['status']==='success'
-            if(res.status===200 ){
+            if (res.status === 200) {
                 successToast(res.data['message'])
                 sessionStorage.setItem('email', email);
-                setTimeout(function (){
+                setTimeout(function() {
                     window.location.href = '/verifyOtp';
                 }, 1000)
-            }
-            else{
+            } else {
                 errorToast(res.data['message'])
             }
         }
@@ -566,43 +566,41 @@ send-otp-form.blade.php->
 
 
 /**
- * 16 [POS] Front End Verify OTP
- *======================================================================
- */
- UserController->
- ---------------------
- verifyOtp class->
- // Pass Reset Token Issue
-            $token = JWTToken::CreateTokenForSetPassword($request->input('email'));
-            return response()->json([
-                'status' => 'success',
-                'message' => 'OTP Verification Successful'
-            ], status: 200)->cookie('token', $token, 60*24*30); // change here
+* 16 [POS] Front End Verify OTP
+*======================================================================
+*/
+UserController->
+---------------------
+verifyOtp class->
+// Pass Reset Token Issue
+$token = JWTToken::CreateTokenForSetPassword($request->input('email'));
+return response()->json([
+'status' => 'success',
+'message' => 'OTP Verification Successful'
+], status: 200)->cookie('token', $token, 60*24*30); // change here
 
 
 
- <script>
-   async function VerifyOtp() {
+<script>
+    async function VerifyOtp() {
         let otp = document.getElementById('otp').value;
-        if(otp.length !==4){
-           errorToast('Invalid OTP')
-        }
-        else{
+        if (otp.length !== 4) {
+            errorToast('Invalid OTP')
+        } else {
             showLoader();
-            let res=await axios.post('/verify-otp', {
+            let res = await axios.post('/verify-otp', {
                 otp: otp,
-                email:sessionStorage.getItem('email')
+                email: sessionStorage.getItem('email')
             })
             hideLoader();
 
-            if(res.status===200 && res.data['status']==='success'){
+            if (res.status === 200 && res.data['status'] === 'success') {
                 successToast(res.data['message'])
                 sessionStorage.clear();
                 setTimeout(() => {
-                    window.location.href='/resetPassword'
+                    window.location.href = '/resetPassword'
                 }, 1000);
-            }
-            else{
+            } else {
                 errorToast(res.data['message'])
             }
         }
@@ -610,38 +608,58 @@ send-otp-form.blade.php->
 </script>
 
 /**
- * 17 [POS] Front End Reset password
- *==================================================
- */
+* 17 [POS] Front End Reset password
+*==================================================
+*/
 
- <script>
-  async function ResetPass() {
+<script>
+    async function ResetPass() {
         let password = document.getElementById('password').value;
         let cpassword = document.getElementById('cpassword').value;
 
-        if(password.length===0){
+        if (password.length === 0) {
             errorToast('Password is required')
-        }
-        else if(cpassword.length===0){
+        } else if (cpassword.length === 0) {
             errorToast('Confirm Password is required')
-        }
-        else if(password!==cpassword){
+        } else if (password !== cpassword) {
             errorToast('Password and Confirm Password must be same')
-        }
-        else{
-          showLoader()
-          let res=await axios.post("/reset-password",{password:password});
-          hideLoader();
-          if(res.status===200 && res.data['status']==='success'){
-              successToast(res.data['message']);
-              setTimeout(function () {
-                  window.location.href="/userLogin";
-              },1000);
-          }
-          else{
-            errorToast(res.data['message'])
-          }
+        } else {
+            showLoader()
+            let res = await axios.post("/reset-password", {
+                password: password
+            });
+            hideLoader();
+            if (res.status === 200 && res.data['status'] === 'success') {
+                successToast(res.data['message']);
+                setTimeout(function() {
+                    window.location.href = "/userLogin";
+                }, 1000);
+            } else {
+                errorToast(res.data['message'])
+            }
         }
 
     }
 </script>
+
+
+/***
+* 18 [POS] User Logout And Take Agile Advantages
+* =====================================================
+*/
+UserController->
+------------------
+function UserLogout() {
+return redirect('/userLogin')->cookie('token', '', -1);
+}
+
+web.php -> 
+// User Logout 
+Route::get('/logout', [UserController::class, 'UserLogout']);
+
+
+sidenav-layout.blade.php ->
+-----------------------------------
+<a href="{{url("/logout")}}" class="side-bar-item">
+    <span class="side-bar-item-caption">Logout</span>
+</a>

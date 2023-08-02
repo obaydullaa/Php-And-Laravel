@@ -1,1 +1,48 @@
-Live Test Done
+Question
+
+Question : Assume you have a Laravel project with a 'User' model. Create a Trait named 'Verifiable' that will add a new method to classes using the Trait. This method should generate a verification code for the user. Use the 'Verifiable' Trait in the 'User' model. Implement the 'generateVerificationCode' method in the Trait, which should accept the user's email as an argument and return a unique verification code based on the email.
+
+// app/Traits/Verifiable.php
+
+namespace App\Traits;
+
+trait Verifiable
+{
+    /**
+     * Generate a verification code for the user based on their email.
+     *
+     * @param string $email
+     * @return string
+     */
+    public function generateVerificationCode(string $email): string
+    {
+        // You can implement your custom logic to generate a unique verification code here.
+        // For example, you can use the email to generate a hash or any other unique code.
+
+        // For this example, let's use a simple approach with a hash of the email.
+        return md5($email . uniqid());
+    }
+}
+
+// app/Models/User.php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\Verifiable;
+
+class User extends Model
+{
+    use Verifiable;
+
+    // ... Other existing model code ...
+
+    // You can add more model-specific methods and properties here.
+}
+
+// Somewhere in your code where you have access to a User instance, you can call the method like this:
+
+$user = new User();
+$email = 'user@example.com';
+$verificationCode = $user->generateVerificationCode($email);
+echo $verificationCode;
