@@ -72,11 +72,11 @@ class UserController extends Controller
     {
         $count = User::where('email', '=', $request->input('email'))
             ->where('password', '=', $request->input('password'))
-            ->count();
-
-        if ($count == 1) {
+            ->select('id')->first();
+            
+            if ($count !==null) {
             // User login -> jWT Token Issue 
-            $token = JWTToken::CreateToken($request->input('email'));
+            $token = JWTToken::CreateToken($request->input('email'), $count->id);
             return response()->json([
                 'status' => 'success',
                 'message' => 'User Login Successful',

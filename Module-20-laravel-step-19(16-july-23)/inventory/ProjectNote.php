@@ -670,5 +670,67 @@ sidenav-layout.blade.php ->
 * ===========================================================
 */
 
+UserController.php -> 
+============================
+
+ function UserLogin(Request $request)
+    {
+        $count = User::where('email', '=', $request->input('email'))
+            ->where('password', '=', $request->input('password'))
+            ->select('id')->first(); // call 
+
+            if ($count == 1) {
+            // User login -> jWT Token Issue 
+            $token = JWTToken::CreateToken($request->input('email'), $count->id); // pass paramiter
+
+            public static function  CreateTokenForSetPassword($userEmail):string {
+        $key = env('JWT_KEY');
+
+        $payload = [
+            'iss'=> 'laravel_token',
+            'iat'=> time(),
+            'exp'=> time()+60*60,
+            'userEmail'=> $userEmail,
+            'userID'=>'0' // setup this email
+        ];
+        return JWT::encode($payload, $key, 'HS256');
+    }
+
+TokenVerificationMiddleware ->
+-------------------------------------
+public function handle(Request $request, Closure $next): Response
+    {
+
+        $token=$request->cookie('token');
+        $result=JWTToken::VerifyToken($token);
+        if($result=="unauthorized"){
+            return redirect('/userLogin');
+        }
+        else{
+            $request->headers->set('email',$result->userEmail);
+            $request->headers->set('id',$result->userID);
+            return $next($request);
+        }
 
 
+    }
+}
+
+JWTToken.ph ->
+----------------------
+public static function VerifyToken($token):string|object
+    {
+        try {
+            if($token==null){
+                return 'unauthorized';
+            }
+            else{
+                $key =env('JWT_KEY');
+                $decode=JWT::decode($token,new Key($key,'HS256'));
+                return $decode;
+            }
+        }
+        catch (Exception $e){
+            return 'unauthorized';
+        }
+    }
