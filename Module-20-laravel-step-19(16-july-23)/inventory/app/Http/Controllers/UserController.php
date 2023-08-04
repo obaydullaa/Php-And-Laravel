@@ -20,7 +20,7 @@ class UserController extends Controller
         return view('pages.auth.login-page');
     }
 
-    function RegistrationPage(): View
+    function RegistrationPage(): ViewView
     {
         return view('pages.auth.registration-page');
     }

@@ -50,7 +50,7 @@
                         <h6>User Name</h6>
                         <hr class="user-dropdown-divider  p-0"/>
                     </div>
-                    <a href="{{url('/userProfile')}}" class="side-bar-item">
+                    <a href="{{url('/UserProfile')}}" class="side-bar-item">
                         <span class="side-bar-item-caption">Profile</span>
                     </a>
                     <a href="{{url("/logout")}}" class="side-bar-item">

@@ -739,3 +739,19 @@ public static function VerifyToken($token):string|object
 * 20 [POS] Working With User Profile
 * ===========================================================
 */
+
+resurces-> pages->dahsboard -> profile-page.blade.php
+--------------------------------------------------------------
+
+@extends('layout.sidenav-layout')
+@section('content')
+    @include('components.dashboard.summary')
+@endsection
+
+
+resurces-> components->dahsboard -> profile-form.blade.php
+----------------------------------------------------------------
+
+copy markup from registration form .........
+
+
