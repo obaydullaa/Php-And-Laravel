@@ -734,3 +734,8 @@ public static function VerifyToken($token):string|object
             return 'unauthorized';
         }
     }
+
+/***
+* 20 [POS] Working With User Profile
+* ===========================================================
+*/
