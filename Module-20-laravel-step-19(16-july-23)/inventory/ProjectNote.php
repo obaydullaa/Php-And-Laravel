@@ -761,7 +761,7 @@ copy markup from registration form and javascript
 * ===========================================================
 */
 
-Route::post('/user-profile', [UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/user-profile', [UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/user-update', [UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
 
 
@@ -800,3 +800,70 @@ function UserProfile(Request $request) {
             ],200);
         }
     }
+
+/***
+* 22 [POS] Working With User Profile
+* ===========================================================
+*/
+
+profile-form.blade.php ->
+---------------------------------
+
+<script>
+    getProfile();
+    async function getProfile(){
+        showLoader();
+        let res=await axios.get("/user-profile")
+        hideLoader();
+        if(res.status===200 && res.data['status']==='success'){
+            let data=res.data['data'];
+            document.getElementById('email').value=data['email'];
+            document.getElementById('firstName').value=data['firstName'];
+            document.getElementById('lastName').value=data['lastName'];
+            document.getElementById('mobile').value=data['mobile'];
+            document.getElementById('password').value=data['password'];
+        }
+        else{
+            errorToast(res.data['message'])
+        }
+
+    }
+
+    async function onUpdate() {
+        let firstName = document.getElementById('firstName').value;
+        let lastName = document.getElementById('lastName').value;
+        let mobile = document.getElementById('mobile').value;
+        let password = document.getElementById('password').value;
+
+        if(firstName.length===0){
+            errorToast('First Name is required')
+        }
+        else if(lastName.length===0){
+            errorToast('Last Name is required')
+        }
+        else if(mobile.length===0){
+            errorToast('Mobile is required')
+        }
+        else if(password.length===0){
+            errorToast('Password is required')
+        }
+        else{
+            showLoader();
+            let res=await axios.post("/user-update",{
+                firstName:firstName,
+                lastName:lastName,
+                mobile:mobile,
+                password:password
+            })
+            hideLoader();
+            if(res.status===200 && res.data['status']==='success'){
+                successToast(res.data['message']);
+                await getProfile();
+            }
+            else{
+                errorToast(res.data['message'])
+            }
+        }
+    }
+
+</script>
