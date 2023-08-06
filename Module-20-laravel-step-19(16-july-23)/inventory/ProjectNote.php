@@ -869,6 +869,37 @@ profile-form.blade.php ->
 </script>
 
 /***
-* 22 [POS] Working With User Profile
+* 23 [POS] Working With Category Back End
 * ===========================================================
 */
+php artisan make:migration create_categories
+php artisan migrate
+php artisan make:model Category 
+php artisan make:controller CategoryController
+
+create_categories ->Migrations
+------------------------------------------
+
+public function up(): void
+    {
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name',50);
+
+            $table->unsignedBigInteger('user_id');
+            
+            $table->foreign('user_id')->references('id')->on('users')
+                ->cascadeOnUpdate()->restrictOnDelete();
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('categories');
+    }
