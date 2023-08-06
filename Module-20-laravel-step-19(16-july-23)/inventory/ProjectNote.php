@@ -867,3 +867,8 @@ profile-form.blade.php ->
     }
 
 </script>
+
+/***
+* 22 [POS] Working With User Profile
+* ===========================================================
+*/
