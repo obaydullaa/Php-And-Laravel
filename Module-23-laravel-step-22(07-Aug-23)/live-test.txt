@@ -1,0 +1,15 @@
+Question
+
+Question : What is the purpose of the given Laravel code snippet?
+
+Post::where('is_published', true)
+
+    ->where('min_to_read', '>', 5)
+
+    ->orderBy('title', 'desc')
+
+    ->get()
+
+    ->count();
+
+Ans: 
