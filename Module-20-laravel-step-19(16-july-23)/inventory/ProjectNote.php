@@ -903,3 +903,16 @@ public function up(): void
     {
         Schema::dropIfExists('categories');
     }
+
+    pages -> category-page.blade.php ->
+    ---------------------------------
+    @extends('layout.sidenav-layout')
+@section('content')
+    @include('components.category.category-list')
+    @include('components.category.category-delete')
+    @include('components.category.category-create')
+    @include('components.category.category-update')
+@endsection
+
+components -> category -> all categories components : create, delete, list, update
+-----------------------------------------------------------------------------------------
