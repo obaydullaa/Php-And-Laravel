@@ -916,3 +916,11 @@ public function up(): void
 
 components -> category -> all categories components : create, delete, list, update
 -----------------------------------------------------------------------------------------
+
+api create and check in post man.
+
+
+/**
+* 24 [POS] Test Category API In Postman
+*===============================================
+*/
