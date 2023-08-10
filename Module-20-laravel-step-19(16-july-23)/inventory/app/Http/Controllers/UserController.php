@@ -182,6 +182,7 @@ class UserController extends Controller
             'message' > 'Request Successful',
             'data' => $user
         ], status: 200);
+        
     }
 
     function UpdateProfile(Request $request){
