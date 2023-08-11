@@ -932,3 +932,11 @@ Route::get('/list-category', [CategoryController::class, 'CategoryList'])->middl
 Route::post('/delete-category', [CategoryController::class, 'CategoryDelete'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/update-category', [CategoryController::class, 'CategoryUpdate'])->middleware([TokenVerificationMiddleware::class]);
 
+
+/**
+* 25 [POS] Set Up JavaScript Data table For Category
+*=============================================================
+*/
+data table plugin added and setup
+
+views->components -> category folder and get some file. 
