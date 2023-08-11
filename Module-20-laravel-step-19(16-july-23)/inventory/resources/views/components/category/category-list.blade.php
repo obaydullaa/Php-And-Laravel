@@ -43,14 +43,21 @@
       let tableData=$('#tableData');
       let tableList=$('#tableList');
 
-      tableData.DataTable().destroy();
-      tableList.empty();
+    //   tableData.DataTable().destroy();
+    //   tableList.empty();
 
 
 
       res.data.forEach(function (item,index) {
+        let row = `<tr></tr>`;
 
+        tableList.append(row);
       });
+
+
+
+
+
 
     }
 
