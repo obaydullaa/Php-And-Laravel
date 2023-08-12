@@ -61,6 +61,11 @@
         tableList.append(row);
       });
 
+      tableData.DataTable({
+        order: [[0, 'desc']],
+        LengthMenu: [5, 10, 15, 20],
+
+      })
 
 
 
