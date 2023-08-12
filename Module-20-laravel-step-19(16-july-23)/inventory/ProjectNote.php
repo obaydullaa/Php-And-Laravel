@@ -940,3 +940,50 @@ Route::post('/update-category', [CategoryController::class, 'CategoryUpdate'])->
 data table plugin added and setup
 
 views->components -> category folder and get some file. 
+views -> components -> category -> category-list.blade.php
+
+<script>
+
+    getList();
+
+
+  async function getList() {
+
+      showLoader();
+      let res=await axios.get("/list-category");
+      hideLoader();
+
+
+      let tableData=$('#tableData');
+      let tableList=$('#tableList');
+
+    //   tableData.DataTable().destroy();
+    //   tableList.empty();
+
+
+
+      res.data.forEach(function (item,index) {
+        let row = `<tr>
+                        <td> ${index+1} </td>
+                        <td> ${item['name']} </td>
+                        <td>
+                            <button class='btn btn-sm btn-outline-success'> Edit </buton>
+                            <button class='btn btn-sm btn-outline-danger'> Delete </buton>
+                        </td>
+                    <tr>`;
+
+        tableList.append(row);
+      });
+
+      tableData.DataTable({
+        order: [[0, 'desc']],
+        LengthMenu: [5, 10, 15, 20],
+
+      })
+
+
+
+
+
+    }
+    </script>
