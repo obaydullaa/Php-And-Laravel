@@ -970,7 +970,7 @@ views -> components -> category -> category-list.blade.php
                             <button class='btn btn-sm btn-outline-success'> Edit </buton>
                             <button class='btn btn-sm btn-outline-danger'> Delete </buton>
                         </td>
-                    <tr>`;
+                    </tr>`;
 
         tableList.append(row);
       });
@@ -987,3 +987,8 @@ views -> components -> category -> category-list.blade.php
 
     }
     </script>
+
+    /**
+    * 26 [POS] Fix the Part 25 Error
+    *========================================================
+    */

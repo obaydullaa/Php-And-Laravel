@@ -56,7 +56,7 @@
                             <button class='btn btn-sm btn-outline-success'> Edit </buton>
                             <button class='btn btn-sm btn-outline-danger'> Delete </buton>
                         </td>
-                    <tr>`;
+                    <tr>`
 
         tableList.append(row);
       });
