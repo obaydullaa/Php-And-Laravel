@@ -56,14 +56,14 @@
                             <button class='btn btn-sm btn-outline-success'> Edit </buton>
                             <button class='btn btn-sm btn-outline-danger'> Delete </buton>
                         </td>
-                    <tr>`
+                    </tr>`
 
         tableList.append(row);
       });
 
       tableData.DataTable({
-        order: [[0, 'desc']],
-        LengthMenu: [5, 10, 15, 20],
+        order:[[0,'asc']],
+        LengthMenu:[5,10,15,20]
 
       })
 
