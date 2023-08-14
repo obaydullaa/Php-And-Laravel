@@ -43,8 +43,8 @@
       let tableData=$('#tableData');
       let tableList=$('#tableList');
 
-    //   tableData.DataTable().destroy();
-    //   tableList.empty();
+      tableData.DataTable().destroy();
+      tableList.empty();
 
 
 
@@ -61,11 +61,18 @@
         tableList.append(row);
       });
 
+    // new DataTable('#tableData', {
+    //   order: [[0,'desc']],
+    //   lengthMenu:[5, 10, 20, 30,]
+    // });
+
       tableData.DataTable({
         order:[[0,'asc']],
-        LengthMenu:[5,10,15,20]
+        lengthMenu:[5,10,15,20]
 
       })
+
+
 
 
 
