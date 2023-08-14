@@ -992,3 +992,60 @@ views -> components -> category -> category-list.blade.php
     * 26 [POS] Fix the Part 25 Error
     *========================================================
     */
+
+    <script>
+
+    getList();
+
+
+  async function getList() {
+
+      showLoader();
+      let res=await axios.get("/list-category");
+      hideLoader();
+
+
+      let tableData=$('#tableData');
+      let tableList=$('#tableList');
+
+      tableData.DataTable().destroy();
+      tableList.empty();
+
+
+
+      res.data.forEach(function (item,index) {
+        let row = `<tr>
+                        <td> ${index+1} </td>
+                        <td> ${item['name']} </td>
+                        <td>
+                            <button class='btn btn-sm btn-outline-success'> Edit </buton>
+                            <button class='btn btn-sm btn-outline-danger'> Delete </buton>
+                        </td>
+                    </tr>`
+
+        tableList.append(row);
+      });
+
+    // new DataTable('#tableData', {
+    //   order: [[0,'desc']],
+    //   lengthMenu:[5, 10, 20, 30,]
+    // });
+
+      tableData.DataTable({
+        order:[[0,'asc']],
+        lengthMenu:[5,10,15,20]
+
+      })
+
+    }
+    </script>
+
+/**
+* 27 [POS] Working With Category Create And Refresh List
+*========================================================
+*/
+
+
+
+
+

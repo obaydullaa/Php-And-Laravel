@@ -1,0 +1,10 @@
+interface PaymentGateway {
+    /**
+     * Process a payment for the specified amount.
+     *
+     * @param float $amount The amount to be processed for the payment.
+     *
+     * @return bool Returns true if the payment is successfully processed, false otherwise.
+     */
+    public function processPayment($amount);
+}
