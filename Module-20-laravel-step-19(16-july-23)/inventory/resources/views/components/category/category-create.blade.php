@@ -27,8 +27,6 @@
 
 
 
-
-
 <script>
 
     $("#insertData").on('submit',async function (e) {
@@ -57,3 +55,5 @@
 
 
 </script>
+
+
