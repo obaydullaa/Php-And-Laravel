@@ -1046,6 +1046,86 @@ views -> components -> category -> category-list.blade.php
 */
 
 
+views -> category -> category-create.blade.php 
 
+
+<script>
+
+    $("#insertData").on('submit',async function (e) {
+        e.preventDefault();
+
+        let categoryName = document.getElementById('categoryName').value;
+        if (categoryName.length === 0) {
+            errorToast("Category Required !")
+        } else {
+            $('#create-modal').modal('hide');
+            showLoader();
+            let res = await axios.post("/create-category",{name:categoryName})
+            hideLoader();
+            if(res.status===201){
+                successToast('Request completed');
+                $("#insertData").trigger("reset");
+                await getList();
+            }
+            else{
+                errorToast("Request fail !")
+            }
+
+        }
+
+    })
+
+
+</script>
+
+views -> category -> category-list.blade.php 
+
+<script>
+
+    getList();
+
+
+  async function getList() {
+
+      showLoader();
+      let res=await axios.get("/list-category");
+      hideLoader();
+
+
+      let tableData=$('#tableData');
+      let tableList=$('#tableList');
+
+      tableData.DataTable().destroy();
+      tableList.empty();
+
+
+
+      res.data.forEach(function (item,index) {
+        let row = `<tr>
+                        <td> ${index+1} </td>
+                        <td> ${item['name']} </td>
+                        <td>
+                            <button class='btn btn-sm btn-outline-success'> Edit </buton>
+                            <button class='btn btn-sm btn-outline-danger'> Delete </buton>
+                        </td>
+                    </tr>`
+
+        tableList.append(row);
+      });
+
+    // new DataTable('#tableData', {
+    //   order: [[0,'desc']],
+    //   lengthMenu:[5, 10, 20, 30,]
+    // });
+
+      tableData.DataTable({
+        order:[[0,'asc']],
+        lengthMenu:[5,10,15,20]
+
+      })
+
+    }
+
+    </script>
 
 
