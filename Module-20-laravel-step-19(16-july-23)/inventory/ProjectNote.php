@@ -1129,3 +1129,12 @@ views -> category -> category-list.blade.php
     </script>
 
 
+
+
+
+/**
+ * 28 [POS] Understanding id pulling from specific row object
+ =================================================================
+ */
+
+
