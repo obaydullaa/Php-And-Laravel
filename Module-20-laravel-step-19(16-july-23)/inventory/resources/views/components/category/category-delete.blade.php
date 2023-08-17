@@ -20,3 +20,8 @@
     </div>
 </div>
 
+<script>
+    async function itemDelete() {
+        
+    }
+</script>
