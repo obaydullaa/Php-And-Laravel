@@ -53,12 +53,16 @@
                         <td> ${index+1} </td>
                         <td> ${item['name']} </td>
                         <td>
-                            <button class='btn btn-sm btn-outline-success'> Edit </buton>
-                            <button class='btn btn-sm btn-outline-danger'> Delete </buton>
+                            <button data-id="${item['id']}" class='btn editBtn btn-sm btn-outline-success'> Edit </buton>
+                            <button data-id="${item['id']}" class='btn deleteBtn btn-sm btn-outline-danger'> Delete </buton>
                         </td>
                     </tr>`
 
         tableList.append(row);
+      });
+
+      $('.editBtn').on(click{
+
       });
 
     // new DataTable('#tableData', {
