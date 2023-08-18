@@ -1134,4 +1134,21 @@ views -> category -> category-list.blade.php
  =================================================================
  */
 
+ category-list.blade.php ->
+ =================================
 
+
+    <button data-id="${item['id']}" class='btn editBtn btn-sm btn-outline-success'> Edit </buton>
+    <button data-id="${item['id']}" class='btn deleteBtn btn-sm btn-outline-danger'> Delete </buton>
+
+
+    
+    $('.editBtn').on('click', function (){
+       let id = $(this).data('id');
+        alert(id);
+      });
+
+      $('.deleteBtn').on('click', function (){
+       let id = $(this).data('id');
+          alert(id);
+      });
