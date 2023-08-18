@@ -1112,11 +1112,12 @@ views -> category -> category-list.blade.php
 
         tableList.append(row);
       });
-
     // new DataTable('#tableData', {
     //   order: [[0,'desc']],
     //   lengthMenu:[5, 10, 20, 30,]
     // });
+
+
 
       tableData.DataTable({
         order:[[0,'asc']],
@@ -1127,10 +1128,6 @@ views -> category -> category-list.blade.php
     }
 
     </script>
-
-
-
-
 
 /**
  * 28 [POS] Understanding id pulling from specific row object
