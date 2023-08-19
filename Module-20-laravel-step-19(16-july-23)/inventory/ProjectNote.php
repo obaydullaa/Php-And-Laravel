@@ -1152,3 +1152,8 @@ views -> category -> category-list.blade.php
        let id = $(this).data('id');
           alert(id);
       });
+
+/**
+ * 29 [POS] Working With Delete In Smart Way
+ =================================================================
+ */

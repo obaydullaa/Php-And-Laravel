@@ -69,6 +69,7 @@
       $('.deleteBtn').on('click', function (){
        let id = $(this).data('id');
           alert(id);
+          @().modal
       });
 
     // new DataTable('#tableData', {
