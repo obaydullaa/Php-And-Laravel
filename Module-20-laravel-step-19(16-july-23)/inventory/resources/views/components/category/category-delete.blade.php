@@ -6,7 +6,7 @@
             <div class="modal-body text-center">
                 <h3 class=" mt-3 text-warning">Delete !</h3>
                 <p class="mb-3">Once delete, you can't get it back.</p>
-                <input id="deleteID"/>
+                <input class="d-none" id="deleteID"/>
             </div>
 
             <!-- Modal footer -->
@@ -23,8 +23,19 @@
 
 <script>
     async function itemDelete() {
-        let id = document.getElementById('deleteID');
+        let id = document.getElementById('deleteID').value;
         document.getElementById('delete-modal-close').click();
+
+        showLoader();
+        let res = await axios.post("/delete-category", {id:id});
+        console.log(res);
+        hideLoader();
+        if(res.data === 1) {
+            successToast("Request Completed")
+            await getList();
+        }else {
+            errorToast('Request Faill!')
+        }
 
     }
 </script>

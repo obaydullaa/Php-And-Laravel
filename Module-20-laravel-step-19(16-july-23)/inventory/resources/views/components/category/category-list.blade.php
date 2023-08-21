@@ -32,21 +32,16 @@
 
     getList();
 
-
   async function getList() {
-
       showLoader();
       let res=await axios.get("/list-category");
       hideLoader();
-
 
       let tableData=$('#tableData');
       let tableList=$('#tableList');
 
       tableData.DataTable().destroy();
       tableList.empty();
-
-
 
       res.data.forEach(function (item,index) {
         let row = `<tr>
