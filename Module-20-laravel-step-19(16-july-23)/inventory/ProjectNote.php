@@ -1157,3 +1157,33 @@ views -> category -> category-list.blade.php
  * 29 [POS] Working With Delete In Smart Way
  =================================================================
  */
+category-list.blade.php  -> 
+-----------------------------------
+
+ $('.deleteBtn').on('click', function (){
+       let id = $(this).data('id');
+          $('#delete-modal').modal('show');
+          $('#deleteID').val(id); // from delete blade input id
+      });
+
+
+      category-delete.blade.php  -> 
+----------------------------------- 
+<script>
+    async function itemDelete() {
+        let id = document.getElementById('deleteID').value;
+        document.getElementById('delete-modal-close').click(); // close the modal
+
+        showLoader();
+        let res = await axios.post("/delete-category", {id:id});
+        console.log(res);
+        hideLoader();
+        if(res.data === 1) {
+            successToast("Request Completed")
+            await getList();
+        }else {
+            errorToast('Request Faill!')
+        }
+
+    }
+</script>

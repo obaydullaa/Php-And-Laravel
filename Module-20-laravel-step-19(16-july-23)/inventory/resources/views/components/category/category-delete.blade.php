@@ -24,7 +24,7 @@
 <script>
     async function itemDelete() {
         let id = document.getElementById('deleteID').value;
-        document.getElementById('delete-modal-close').click();
+        document.getElementById('delete-modal-close').click(); // close the modal
 
         showLoader();
         let res = await axios.post("/delete-category", {id:id});
