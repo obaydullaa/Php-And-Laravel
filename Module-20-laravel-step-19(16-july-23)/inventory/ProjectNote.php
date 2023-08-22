@@ -1187,3 +1187,8 @@ category-list.blade.php  ->
 
     }
 </script>
+
+/**
+ * 30 [POS] Customer Module As Previous
+ =================================================================
+ */
