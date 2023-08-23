@@ -104,8 +104,7 @@ User::create([
 return response()->json([
 'status' => 'success',
 'message' => 'User Registration Successfully'
-], status: 200);
-
+.
 }catch (Exception $err){
 return response()->json([
 'status' => 'Failed',
