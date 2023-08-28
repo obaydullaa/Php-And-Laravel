@@ -1262,4 +1262,9 @@ view->pages->dashboard->custoper-ages.blade.php
     @include('components.customer.customer-update')
 @endsection
 
- 
+ views -> components -> customer ->
+ -----------------------------------------------
+ Customer-create.blade.php
+ Customer-delete.blade.php
+ Customer-list.blade.php
+ Customer-update.blade.php
