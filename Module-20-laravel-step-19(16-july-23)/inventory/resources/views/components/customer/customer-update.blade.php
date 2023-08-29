@@ -77,7 +77,7 @@
 
                 successToast('Request completed');
 
-                document.getElementById("update-form").reset();
+                document.getElementById("update-form").reset(); 
 
                 await getList();
             }
