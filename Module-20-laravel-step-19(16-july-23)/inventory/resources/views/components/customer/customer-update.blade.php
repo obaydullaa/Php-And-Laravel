@@ -1,4 +1,4 @@
-<div class="modal" id="update-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="update-modal" tabindex="-1" aria-labelledby="exampleModalLabel"  aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,7 +15,7 @@
                                 <input type="text" class="form-control" id="customerEmailUpdate">
                                 <label class="form-label">Customer Mobile *</label>
                                 <input type="text" class="form-control" id="customerMobileUpdate">
-                                <input type="text" class="d-none" id="updateID">
+                                <input type="text" class="d-none" id="updateID"> 
 
                             </div>
                         </div>
