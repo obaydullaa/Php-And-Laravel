@@ -53,8 +53,10 @@
                     <td>${item['email']}</td>
                     <td>${item['mobile']}</td>
                     <td>
+                        
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
+
                     </td>
                  </tr>`
             tableList.append(row)
