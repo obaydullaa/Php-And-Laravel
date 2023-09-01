@@ -9,9 +9,7 @@ use Illuminate\View\View;
 class CustomerController extends Controller
 {
 
-    function CustomerPage():View{
-        return view('pages.dashboard.customer-page');
-    }
+    function CustomerPage
 
     function CustomerCreate(Request $request){
         $user_id=$request->header('id');
