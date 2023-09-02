@@ -12,7 +12,7 @@ class CustomerController extends Controller
     function CustomerPage():View{
         return view('pages.dashboard.customer-page');
     }
-
+    
     function CustomerCreate(Request $request){
         $user_id=$request->header('id');
         return Customer::create([
