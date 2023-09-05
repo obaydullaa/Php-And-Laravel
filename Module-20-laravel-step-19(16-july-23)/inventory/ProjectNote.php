@@ -1270,3 +1270,9 @@ view->pages->dashboard->custoper-ages.blade.php
  Customer-update.blade.php
 
  // all component list , show , create and delete  fot details this page
+
+
+ /**
+ *  31 [POS] Update Category By Getting Details
+ =================================================================
+ */
