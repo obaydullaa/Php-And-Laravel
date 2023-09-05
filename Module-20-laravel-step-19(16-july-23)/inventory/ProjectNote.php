@@ -1268,3 +1268,5 @@ view->pages->dashboard->custoper-ages.blade.php
  Customer-delete.blade.php
  Customer-list.blade.php
  Customer-update.blade.php
+
+ // all component list , show , create and delete  fot details this page
