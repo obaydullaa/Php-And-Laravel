@@ -58,7 +58,7 @@
 
       $('.editBtn').on('click', function (){
        let id = $(this).data('id');
-        alert(id);
+       $('#update-modal').modal('show');
       });
 
       $('.deleteBtn').on('click', function (){

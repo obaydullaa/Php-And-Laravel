@@ -25,3 +25,12 @@
         </form>
     </div>
 </div>
+
+<script>
+    async funcion Update() {
+
+        let categryNameUpdate = document.getElementById('categryNameUpdate').value;
+
+    }
+
+</script>
