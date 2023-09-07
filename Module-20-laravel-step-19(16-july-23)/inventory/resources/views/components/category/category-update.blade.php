@@ -31,6 +31,8 @@
 
         let categryNameUpdate = document.getElementById('categryNameUpdate').value;
 
+        // Ajax
+
     }
 
 </script>
