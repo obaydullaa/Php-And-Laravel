@@ -60,4 +60,4 @@ Route::post("/update-customer",[CustomerController::class,'CustomerUpdate'])->mi
 Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
 
-
+  
