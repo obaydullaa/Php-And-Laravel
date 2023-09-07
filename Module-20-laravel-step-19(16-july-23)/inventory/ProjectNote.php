@@ -1276,3 +1276,4 @@ view->pages->dashboard->custoper-ages.blade.php
  *  31 [POS] Update Category By Getting Details
  =================================================================
  */
+category-update.blade.php ->
