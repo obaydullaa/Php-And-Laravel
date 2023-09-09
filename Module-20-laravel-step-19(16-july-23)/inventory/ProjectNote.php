@@ -1277,3 +1277,15 @@ view->pages->dashboard->custoper-ages.blade.php
  =================================================================
  */
 category-update.blade.php -> work this file
+
+CategoryController.php ->
+-------------------------------
+
+function CategoryByID(Request $request) {
+        $category_id=$request->input('id');
+        $user_id=$request->header('id');
+        return Category::where('id', $category_id)->where('user_id', $user_id)->first();
+    }
+
+route ->12XYSPOHBN7864wLKP
+Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
