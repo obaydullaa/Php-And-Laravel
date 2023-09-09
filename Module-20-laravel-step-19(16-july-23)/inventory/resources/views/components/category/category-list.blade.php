@@ -60,6 +60,7 @@
        let id = $(this).data('id');
        $('#update-modal').modal('show');
        $('#updateID').val(id);
+       FilleUpUpdateForm()
       });
 
       $('.deleteBtn').on('click', function (){

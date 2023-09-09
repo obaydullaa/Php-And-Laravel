@@ -27,6 +27,9 @@
 </div>
 
 <script>
+    function FilleUpUpdateForm(id) {
+        alert(id);
+    }
     async funcion Update() {
 
         let categryNameUpdate = document.getElementById('categryNameUpdate').value;
