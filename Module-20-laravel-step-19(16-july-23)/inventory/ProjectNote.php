@@ -1287,5 +1287,6 @@ function CategoryByID(Request $request) {
         return Category::where('id', $category_id)->where('user_id', $user_id)->first();
     }
 
-route ->12XYSPOHBN7864wLKP
+route ->
 Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+  
