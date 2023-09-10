@@ -27,8 +27,12 @@
 </div>
     
 <script>
-    function FilleUpUpdateForm(id) {
-        alert(id);
+   async function FilleUpUpdateForm(id) {
+        document.getElementById('updateID').value=id;
+        showLoader();
+        let res=await axios.post("category-by-id",{id:id});
+        hideLoader();
+
     }
     async funcion Update() {
 

@@ -56,18 +56,19 @@
         tableList.append(row);
       });
 
-      $('.editBtn').on('click', function (){
-       let id = $(this).data('id');
-       $('#update-modal').modal('show');
-       $('#updateID').val(id);
-       FilleUpUpdateForm()
-      });
+        $('.editBtn').on('click', function (){
+            let id = $(this).data('id');
+            $('#update-modal').modal('show');
+            $('#updateID').val(id);
+            FilleUpUpdateForm()
 
-      $('.deleteBtn').on('click', function (){
-       let id = $(this).data('id');
-          $('#delete-modal').modal('show');
-          $('#deleteID').val(id);
-      });
+        });
+
+        $('.deleteBtn').on('click', function (){
+        let id = $(this).data('id');
+            $('#delete-modal').modal('show');
+            $('#deleteID').val(id);
+        });
 
     // new DataTable('#tableData', {
     //   order: [[0,'desc']],
