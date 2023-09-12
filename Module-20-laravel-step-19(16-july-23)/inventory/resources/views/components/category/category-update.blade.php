@@ -28,15 +28,14 @@
     
 <script>
     
-   async function FilleUpUpdateForm(id) {
+    async function FillUpUpdateForm(id){
         document.getElementById('updateID').value=id;
         showLoader();
-        let res=await axios.post("/category-by-id",{id:id});
-        conole.log(res.data['name']);
+        let res=await axios.post("/category-by-id",{id:id})
         hideLoader();
-         document.getElementById('categryNameUpdate').value=res.data['name'];
-
+        document.getElementById('categoryNameUpdate').value=res.data['name'];
     }
+    
     async funcion Update() {
 
         let categryNameUpdate = document.getElementById('categryNameUpdate').value;
