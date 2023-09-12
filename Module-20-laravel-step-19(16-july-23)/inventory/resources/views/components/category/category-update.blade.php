@@ -27,12 +27,14 @@
 </div>
     
 <script>
+    
    async function FilleUpUpdateForm(id) {
         document.getElementById('updateID').value=id;
         showLoader();
         let res=await axios.post("/category-by-id",{id:id});
+        conole.log(res.data['name']);
         hideLoader();
-        document.getElementById('categryNameUpdate').value=res.data['name'];
+         document.getElementById('categryNameUpdate').value=res.data['name'];
 
     }
     async funcion Update() {
