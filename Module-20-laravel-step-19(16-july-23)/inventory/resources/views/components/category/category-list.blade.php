@@ -58,10 +58,10 @@
 
         $('.editBtn').on('click', function (){
             let id = $(this).data('id');
+            console.log(id);
             $('#update-modal').modal('show');
             $('#updateID').val(id);
            FilleUpUpdateForm(id)
-
         });
 
         $('.deleteBtn').on('click', function (){
