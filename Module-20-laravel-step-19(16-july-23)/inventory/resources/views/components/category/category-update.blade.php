@@ -52,7 +52,7 @@
             showLoader();
             let res = await axios.post("/update-category", {
                 name: categoryName,
-                id: updateID
+                id: updateID 
             })
             hideLoader();
 
